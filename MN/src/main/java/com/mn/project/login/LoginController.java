@@ -1,6 +1,7 @@
 package com.mn.project.login;
 
 import javax.inject.Inject;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -25,7 +26,7 @@ public class LoginController {
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
     public String login(RedirectAttributes rttr) throws Exception{
 
-		return "/login";
+		return "/First/login";
 	}
 	
 	//로그인성공후 메인페이지로이동
@@ -44,7 +45,7 @@ public class LoginController {
         	 System.out.println(loginVO);
         	  session.setAttribute("member", login.mmid); 
         	  System.out.println(session.getAttribute("member"));
-        	 return "/commonhomecomplete"; 
+        	 return "/First/commonhomecomplete"; 
          }
          
 	}
@@ -54,7 +55,7 @@ public class LoginController {
     public String idfind() throws Exception{
 		
 		
-		return "/idfind";
+		return "/First/idfind";
 	}
 	
 	// 아이디찾기페이지에서 아이디찾은정보페이지로 이동,아이디찾은정보페이지
@@ -63,14 +64,14 @@ public class LoginController {
 		
 		model.addAttribute("idfindaftern", service.idfind(loginVO));
 		
-		return "/idfindafter";
+		return "/First/idfindafter";
 	}
 	
 	//로그인페이지에서 비번찾기페이지로이동
 	@RequestMapping(value="/pwfind",method = {RequestMethod.POST,RequestMethod.GET})
     public String pwfind() throws Exception{
 		
-		return "/pwfind";
+		return "/First/pwfind";
 	}
 	//비번바꾸는 페이지
 	@RequestMapping(value="/pwchange",method = {RequestMethod.POST,RequestMethod.GET})
@@ -84,7 +85,7 @@ public class LoginController {
         	 return "redirect:/pwfind";
          }else {
         	  session.setAttribute("mmpwd", mmpwd);  
-        	 return "/pwchange"; 
+        	 return "/First/pwchange"; 
          }
 	}
 	//비번이 일치하면 다음페이지에서 비번변경되었음 페이지로 이동
@@ -94,28 +95,28 @@ public class LoginController {
 		
 		service.pwchange(loginVO);
 		
-		return "/changenotice";
+		return "/First/changenotice";
 	}
 	
     //로그인페이지에서 회원가입페이지로이동
 	@RequestMapping(value="/signupgo", method = {RequestMethod.POST,RequestMethod.GET})
 	public String signUp() throws Exception{
 
-		return "/signup";
+		return "/First/signup";
 	}
 	
     //마이페이지로이동
 	@RequestMapping(value="/matchmypage", method = {RequestMethod.POST,RequestMethod.GET})
 	public String gomypage() throws Exception{
 
-		return "/matchmypage";
+		return "/First/matchmypage";
 	}
 	
     //마이페이지로이동
 	@RequestMapping(value="/delete", method = {RequestMethod.POST,RequestMethod.GET})
 	public String deletego(HttpServletRequest req) throws Exception{
 	
-		return "/delete";
+		return "/First/delete";
 	}
 	
     //마이페이지에서 회원탈퇴누르시 탈퇴페이지로 이동
@@ -134,7 +135,7 @@ public class LoginController {
          }else {
         	  session.setAttribute("delete", tt);
         	  service.mmdelete(loginVO);
-        	 return "/home"; 
+        	 return "/First/home"; 
          }
 	}
 }

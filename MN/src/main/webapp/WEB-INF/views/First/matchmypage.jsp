@@ -14,7 +14,7 @@
 
 //삭제 버튼 클릭 이벤트
 $(document).on('click','#btndelete', function() {
-	var url = "${pageContext.request.contextPath}/delete";
+	var url = "${pageContext.request.contextPath}/First/delete";
 	location.href = url;
 });
 </script>

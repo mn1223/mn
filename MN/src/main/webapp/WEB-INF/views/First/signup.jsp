@@ -21,7 +21,7 @@
 </script>
 <article>
 	<form method="post" name="form" onsubmit="return checkpwd()"
-		action="${pageContext.request.contextPath}/signupcomplete">
+		action="${pageContext.request.contextPath}/First/signupcomplete">
 		<div>
 			<label>이름</label> <input type="text" id="mmname" name="mmname" />
 		</div>

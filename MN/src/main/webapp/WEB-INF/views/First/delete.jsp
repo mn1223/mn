@@ -11,7 +11,7 @@
 </script>
 <body>
 	<form method="post" id="form"
-		action="${pageContext.request.contextPath}/home">
+		action="${pageContext.request.contextPath}/First/home">
 		<div>
 			<label>비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
 		</div>

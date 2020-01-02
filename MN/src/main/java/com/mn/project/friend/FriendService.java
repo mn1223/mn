@@ -1,5 +1,7 @@
 package com.mn.project.friend;
 
-public interface FriendService {
+import java.util.List;
 
+public interface FriendService {
+	public List<FriendVO> searchData(FriendVO friendVO);
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form method="post" id="form"
-		action="${pageContext.request.contextPath}/successcommonhome">
+		action="${pageContext.request.contextPath}/First/successcommonhome">
 		<div>
 			<label>아이디</label> <input type="text" id="mmid" name="mmid" />
 		</div>

@@ -2,8 +2,8 @@ package com.mn.project.login;
 
 import javax.inject.Inject;
 
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mn.project.util.SessionClass;
+
 
 @Controller
 public class LoginController {
@@ -19,9 +21,9 @@ public class LoginController {
 	@Inject
 	private LoginService service;
 	
+	@Inject
+	private SessionClass session;
 	 
-	 HttpSession session;
-	
 	//로그인페이지로이동
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
     public String login(RedirectAttributes rttr) throws Exception{
@@ -33,18 +35,18 @@ public class LoginController {
 	@RequestMapping(value="/successcommonhome", method = {RequestMethod.POST,RequestMethod.GET})
 	public String success(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
         
-		session = req.getSession();
+		session.getSessionId(req);
 		
 		LoginVO login = service.login(loginVO);
 	
          if(login == null) {
-        	  session.setAttribute("member", null); 
+        	  session.setId("member",null);    
         	  rttr.addFlashAttribute("msg", false);
         	 return "redirect:/login";
          }else {
-        	 System.out.println(loginVO);
-        	  session.setAttribute("member", login.mmid); 
-        	  System.out.println(session.getAttribute("member"));
+        	  System.out.println(loginVO);
+        	  session.setId("member",login.mmid);
+        	  System.out.println(session.getId("member"));
         	 return "/First/commonhomecomplete"; 
          }
          
@@ -75,16 +77,17 @@ public class LoginController {
 	}
 	//비번바꾸는 페이지
 	@RequestMapping(value="/pwchange",method = {RequestMethod.POST,RequestMethod.GET})
-    public String pwfind(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req) throws Exception{
+    public String pwfind(@ModelAttribute("LoginVO") LoginVO loginVO) throws Exception{
+		
 		
 		
 		LoginVO mmpwd = service.pwfind(loginVO);
 		
 	      if(mmpwd == null) {
-        	  session.setAttribute("mmpwd", null); 
+        	  session.setId("mmpwd", null); 
         	 return "redirect:/pwfind";
          }else {
-        	  session.setAttribute("mmpwd", mmpwd);  
+        	  session.setId("mmpwd", mmpwd.mmpwd); 
         	 return "/First/pwchange"; 
          }
 	}
@@ -120,27 +123,24 @@ public class LoginController {
 	
     //마이페이지에서 회원탈퇴누르시 탈퇴페이지로 이동
 	@RequestMapping(value="/home", method = {RequestMethod.POST,RequestMethod.GET})
-	public String delete(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req) throws Exception{
+	public String delete(@ModelAttribute("LoginVO") LoginVO loginVO) throws Exception{
 		
-		String mmid =  (String) session.getAttribute("member");	
+		String mmid =  session.getId("member");	
+				
 		loginVO.setMmid(mmid);
 		
 		LoginVO tt= service.mmdeletebe(loginVO);
 		System.out.println(tt);
 
 	      if(tt == null) {
-        	  session.setAttribute("delete", null); 
+        	  session.setId("delete", null); 
         	 return "redirect:/delete";  
          }else {
-        	  session.setAttribute("delete", tt);
+        	  session.setId("delete", tt.mmid);
         	  service.mmdelete(loginVO);
         	 return "/First/home"; 
          }
 	}
-	//회원정보수정클릭시 회원정보 가져와서 화면에 보여주기
-	@RequestMapping(value="/", method = {RequestMethod.POST,RequestMethod.GET})
-	public String update(HttpServletRequest req) throws Exception{
 	
-		return "/First/matchmypage";
-	}
+	
 }

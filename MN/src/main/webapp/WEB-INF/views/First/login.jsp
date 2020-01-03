@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,7 @@
 	</form>
 	
 	<c:if test="${msg == 'false'}">
-	<p style="color:#f00;">로그인에 실패하였습니다.아이디 또는 패스워드를 입력해십시요
-	</p>
+		<p style="color:#f00;">로그인에 실패하였습니다.아이디 또는 패스워드를 입력해십시요</p>	
 	</c:if>
 	<br>
 	<a href="/idfind">아이디찾기</a>

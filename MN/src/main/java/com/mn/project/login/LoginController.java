@@ -137,10 +137,4 @@ public class LoginController {
         	 return "/First/home"; 
          }
 	}
-	//회원정보수정클릭시 회원정보 가져와서 화면에 보여주기
-	@RequestMapping(value="/", method = {RequestMethod.POST,RequestMethod.GET})
-	public String update(HttpServletRequest req) throws Exception{
-	
-		return "/First/matchmypage";
-	}
 }

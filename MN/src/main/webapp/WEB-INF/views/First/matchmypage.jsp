@@ -12,7 +12,7 @@
 <script>
 //수정 버튼 클릭 이벤트
 $(document).on('click','#btnupdate',function(){
-	var url = "${pageContext.request.contextPath}/editForm";
+	var url = "${pageContext.request.contextPath}/update";
 	url = url + "?bno=" + $
 	{
 		boardContent.bno
@@ -38,7 +38,48 @@ $(document).on('click','#btndelete', function() {
 <form>
 	<div class="board_title">
 		<c:out value="${LoginVO.mmname}" />
-	</div>
+		<c:out value="${LoginVO.mmid}" />
+		<c:out value="${LoginVO.mmpwd}" />
+		<c:out value="${LoginVO.re_mmpwd}" />
+		<c:out value="${LoginVO.mmphonenum}" />
+		<c:out value="${LoginVO.mmgender}" />
+	</div> 
+	
+<form>
+		<div>
+			<label>초등학교</label> <input type="text" id="mmid" name="mmid" />
+		</div>
+		<div>
+			<label>초등학교졸업년도</label> <input type="text" id="mmpwd" name="mmpwd" />
+		</div>
+<br>
+		<div>
+			<label>중학교</label> <input type="text" id="mmid" name="mmid" />
+		</div>
+		<div>
+			<label>중학교졸업년도</label> <input type="text" id="mmpwd" name="mmpwd" />
+		</div>
+<br>
+		<div>
+			<label>고등학교</label> <input type="text" id="mmid" name="mmid" />
+		</div>
+		<div>
+			<label>고등학교졸업년도</label> <input type="text" id="mmpwd" name="mmpwd" />
+		</div>
+<br>
+<div>
+	    <label>대학교</label> <input type="text" id="mmid" name="mmid" />
+		</div>
+		<div>
+	    <label>대학교졸업년도</label> <input type="text" id="mmpwd" name="mmpwd" />
+		</div>
+		<div>
+	    <label>입학년도</label> <input type="text" id="mmpwd" name="mmpwd" />
+		</div>
+       <div>
+			<button type="button" id="btnschool">등록및 수정</button>
+		</div>
+</form>	
 				
 <button type="button" id="btnupdate">수정하기</button>
 </form> <button type="button" id="btndelete">회원탈퇴</button>

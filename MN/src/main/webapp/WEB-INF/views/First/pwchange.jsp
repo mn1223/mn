@@ -18,7 +18,7 @@ function checkpwd() {
   }
 </script>
 <body>
-	<form method="post" name="form" action="${pageContext.request.contextPath}/First/changenotice" 
+	<form method="post" name="form" action="${pageContext.request.contextPath}/changenotice" 
 	onsubmit="return checkpwd()">
 	<div>
 		<label>수정할비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />

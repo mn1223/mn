@@ -6,10 +6,7 @@
 	<title>Home</title>
 </head>
 <body>
-
 <a href="/signup">회원가입</a>
 <a href="/login">로그인</a>
-<a href = "/search">친구검색</a>
-
 </body>
 </html>

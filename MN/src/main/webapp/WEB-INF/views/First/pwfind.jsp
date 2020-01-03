@@ -8,7 +8,7 @@
 </head>
 <body>
 <form method="post" id="form"
-		action="${pageContext.request.contextPath}/First/pwchange">
+		action="${pageContext.request.contextPath}/pwchange">
     <div>
 		<label>아이디</label> <input type="text" id="mmid" name="mmid"/>
 	</div>

@@ -18,7 +18,7 @@ public class RegisterController {
 	@RequestMapping(value="/signup", method = {RequestMethod.POST,RequestMethod.GET})
 	public String signUp() throws Exception{
 
-		return "/signup";
+		return "/First/signup";
 	}
 
 	//가입하기버튼클릭시 회원가입성공페이지로 이동
@@ -26,14 +26,14 @@ public class RegisterController {
 	public String signUpcomplete(@ModelAttribute("RegisterVO") RegisterVO registerVO) throws Exception{
 		System.out.println(registerVO);
 		service.insertUser(registerVO);
-		return "/congratulation";
+		return "/First/congratulation";
 	}
 
 	//회원가입성공페이지에서 메인페이지로 이동
 	@RequestMapping(value="/commonhome", method = {RequestMethod.POST,RequestMethod.GET})
 	public String signUpafter() throws Exception{
 
-		return "/commonhome";
+		return "First/commonhome";
 	}
 
 }

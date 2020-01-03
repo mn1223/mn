@@ -92,7 +92,6 @@ public class LoginController {
 	@RequestMapping(value="/changenotice", method = {RequestMethod.POST,RequestMethod.GET})
     public String pwchangecomplete(@ModelAttribute("LoginVO") LoginVO loginVO,HttpServletRequest req) throws Exception{
 		
-		
 		service.pwchange(loginVO);
 		
 		return "/First/changenotice";
@@ -112,7 +111,7 @@ public class LoginController {
 		return "/First/matchmypage";
 	}
 	
-    //마이페이지로이동
+    //삭제페이지로이동
 	@RequestMapping(value="/delete", method = {RequestMethod.POST,RequestMethod.GET})
 	public String deletego(HttpServletRequest req) throws Exception{
 	
@@ -137,5 +136,11 @@ public class LoginController {
         	  service.mmdelete(loginVO);
         	 return "/First/home"; 
          }
+	}
+	//회원정보수정클릭시 회원정보 가져와서 화면에 보여주기
+	@RequestMapping(value="/", method = {RequestMethod.POST,RequestMethod.GET})
+	public String update(HttpServletRequest req) throws Exception{
+	
+		return "/First/matchmypage";
 	}
 }

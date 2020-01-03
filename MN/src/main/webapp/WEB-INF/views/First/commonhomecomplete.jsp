@@ -9,5 +9,6 @@
 <body>
 <a href="/login">로그아웃</a>
 <a href="/matchmypage">마이페이지(매치메이커)</a>
+<a href ="/search">친구검색</a>
 </body>
 </html>

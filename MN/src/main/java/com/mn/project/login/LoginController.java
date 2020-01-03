@@ -25,7 +25,7 @@ public class LoginController {
 	//로그인페이지로이동
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
     public String login(RedirectAttributes rttr) throws Exception{
-
+		
 		return "/First/login";
 	}
 	

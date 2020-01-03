@@ -45,17 +45,12 @@ function usc(){
 
 
 
+
 $(document).on('click', '#btnSearch1', function() {	
 	var name = $('#mmname').val();
 	var eschool = $('#eschool').val();
 	var eschoolgy = $('#eschoolgy').val();
 	var searchType = $('#searchType').val();
-	
-	if(name == null || name == '' || eschool == null || eschool == '' || eschoolgy == null || eschoolgy == ''){
-		alert("오류");
-	}else{
-		
-	
 	
 	var paramData = JSON.stringify({
 		"mmname" : name,
@@ -67,8 +62,6 @@ $(document).on('click', '#btnSearch1', function() {
 			"Content-Type" : "application/json",
 			"X-HTTP-Method-Override" : "POST"
 		};
-	
-	
 	
 	$.ajax({
 		headers : headers,
@@ -84,7 +77,7 @@ $(document).on('click', '#btnSearch1', function() {
 				html += '<th>'+this.eschool+'<th>';
 				html += '<th>'+this.eschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><button onclick ="fadd('+this.scmmid+')">친구추가</button><th>';
+				html += '<th><a href = "#" onclick=friends_add("'+ this.scmmid +'");>친구추가</a><th>';
 				html += '<th><button>채팅하기</button><th>';
 				html += '<tr>';							
 			});//each end			
@@ -93,17 +86,19 @@ $(document).on('click', '#btnSearch1', function() {
 		error : function(e){
 			alert(e);
 		}		
-	});
-	
-	//}
-	
+	});	
 });
 
-function fadd(id){
-	alert(id);
+
+
+function friends_add(scmmid){
+	
+	var id = scmmid;	
+	alert(scmmid);
+	
+	
 	
 }
-
 
 
 

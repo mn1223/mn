@@ -8,5 +8,10 @@
 <body>
 <a href="/signup">회원가입</a>
 <a href="/login">로그인</a>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 </body>
 </html>

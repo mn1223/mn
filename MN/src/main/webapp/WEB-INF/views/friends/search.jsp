@@ -16,6 +16,7 @@ $(document).ready(function() {
 	$("#ms").hide();
 	$("#hs").hide();
 	$("#us").hide();
+	
 });
 
 function esc(){
@@ -77,7 +78,7 @@ $(document).on('click', '#btnSearch1', function() {
 				html += '<th>'+this.eschool+'<th>';
 				html += '<th>'+this.eschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><a href = "#" onclick=friends_add("'+ this.scmmid +'");>친구추가</a><th>';
+				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
 				html += '<th><button>채팅하기</button><th>';
 				html += '<tr>';							
 			});//each end			
@@ -91,12 +92,60 @@ $(document).on('click', '#btnSearch1', function() {
 
 
 
-function friends_add(scmmid){
+function friends_judge(scmmid){
+	var yourid = scmmid;
+	var num = 0;
+	var id = $('#loginId').val();
 	
-	var id = scmmid;	
-	alert(scmmid);
+	var headers = {
+			"Content-Type" : "application/json",
+			"X-HTTP-Method-Override" : "POST"
+		};
 	
+	$.ajax({
+		headers : headers,
+		type : "GET",
+		url : "/judgeFriend",
+		data : {"myid" : id},
+		dataType : "json",
+		success : function(data){			
+			$(data).each(function(){
+				if(yourid == this.yourid){
+					num++;					
+				}else{
+					
+				}
+			});
+			//친구 유무 판단 후 작업 (num == 0 : 친구 등록/num!=0 : 친구 등록 X)
+			if(num==0){
+				alert("친구 등록 진행");
+				friends_add(yourid);
+			}else{
+				alert("이미 등록된 친구  입니다.");
+			}
+		},
+		error : function(e){
+			alert(e);
+		}		
+	});
+}
+
+function friends_add(yourid){
 	
+	$.ajax({
+		url : "/addFriend",
+		type : "GET",
+		dataType : "text",
+		data : {"yourid" : yourid},
+		success : function(result){
+			alert("친구등록 완료!!!!");
+		},
+		error : function(e){
+			alert(e);
+		}
+		
+		
+	});
 	
 }
 
@@ -133,6 +182,8 @@ $(document).on('click', '#btnSearch2', function() {
 				html += '<th>'+this.mschool+'<th>';
 				html += '<th>'+this.mschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
+				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
+				html += '<th><button>채팅하기</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -174,6 +225,8 @@ $(document).on('click', '#btnSearch3', function() {
 				html += '<th>'+this.hschool+'<th>';
 				html += '<th>'+this.hschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
+				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
+				html += '<th><button>채팅하기</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -217,6 +270,8 @@ $(document).on('click', '#btnSearch4', function() {
 				html += '<th>'+this.uschool+'<th>';
 				html += '<th>'+this.uschooley+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
+				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
+				html += '<th><button>채팅하기</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -239,6 +294,7 @@ $(document).on('click', '#btnSearch4', function() {
 <input type="button" value ="중학교 동창" onclick ="msc()">
 <input type="button" value ="고등학교 동창" onclick ="hsc()">
 <input type="button" value ="대학교 동창" onclick ="usc()">
+<input type="hidden" id = loginId value = ${id}>
 
 
 <div id = "es">

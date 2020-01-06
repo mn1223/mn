@@ -36,4 +36,16 @@ public class FriendDAOImpl implements FriendDAO {
 		
 	}
 
+	@Override
+	public void addFriendList(FriendVO friendVO) {
+		
+		session.insert(namespace+".addFriendList",friendVO);
+	}
+
+	@Override
+	public List<FriendVO> judgeFirend(FriendVO friendVO) {
+		
+		return session.selectList(namespace+".judgeFriend",friendVO);
+	}
+
 }

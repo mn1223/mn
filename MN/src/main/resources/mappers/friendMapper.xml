@@ -77,4 +77,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</trim>
 	</select>
 	
+	<insert id="addFriendList" parameterType = "com.mn.project.friend.FriendVO">
+	insert into nflist(myid,yourid) values(#{myid},#{yourid})
+	</insert>
+	
+	<select id="judgeFriend" parameterType = "com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
+	select yourid from nflist where myid = #{myid}
+	</select>
+	
+	
 </mapper>

@@ -82,8 +82,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="judgeFriend" parameterType = "com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
-	select yourid from nflist where myid = #{myid}
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid}
 	</select>
+	
 	
 	
 </mapper>

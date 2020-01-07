@@ -8,15 +8,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-  
+ 
 <script>
 
 $(document).ready(function() {
 	$("#es").show();
 	$("#ms").hide();
 	$("#hs").hide();
-	$("#us").hide();
-	
+	$("#us").hide();	
 });
 
 function esc(){
@@ -25,18 +24,21 @@ function esc(){
 	$("#hs").hide();
 	$("#us").hide();
 }
+
 function msc(){
 	$("#es").hide();
 	$("#ms").show();
 	$("#hs").hide();
 	$("#us").hide();
 }
+
 function hsc(){
 	$("#es").hide();
 	$("#ms").hide();
 	$("#hs").show();
 	$("#us").hide();
 }
+
 function usc(){
 	$("#es").hide();
 	$("#ms").hide();
@@ -53,6 +55,12 @@ $(document).on('click', '#btnSearch1', function() {
 	var eschoolgy = $('#eschoolgy').val();
 	var searchType = $('#searchType').val();
 	
+	if(name == '' && eschool == '' && eschoolgy == '' ){
+		alert("검색어 입력 바람");
+		
+	}
+	
+	else{
 	var paramData = JSON.stringify({
 		"mmname" : name,
 		"eschool" : eschool,
@@ -88,6 +96,7 @@ $(document).on('click', '#btnSearch1', function() {
 			alert(e);
 		}		
 	});	
+	}
 });
 
 
@@ -110,7 +119,7 @@ function friends_judge(scmmid){
 		dataType : "json",
 		success : function(data){			
 			$(data).each(function(){
-				if(yourid == this.yourid){
+				if(yourid == this.yourid || id == yourid){
 					num++;					
 				}else{
 					
@@ -121,7 +130,7 @@ function friends_judge(scmmid){
 				alert("친구 등록 진행");
 				friends_add(yourid);
 			}else{
-				alert("이미 등록된 친구  입니다.");
+				alert("이미 등록된 친구 또는 자신 입니다.");
 			}
 		},
 		error : function(e){
@@ -157,6 +166,11 @@ $(document).on('click', '#btnSearch2', function() {
 	var mschoolgy = $('#mschoolgy').val();
 	var searchType = $('#searchType2').val();
 	
+	if(name == '' && mschool == '' && mschoolgy == '' ){
+		alert("검색어 입력 바람");
+		
+	}
+	else{
 	var paramData = JSON.stringify({
 		"mmname" : name,
 		"mschool" : mschool,
@@ -192,6 +206,7 @@ $(document).on('click', '#btnSearch2', function() {
 			alert(e);
 		}		
 	});
+	}
 });
 
 $(document).on('click', '#btnSearch3', function() {	
@@ -199,6 +214,13 @@ $(document).on('click', '#btnSearch3', function() {
 	var hschool = $('#hschool').val();
 	var hschoolgy = $('#hschoolgy').val();
 	var searchType = $('#searchType3').val();
+	
+	if(name == '' && hschool == '' && hschoolgy == '' ){
+		alert("검색어 입력 바람");
+		
+	}
+	
+	else{
 	
 	var paramData = JSON.stringify({
 		"mmname" : name,
@@ -235,6 +257,7 @@ $(document).on('click', '#btnSearch3', function() {
 			alert(e);
 		}		
 	});
+	}
 });
 
 $(document).on('click', '#btnSearch4', function() {	
@@ -243,6 +266,12 @@ $(document).on('click', '#btnSearch4', function() {
 	var uschooley = $('#uschooley').val();
 	var searchType = $('#searchType4').val();
 	var uschoolma = $('#uschoolma').val();
+	
+	if(name == '' && uschool == '' && uschooley == '' && uschoolma == '' ){
+		alert("검색어 입력 바람");		
+	}
+	
+	else{
 	
 	var paramData = JSON.stringify({
 		"mmname" : name,
@@ -280,6 +309,7 @@ $(document).on('click', '#btnSearch4', function() {
 			alert(e);
 		}		
 	});
+	}
 });
 
 

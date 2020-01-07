@@ -1,6 +1,7 @@
 package com.mn.project.friend;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -54,6 +55,7 @@ public class RestFriendsController {
 		
 		return result;
 	}
+	
 	@RequestMapping(value="/judgeFriend",method=RequestMethod.GET)
 	public List<FriendVO> judgeFriend(@RequestParam("myid") String myid){
 		List<FriendVO> list = null;
@@ -64,11 +66,8 @@ public class RestFriendsController {
 		System.out.println(list);
 		
 		return list;
-		
 	}
 	
 	
 	
-	
-
 }

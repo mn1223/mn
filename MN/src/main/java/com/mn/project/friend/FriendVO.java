@@ -14,8 +14,22 @@ public class FriendVO {
 	private String mmname;
 	private String searchType;
 	private String mmgender;
+	private String myid;
+	private String yourid;
 	
 	
+	public String getMyid() {
+		return myid;
+	}
+	public void setMyid(String myid) {
+		this.myid = myid;
+	}
+	public String getYourid() {
+		return yourid;
+	}
+	public void setYourid(String yourid) {
+		this.yourid = yourid;
+	}
 	public String getMmgender() {
 		return mmgender;
 	}
@@ -99,9 +113,10 @@ public class FriendVO {
 		return "FriendVO [scmmid=" + scmmid + ", eschool=" + eschool + ", eschoolgy=" + eschoolgy + ", mschool="
 				+ mschool + ", mschoolgy=" + mschoolgy + ", hschool=" + hschool + ", hschoolgy=" + hschoolgy
 				+ ", uschool=" + uschool + ", uschoolma=" + uschoolma + ", uschooley=" + uschooley + ", mmname="
-				+ mmname + ", searchType=" + searchType + "]";
+				+ mmname + ", searchType=" + searchType + ", mmgender=" + mmgender + ", myid=" + myid + ", yourid="
+				+ yourid + "]";
 	}
-	
+
 	
 	
 	

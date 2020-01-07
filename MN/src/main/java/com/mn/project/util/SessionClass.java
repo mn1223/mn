@@ -17,8 +17,7 @@ public class SessionClass {
 		session.setAttribute(at, id);
 	}
 	
-	public String getId(String member) {
-		
+	public String getId(String member) {	
 		return (String) session.getAttribute(member);
 	}
 	

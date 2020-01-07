@@ -17,4 +17,17 @@ public class FriendServiceImpl implements FriendService {
 		return friendDAO.searchData(friendVO);
 	}
 
+	@Override
+	public void addFriendList(FriendVO friendVO) {
+		
+		friendDAO.addFriendList(friendVO);
+		
+	}
+
+	@Override
+	public List<FriendVO> judgeFirend(FriendVO friendVO) {
+		
+		return friendDAO.judgeFirend(friendVO);
+	}
+
 }

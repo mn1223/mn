@@ -217,8 +217,7 @@ $(document).on('click', '#btnSearch3', function() {
 	
 	if(name == '' && hschool == '' && hschoolgy == '' ){
 		alert("검색어 입력 바람");
-		
-	}
+		} 
 	
 	else{
 	

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mn.project.mappers.matchmypage">
+    <select id="mmselect" parameterType="com.mn.project.login.LoginVO"
+	 resultType="com.mn.project.login.LoginVO">
+	  select mmname,mmid,mmpwd,mmphonenum,mmgender
+      from member
+      where mmid=#{mmid}
+	</select>
+	
+	<select id="mmdate" parameterType="com.mn.project.login.LoginVO"
+	 resultType="int">
+	  update member
+	  set mmname=#{mmname},
+	   mmid=#{mmid},
+	   mmpwd=#{mmpwd},
+	   mmphonenum=#{mmphonenum},
+       mmgender=#{mmgender}
+      where mmid=#{mmid}
+	</select>
+</mapper>

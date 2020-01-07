@@ -15,4 +15,7 @@ public interface LoginService {
 	
 	public int mmdelete(LoginVO loginVO) throws Exception;
 	
+	public LoginVO select(LoginVO loginVO) throws Exception;
+	
+	public void update(LoginVO loginVO) throws Exception;
 }

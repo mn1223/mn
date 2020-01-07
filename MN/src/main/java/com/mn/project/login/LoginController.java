@@ -1,5 +1,8 @@
 package com.mn.project.login;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 
@@ -8,13 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mn.project.util.SessionClass;
 
-
+@ResponseBody
 @Controller
 public class LoginController {
 
@@ -80,7 +85,6 @@ public class LoginController {
     public String pwfind(@ModelAttribute("LoginVO") LoginVO loginVO) throws Exception{
 		
 		
-		
 		LoginVO mmpwd = service.pwfind(loginVO);
 		
 	      if(mmpwd == null) {
@@ -109,7 +113,13 @@ public class LoginController {
 	
     //마이페이지로이동
 	@RequestMapping(value="/matchmypage", method = {RequestMethod.POST,RequestMethod.GET})
-	public String gomypage() throws Exception{
+	public String gomypage(Model model) throws Exception{
+		LoginVO loginVO = new LoginVO();
+		loginVO.setMmid(session.getId("member"));
+		
+		LoginVO tt = service.select(loginVO);
+		
+		model.addAttribute("userInfo",tt);
 
 		return "/First/matchmypage";
 	}
@@ -127,7 +137,7 @@ public class LoginController {
 		
 		String mmid =  session.getId("member");	
 				
-		loginVO.setMmid(mmid);
+		loginVO.setMmid(mmid);//로그인한 아이디의 정보를 loginVO에다 넣는다.
 		
 		LoginVO tt= service.mmdeletebe(loginVO);
 		System.out.println(tt);
@@ -141,5 +151,22 @@ public class LoginController {
         	 return "/First/home"; 
          }
 	}
+	
 
+	@RequestMapping(value="/ckkkkk" , method = {RequestMethod.POST,RequestMethod.GET})
+    public Map<String,Object> infoUpdate(LoginVO loginVO,HttpServletRequest request) throws Exception{
+		Map<String,Object> result = new HashMap<>();
+		System.out.println(loginVO+"1234");
+		try {
+			service.update(loginVO);
+			result.put("mes","수정 완료");
+		}
+		catch(Exception e) {
+			result.put("mes","실패");
+			e.printStackTrace();
+		}
+		
+		return result;
+
+	}
 }

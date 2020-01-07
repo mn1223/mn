@@ -36,13 +36,25 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public LoginVO mmdeletebe(LoginVO loginVO) throws Exception {
-		// TODO Auto-generated method stub
+		
 		return dao.mmdeletebe(loginVO);
 	}
 
 	@Override
 	public int mmdelete(LoginVO loginVO) throws Exception {
-		// TODO Auto-generated method stub
+		
 		return dao.mmdelete(loginVO);
+	}
+
+	@Override
+	public LoginVO select(LoginVO loginVO) throws Exception {
+		
+		return dao.mmselect(loginVO);
+	}
+
+	@Override
+	public void update(LoginVO loginVO) throws Exception {
+	 
+		dao.update(loginVO);
 	}
 }

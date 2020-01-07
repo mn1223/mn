@@ -9,6 +9,7 @@
 	});*/
 
 	function checkpwd() {
+		
 		var mmpwd = document.getElementById("mmpwd").value;
 		var re_mmpwd = document.getElementById("re_mmpwd").value;
 

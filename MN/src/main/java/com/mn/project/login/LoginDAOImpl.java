@@ -12,6 +12,7 @@ public class LoginDAOImpl implements LoginDAO{
 	private SqlSession sqlSession;
 	
 	private static String namespace="com.mn.project.mappers.Login";
+	private static String namespace2="com.mn.project.mappers.matchmypage";
 	
 	@Override
 	public LoginVO login(LoginVO loginVO) throws Exception {
@@ -47,5 +48,18 @@ public class LoginDAOImpl implements LoginDAO{
 	public int mmdelete(LoginVO loginVO) throws Exception {
 		
 		return sqlSession.update(namespace+".mmdelete", loginVO);
+	}
+
+	@Override
+	public LoginVO mmselect(LoginVO loginVO) throws Exception {
+		
+		return sqlSession.selectOne(namespace2+".mmselect", loginVO);
+	}
+
+	@Override
+	public void update(LoginVO loginVO) throws Exception {
+	
+		sqlSession.update(namespace2+".mmdate",loginVO);
+		
 	}	
 }

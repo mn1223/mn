@@ -1,6 +1,7 @@
 package com.mn.project.friend;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.inject.Inject;

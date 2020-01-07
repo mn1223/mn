@@ -307,6 +307,5 @@ $(document).on('click', '#btnSearch4', function() {
 		<tbody id ="result"></tbody>
 	</table>
 </div>
-
 </body>
 </html>

@@ -15,4 +15,10 @@ public interface LoginDAO {
 	public LoginVO mmdeletebe(LoginVO loginVO) throws Exception;
 	
 	public int mmdelete(LoginVO loginVO) throws Exception;
+	
+	//마이페이지 아이디 해당정보 
+	public LoginVO mmselect(LoginVO loginVO) throws Exception;
+	
+	//회원정보 업데이트
+	public void update(LoginVO loginVO) throws Exception;
 }

@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mn.project.util.SessionClass;
 
-@ResponseBody
+
 @Controller
 public class LoginController {
 
@@ -152,9 +152,9 @@ public class LoginController {
          }
 	}
 	
-
-	@RequestMapping(value="/ckkkkk" , method = {RequestMethod.POST,RequestMethod.GET})
-    public Map<String,Object> infoUpdate(LoginVO loginVO,HttpServletRequest request) throws Exception{
+	@ResponseBody
+	@RequestMapping(value="/ckkkkk" , method = RequestMethod.POST)
+    public Map<String,Object> infoUpdate(@RequestBody LoginVO loginVO,HttpServletRequest request) throws Exception{
 		Map<String,Object> result = new HashMap<>();
 		System.out.println(loginVO+"1234");
 		try {

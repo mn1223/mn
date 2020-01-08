@@ -39,13 +39,20 @@ public class FriendController  {
 		
 		vo.setMyid(session.getId("member"));
 		
-		list = friendService.judgeFirend(vo);
+		list = friendService.getFriendTrue(vo);
 		
 		System.out.println(list);
 		
 		model.addAttribute("list", list);
 				
 		return "friends/chatList";
+	}
+	@RequestMapping(value="/friendmypage",method = RequestMethod.GET)
+	public String friendMypage(Model model) {
+		model.addAttribute("myid",session.getId("member"));
+		
+		
+		return "friends/friendmypage";
 	}
 	
 	

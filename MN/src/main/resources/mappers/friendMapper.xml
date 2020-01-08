@@ -85,6 +85,26 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid}
 	</select>
 	
+	<select id="getFriendfalse" parameterType ="com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
+	select myid,yourid,mmname from nflist a,member b where a.myid = b.mmid and a.yourid = #{myid} and status = 'F' 
+	</select>
+	
+	<select id="getFriendtrue" parameterType ="com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and status = 'T' 
+	</select>
+	
+	<update id="addFriendtrue" parameterType ="com.mn.project.friend.FriendVO" >
+	update nflist set status = 'T' where myid = #{myid} and yourid = #{yourid}
+	</update>
+	
+	<insert id="addFriendListTrue" parameterType = "com.mn.project.friend.FriendVO">
+	insert into nflist(myid,yourid,status) values(#{yourid},#{myid},'T')
+	</insert>
+	
+	<select id="getMyFriendfalse" parameterType = "com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and a.status = 'F'
+	</select>
+	
 	
 	
 </mapper>

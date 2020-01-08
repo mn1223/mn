@@ -68,6 +68,65 @@ public class RestFriendsController {
 		return list;
 	}
 	
+	@RequestMapping(value = "/getFriendFalse",method=RequestMethod.GET)
+	public List<FriendVO> getFriendFalse(@RequestParam("myid") String myid){
+		FriendVO vo = new FriendVO();
+		List<FriendVO> list = null;
+		vo.setMyid(myid);
+		
+		list = friendService.getFriendFalse(vo);
+		
+		System.out.println(list);
+		
+		return list;
+	}
+	
+	@RequestMapping(value = "/getMyFriendFalse",method=RequestMethod.GET)
+	public List<FriendVO> getMyFriendFalse(@RequestParam("myid") String myid){
+		FriendVO vo = new FriendVO();
+		List<FriendVO> list = null;
+		vo.setMyid(myid);
+		
+		list = friendService.getMyFriendFalse(vo);
+		
+		System.out.println(list);
+		
+		return list;
+	}
+	
+	
+	@RequestMapping(value = "/getFriendTrue",method=RequestMethod.GET)
+	public List<FriendVO> getFriendTrue(@RequestParam("myid") String myid){
+		FriendVO vo = new FriendVO();
+		List<FriendVO> list = null;
+		vo.setMyid(myid);
+		
+		list = friendService.getFriendTrue(vo);
+		
+		System.out.println(list);
+		
+		return list;
+	}
+	
+	@RequestMapping(value ="/addFriendTrue",method =RequestMethod.GET)
+	public Map<String,Object> addFriendTrue(@RequestParam("myid") String myid,@RequestParam("yourid") String yourid){
+		Map<String,Object> result = new HashMap<>();
+		FriendVO vo = new FriendVO();
+		vo.setMyid(myid);
+		vo.setYourid(yourid);
+		
+		System.out.println(vo);
+		try {
+			friendService.addFriendTrue(vo);
+			friendService.addFriendListTrue(vo);
+			result.put("mes", "추가 완료");		
+		}catch(Exception e) {
+			e.printStackTrace();
+			result.put("mes", "실패");
+		}
+		
+		return result;
+	}
 	
 	
 }

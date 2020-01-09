@@ -28,21 +28,20 @@ $(document).on('click', '#btndelete', function() {
 		$("#inform").hide();
 		$("#editform").show();
 	});
-
 	
 	$(document).on('click', '#btnsave', function() {
 		var name = $('#mmname').val();
 		var mid = $('#mmid').val();
 		var mmpwd = $('#mmpwd').val();
 		var mmphonenum = $('#mmphonenum').val();
-		var mmgender = $('#mmgender').val();
-
+		var mmgender = $('#mmgender').val();		
 		var paramData = JSON.stringify({
 		"mmname" :name,
 		"mmid" :mid,
 		"mmpwd":mmpwd,
 		"mmphonenum": mmphonenum,
 		"mmgender":mmgender
+<<<<<<< HEAD
 		});
 		console.log(paramData);
 		
@@ -51,6 +50,13 @@ $(document).on('click', '#btndelete', function() {
 				"X-HTTP-Method-Override" : "POST"
 			};
 		
+=======
+		});			
+		var headers = {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+			};		
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 		$.ajax({
 			headers : headers,
 			type : "POST",
@@ -94,12 +100,20 @@ $(document).on('click', '#btndelete', function() {
 </div>
 
 <div id= "editform">
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 	<label>이름</label> <input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
 	<label>아이디</label><input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly"><br>
 	<label>비밀번호수정</label><input type="text" id="mmpwd" value="${userInfo.mmpwd}"><br>
 	<label>전화번호</label><input type="text" id="mmphonenum" value="${userInfo.mmphonenum}"><br>
 	<label>성별</label><input type="text" id="mmgender" value="${userInfo.mmgender}"><br>
 	<button type="submit" id="btnsave">저장하기</button>
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 </div>
 
 	<br> 회원정보 수정

@@ -147,7 +147,7 @@ function friends_add(yourid){
 		dataType : "text",
 		data : {"yourid" : yourid},
 		success : function(result){
-			alert("친구등록 완료!!!!");
+			alert("친구신청 완료!!!!");
 		},
 		error : function(e){
 			alert(e);

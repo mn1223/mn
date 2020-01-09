@@ -49,4 +49,53 @@ public class FriendDAOImpl implements FriendDAO {
 		return session.selectList(namespace+".judgeFriend",friendVO);
 	}
 
+	@Override
+	public List<FriendVO> getFriendFalse(FriendVO friendVO) {
+		
+		return session.selectList(namespace+".getFriendfalse",friendVO);
+	}
+
+	@Override
+	public List<FriendVO> getFriendTrue(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".getFriendtrue",friendVO);
+	}
+
+	@Override
+	public void addFriendTrue(FriendVO friendVO) {
+		session.update(namespace+".addFriendtrue",friendVO);	
+	}
+
+	@Override
+	public void addFriendListTrue(FriendVO friendVO) {
+		session.insert(namespace+".addFriendListTrue",friendVO);
+		
+	}
+
+	@Override
+	public List<FriendVO> getMyFriendFalse(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".getMyFriendfalse",friendVO);
+	}
+
+	@Override
+	public void deleteFriendListFalse(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		session.delete(namespace+".deleteFriendFalse",friendVO);
+	}
+
+	@Override
+	public void deleteFriendStatus(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		session.update(namespace+".deleteFriendStatus", friendVO);
+		
+	}
+
+	@Override
+	public void deleteFriendListTrue(FriendVO friendVO) {
+		session.delete(namespace+".deleteFriendTrue",friendVO);
+		
+	}
+	
+
 }

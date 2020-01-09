@@ -96,6 +96,7 @@ public class LoginController {
         	  session.setId("mmpwd", mmpwd.mmpwd); 
         	 return "/First/pwchange"; 
          }
+	      
 	}
 	//비번이 일치하면 다음페이지에서 비번변경되었음 페이지로 이동
 	@RequestMapping(value="/changenotice", method = {RequestMethod.POST,RequestMethod.GET})

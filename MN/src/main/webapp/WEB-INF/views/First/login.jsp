@@ -6,6 +6,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<script>
+/*
+$(document).on('click','#btnlogin',function(){
+	var pp=$("#mmid").val();
+	var id=$("#mmpwd").val();
+	
+	var headers = {
+			"Content-Type" : "application/json",
+			"X-HTTP-Method-Override" : "POST"
+			};
+	
+	$.ajax({
+		headers : headers,
+	    type:"POST",
+	    data : {"id":pp,"pwd":id},
+	    url:"/uu",
+	    dataType:"json",
+	    success:function(datae){
+	    	alert(datae);
+	    	
+	    	},
+	     error : function(error){
+	               alert("error : " + error);
+	     }
+	    	});
+});	*/
+
+function grade(){
+	
+	var pp=$("#mmid").val()+"";
+	var id=$("#mmpwd").val()+"";
+	alert(pp);
+	alert(id);
+	
+	var headers = {
+			"Content-Type" : "application/json",
+			"X-HTTP-Method-Override" : "POST"
+			};
+	
+	$.ajax({
+		headers : headers,
+	    type:"POST",
+	    data : {"ididid":pp,"pwd":id},
+	    url:"/uu",
+	    dataType:"json",
+	    success:function(data){
+	    	alert(data);
+	    	
+	    	},
+	     error : function(error){
+	               alert("error : " + error);
+	     }
+	    	});
+}
+  
+
+</script>
 </head>
 <body>
 	<form method="post" id="form"
@@ -16,10 +74,10 @@
 		<div>
 			<label>비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
 		</div>
-		<div style="margin-top: 10px">
-			<button type="submit" id="btnlogin">로그인</button>
-		</div>
 	</form>
+	<div style="margin-top: 10px">
+			<button type="button" id="btnlogin" onclick=grade();>로그인</button>
+		</div>
 	
 	<c:if test="${msg == 'false'}">
 		<p style="color:#f00;">로그인에 실패하였습니다.아이디 또는 패스워드를 입력해십시요</p>	

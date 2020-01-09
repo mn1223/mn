@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -48,6 +49,7 @@ public class LoginController {
         	  session.setId("member",null);    
         	  rttr.addFlashAttribute("msg", false);
         	 return "redirect:/login";
+        	 
          }else {
         	  System.out.println(loginVO);
         	  session.setId("member",login.mmid);
@@ -150,5 +152,18 @@ public class LoginController {
         	  service.mmdelete(loginVO);
         	 return "/First/home"; 
          }
+	}
+	@ResponseBody
+	@RequestMapping(value="/uu", method = {RequestMethod.POST,RequestMethod.GET})
+	public String tryoo(@RequestParam("ididid") String mmid,@RequestParam("pwd") String pwd) throws Exception{
+		
+		LoginVO tt= new LoginVO();
+		tt.setMmid(mmid);
+		tt.setMmpwd(pwd);
+		
+		tt= service.login(tt);
+		tt.getMmgrade();
+		System.out.println(tt);
+		return tt.getMmgrade();
 	}
 }

@@ -31,10 +31,15 @@
 			document.getElementById('pwsame').innerHTML = '비밀번호가 틀렸습니다.';
 			return false;
 		}
-		
 	}
-
 	
+	$(document).ready(function(){
+		$('#box2').change(function(){	
+			$('#mmq').val($(this).val());
+			$("#mmq").attr("readonly");
+		});
+	});
+
 	$(document).on('click','#btnSignup',function(){
 		
 		    	var pp=$("#mmid2").val();
@@ -76,8 +81,8 @@
 		    data:{"useridr":sum},
 		    url:"/checking",
 		    dataType:"json",
-		    success:function(data){
-		    	if(data.cnt>0){
+		    success:function(data8){
+		    	if(data8.cnt>0){
 		    		alert("아이디가 존재합니다. 다른 아이디를 입력해주세요");
 		               } else {
 		                   alert("사용가능한 아이디입니다");						          
@@ -119,7 +124,7 @@
 		<p id="pwsame" style="color: red;"></p>
 		<div>
 			<label>전화번호</label> <input type="text" id="mmphonenum"
-				name="mmphonenum" />
+				name="mmphonenum" /> ex)01012345678
 		</div>
 		<div>
 		<label>성별</label> <input type="radio" name="mmgender" value="남자"checked>남
@@ -127,6 +132,11 @@
 		</div>
 		<div>
 			<label>질문</label> <input type="text" id="mmq" name="mmq" />
+			  <select id="box2" >
+			         <option value="어디서 태어났습니까?" selected="selected">어디서 태어났습니까?</option>
+                     <option value="가장 애정하는 물품은?" >가장 애정하는 물품은?</option>
+                     <option value="좋아하는 노래는?">좋아하는 노래는?</option>
+               </select>
 		</div>
 		<div>
 			<label>질문대답</label> <input type="text" id="mma" name="mma" />

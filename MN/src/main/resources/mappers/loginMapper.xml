@@ -7,10 +7,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 	<select id="login" parameterType="com.mn.project.login.LoginVO"
 		resultType="com.mn.project.login.LoginVO">
-		select mmid, mmname
+		select mmid, mmname, mmgrade
 		from member
 		where mmid=#{mmid} and
-		mmpwd=#{mmpwd}
+		mmpwd=#{mmpwd} 
 	</select>
 
 	<select id="idfind" parameterType="com.mn.project.login.LoginVO"

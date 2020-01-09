@@ -105,6 +105,19 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and a.status = 'F'
 	</select>
 	
+	<delete id="deleteFriendFalse" parameterType= "com.mn.project.friend.FriendVO" >
+	delete from nflist where myid = #{myid} and yourid = #{yourid} and status = 'F'
+	</delete>
+	
+	<update id="deleteFriendStatus" parameterType ="com.mn.project.friend.FriendVO" >
+	update nflist set status = 'F' where myid = #{yourid} and yourid = #{myid}
+	</update>
+	
+	<delete id="deleteFriendTrue" parameterType = "com.mn.project.friend.FriendVO">
+	delete from nflist where myid = #{myid} and yourid = #{yourid} and status = 'T'
+	</delete>
+	
+	
 	
 	
 </mapper>

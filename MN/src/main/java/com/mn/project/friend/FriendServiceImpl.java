@@ -60,4 +60,22 @@ public class FriendServiceImpl implements FriendService {
 		return friendDAO.getMyFriendFalse(friendVO);
 	}
 
+	@Override
+	public void deleteFriendListFalse(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		friendDAO.deleteFriendListFalse(friendVO);	
+	}
+
+	@Override
+	public void deleteFriendStatus(FriendVO friendVO) {
+		friendDAO.deleteFriendStatus(friendVO);
+		
+	}
+
+	@Override
+	public void deleteFriendListTrue(FriendVO friendVO) {
+		friendDAO.deleteFriendListTrue(friendVO);
+		
+	}
+
 }

@@ -78,4 +78,24 @@ public class FriendDAOImpl implements FriendDAO {
 		return session.selectList(namespace+".getMyFriendfalse",friendVO);
 	}
 
+	@Override
+	public void deleteFriendListFalse(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		session.delete(namespace+".deleteFriendFalse",friendVO);
+	}
+
+	@Override
+	public void deleteFriendStatus(FriendVO friendVO) {
+		// TODO Auto-generated method stub
+		session.update(namespace+".deleteFriendStatus", friendVO);
+		
+	}
+
+	@Override
+	public void deleteFriendListTrue(FriendVO friendVO) {
+		session.delete(namespace+".deleteFriendTrue",friendVO);
+		
+	}
+	
+
 }

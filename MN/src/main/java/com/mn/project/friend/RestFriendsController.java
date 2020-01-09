@@ -2,6 +2,7 @@ package com.mn.project.friend;
 
 import java.util.HashMap;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -127,6 +128,29 @@ public class RestFriendsController {
 		
 		return result;
 	}
+	
+	@RequestMapping(value ="/DeleteFriendFalse",method = RequestMethod.GET) 
+	public Map<String,Object> DeleteFriendFalse(@RequestParam("myid") String myid,@RequestParam ("yourid") String yourid,@RequestParam ("status") String status){
+		Map<String,Object> result = new HashMap<>();
+		FriendVO vo = new FriendVO();
+		vo.setMyid(myid);
+		vo.setYourid(yourid);
+		
+		
+			if(status.equals("F")) {
+			friendService.deleteFriendListFalse(vo);}
+			else{
+				System.out.println("??");
+				System.out.println(vo);
+				friendService.deleteFriendListTrue(vo);
+				friendService.deleteFriendStatus(vo);
+			}
+			
+	
+		
+		return result;
+	}
+
 	
 	
 }

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><%@ taglib
 	prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -29,25 +28,26 @@ $(document).on('click', '#btndelete', function() {
 		$("#inform").hide();
 		$("#editform").show();
 	});
-
 	
 	$(document).on('click', '#btnsave', function() {
 		var name = $('#mmname').val();
 		var mid = $('#mmid').val();
 		var mmpwd = $('#mmpwd').val();
 		var mmphonenum = $('#mmphonenum').val();
-		var mmgender = $('#mmgender').val();
-
+		var mmgender = $('#mmgender').val();		
 		var paramData = JSON.stringify({
 		"mmname" :name,
 		"mmid" :mid,
 		"mmpwd":mmpwd,
 		"mmphonenum": mmphonenum,
 		"mmgender":mmgender
-		});
-		console.log(paramData);
-		
+		});			
+		var headers = {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+			};		
 		$.ajax({
+			headers : headers,
 			type : "POST",
 			url : "/ckkkkk",
 			data : paramData,	
@@ -90,14 +90,14 @@ $(document).on('click', '#btndelete', function() {
 </div>
 
 <div id= "editform">
-	<form method ="POST" action>
+	
 	<label>이름</label> <input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
 	<label>아이디</label><input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly"><br>
 	<label>비밀번호수정</label><input type="text" id="mmpwd" value="${userInfo.mmpwd}"><br>
 	<label>전화번호</label><input type="text" id="mmphonenum" value="${userInfo.mmphonenum}"><br>
 	<label>성별</label><input type="text" id="mmgender" value="${userInfo.mmgender}"><br>
 	<button type="submit" id="btnsave">저장하기</button>
-	</form>
+	
 </div>
 
 	<br> 회원정보 수정
@@ -142,7 +142,7 @@ $(document).on('click', '#btndelete', function() {
 			<button type="button" id="btnschool onclick="insert">등록및 수정</button>
 		</div>
 	</form>
-	</form>
+
 	<button type="button" id="btndelete">회원탈퇴</button>
 	<br> 1:1문의 및 대학교 인증
 </body>

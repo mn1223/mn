@@ -61,5 +61,11 @@ public class LoginDAOImpl implements LoginDAO{
 	
 		sqlSession.update(namespace2+".mmdate",loginVO);
 		
+	}
+
+	@Override
+	public int duplicate(LoginVO loginVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace2+".idcheck",loginVO);
 	}	
 }

@@ -81,5 +81,4 @@ public class LoginVO {
 				+ ", mma=" + mma + ", mmgrade=" + mmgrade + "]";
 	}
     
-	
 }

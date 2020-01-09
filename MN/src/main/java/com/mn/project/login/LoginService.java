@@ -18,4 +18,6 @@ public interface LoginService {
 	public LoginVO select(LoginVO loginVO) throws Exception;
 	
 	public void update(LoginVO loginVO) throws Exception;
+	//아이디 중복체크
+	public int duplicate(LoginVO loginVO) throws Exception;
 }

@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
       from member
       where mmid=#{mmid}
 	</select>
-	
+	     
 	<select id="mmdate" parameterType="com.mn.project.login.LoginVO"
 	 resultType="int">
 	  update member
@@ -20,5 +20,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	   mmphonenum=#{mmphonenum},
        mmgender=#{mmgender}
       where mmid=#{mmid}
+	</select>
+	
+	<select id="idcheck" parameterType="com.mn.project.login.LoginVO" resultType="int">
+	  select count(*) from member
+	  where mmid=#{mmid}
 	</select>
 </mapper>

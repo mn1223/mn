@@ -33,7 +33,7 @@ public class RegisterController {
 	@RequestMapping(value="/commonhome", method = {RequestMethod.POST,RequestMethod.GET})
 	public String signUpafter() throws Exception{
 
-		return "First/commonhome";
+		return "/First/home";
 	}
 
 }

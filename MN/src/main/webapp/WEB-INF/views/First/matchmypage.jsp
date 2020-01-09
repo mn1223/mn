@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%><%@ taglib
 	prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -47,7 +46,13 @@ $(document).on('click', '#btndelete', function() {
 		});
 		console.log(paramData);
 		
+		var headers = {
+				"Content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+			};
+		
 		$.ajax({
+			headers : headers,
 			type : "POST",
 			url : "/ckkkkk",
 			data : paramData,	
@@ -69,7 +74,7 @@ $(document).on('click', '#btndelete', function() {
 	<br>
 	<h2>회원 정보</h2>
 <div id="inform">
-	<form name="form" id="inform" role="form" method="post">
+
 		<div>
 			<label>이름:</label><c:out value="${userInfo.mmname}"/>
 		</div>
@@ -86,7 +91,6 @@ $(document).on('click', '#btndelete', function() {
 			<label>성별:</label><c:out value="${userInfo.mmgender}"/>
 		</div>
 		<button type="button" id="btnupdate">수정하기</button>
-	</form>
 </div>
 
 <div id= "editform">
@@ -95,7 +99,7 @@ $(document).on('click', '#btndelete', function() {
 	<label>비밀번호수정</label><input type="text" id="mmpwd" value="${userInfo.mmpwd}"><br>
 	<label>전화번호</label><input type="text" id="mmphonenum" value="${userInfo.mmphonenum}"><br>
 	<label>성별</label><input type="text" id="mmgender" value="${userInfo.mmgender}"><br>
-	<button type="button" id="btnsave">저장하기</button>
+	<button type="submit" id="btnsave">저장하기</button>
 </div>
 
 	<br> 회원정보 수정
@@ -140,7 +144,7 @@ $(document).on('click', '#btndelete', function() {
 			<button type="button" id="btnschool onclick="insert">등록및 수정</button>
 		</div>
 	</form>
-	</form>
+
 	<button type="button" id="btndelete">회원탈퇴</button>
 	<br> 1:1문의 및 대학교 인증
 </body>

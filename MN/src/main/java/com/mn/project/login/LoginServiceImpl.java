@@ -57,4 +57,9 @@ public class LoginServiceImpl implements LoginService {
 	 
 		dao.update(loginVO);
 	}
+
+	@Override
+	public int duplicate(LoginVO loginVO) throws Exception {
+		return dao.duplicate(loginVO);
+	}
 }

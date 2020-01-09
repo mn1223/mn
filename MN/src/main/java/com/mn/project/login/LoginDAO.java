@@ -21,4 +21,7 @@ public interface LoginDAO {
 	
 	//회원정보 업데이트
 	public void update(LoginVO loginVO) throws Exception;
+	
+	//중복확인
+	public int duplicate(LoginVO loginVO) throws Exception;
 }

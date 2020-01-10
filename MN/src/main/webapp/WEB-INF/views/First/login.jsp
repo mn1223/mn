@@ -34,7 +34,7 @@ $(document).on('click','#btnlogin',function(){
 	    	});
 });	*/
 
-function grade(){
+function btnlogin_click(){
 	
 	var pp=$("#mmid").val()+"";
 	var id=$("#mmpwd").val()+"";
@@ -54,15 +54,17 @@ function grade(){
 	    dataType:"text",
 	    success:function(data){
 	    	alert(data);
-	    	
+	    	if(data=='x'){
+	    		alert("탈퇴한 회원입니다.");
+	    	}else{
+	    		$("#form").submit();
+	    	}
 	    	},
 	     error : function(error){
 	               alert("error : " + error);
 	     }
-	    	});
+	});
 }
-  
-
 </script>
 </head>
 <body>
@@ -76,7 +78,7 @@ function grade(){
 		</div>
 	</form>
 	<div style="margin-top: 10px">
-			<button type="button" id="btnlogin" onclick=grade();>로그인</button>
+	<button type="button" id="btnlogin" onclick="btnlogin_click();">로그인</button>
 		</div>
 	
 	<c:if test="${msg == 'false'}">

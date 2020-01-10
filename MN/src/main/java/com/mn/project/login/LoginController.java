@@ -47,7 +47,6 @@ public class LoginController {
 	
          if(login == null) {
         	  session.setId("member",null);    
-        	  rttr.addFlashAttribute("msg", false);
         	 return "redirect:/login";
         	 
          }else {
@@ -62,7 +61,6 @@ public class LoginController {
 	//로그인페이지에서 아이디찾기페이지로이동
 	@RequestMapping(value="/idfind",method = {RequestMethod.POST,RequestMethod.GET})
     public String idfind() throws Exception{
-		
 		
 		return "/First/idfind";
 	}
@@ -82,22 +80,22 @@ public class LoginController {
 		
 		return "/First/pwfind";
 	}
+	
 	//비번바꾸는 페이지
 	@RequestMapping(value="/pwchange",method = {RequestMethod.POST,RequestMethod.GET})
     public String pwfind(@ModelAttribute("LoginVO") LoginVO loginVO) throws Exception{
 		
-		
 		LoginVO mmpwd = service.pwfind(loginVO);
-		
+		System.out.println(mmpwd);
 	      if(mmpwd == null) {
-        	  session.setId("mmpwd", null); 
+        	 
         	 return "redirect:/pwfind";
          }else {
-        	  session.setId("mmpwd", mmpwd.mmpwd); 
-        	 return "/First/pwchange"; 
-         }
-	      
+        	   
+        	 return "/First/pwchange";   
+         }	      
 	}
+	
 	//비번이 일치하면 다음페이지에서 비번변경되었음 페이지로 이동
 	@RequestMapping(value="/changenotice", method = {RequestMethod.POST,RequestMethod.GET})
     public String pwchangecomplete(@ModelAttribute("LoginVO") LoginVO loginVO,HttpServletRequest req) throws Exception{

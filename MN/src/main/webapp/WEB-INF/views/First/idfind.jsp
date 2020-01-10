@@ -8,7 +8,7 @@
 </head>
 <body>
 <form method="post" id="form"
-		action="${pageContext.request.contextPath}/pwchange">
+		action="${pageContext.request.contextPath}/idfindafter">
 	<div>
 		<label>이름</label> <input type="text" id="mmname" name="mmname"/>
 	</div>

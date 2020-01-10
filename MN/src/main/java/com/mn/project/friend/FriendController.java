@@ -55,6 +55,12 @@ public class FriendController  {
 		return "friends/friendmypage";
 	}
 	
+	@RequestMapping("/schoolsearch")
+	public String schoolsearch(Model model) {
+	
+		return "friends/School";
+	}
+	
 	
 	
 	

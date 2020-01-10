@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mn.project.util.SessionClass;
@@ -55,5 +55,18 @@ public class RestMypageController {
 		count =service.duplicate(loginVO);
 		map.put("cnt",count);
 		return map;
+	}
+	
+	@RequestMapping(value="/uu", method = {RequestMethod.POST,RequestMethod.GET})
+	public String tryoo(@RequestParam("mmid") String mmid,@RequestParam("mmpwd") String pwd) throws Exception{
+		
+		LoginVO tt= new LoginVO();
+		tt.setMmid(mmid);
+		tt.setMmpwd(pwd);
+		
+		tt= service.login(tt);
+		tt.getMmgrade();
+		System.out.println(tt);
+		return tt.getMmgrade();
 	}
 }

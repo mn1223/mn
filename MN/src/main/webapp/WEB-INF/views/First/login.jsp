@@ -48,10 +48,10 @@ function grade(){
 	
 	$.ajax({
 		headers : headers,
-	    type:"POST",
-	    data : {"ididid":pp,"pwd":id},
+	    type:"GET",
+	    data : {"mmid":pp,"mmpwd":id},
 	    url:"/uu",
-	    dataType:"json",
+	    dataType:"text",
 	    success:function(data){
 	    	alert(data);
 	    	

@@ -154,17 +154,5 @@ public class LoginController {
         	 return "/First/home"; 
          }
 	}
-	@ResponseBody
-	@RequestMapping(value="/uu", method = {RequestMethod.POST,RequestMethod.GET})
-	public String tryoo(@RequestParam("ididid") String mmid,@RequestParam("pwd") String pwd) throws Exception{
-		
-		LoginVO tt= new LoginVO();
-		tt.setMmid(mmid);
-		tt.setMmpwd(pwd);
-		
-		tt= service.login(tt);
-		tt.getMmgrade();
-		System.out.println(tt);
-		return tt.getMmgrade();
-	}
+	
 }

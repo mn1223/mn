@@ -28,12 +28,14 @@ $(document).on('click', '#btndelete', function() {
 		$("#inform").hide();
 		$("#editform").show();
 	});	
+	
 	$(document).on('click', '#btnsave', function() {
 		var name = $('#mmname').val();
 		var mid = $('#mmid').val();
 		var mmpwd = $('#mmpwd').val();
 		var mmphonenum = $('#mmphonenum').val();
-		var mmgender = $('#mmgender').val();		
+		var mmgender = $('#mmgender').val();
+		
 		var paramData = JSON.stringify({
 		"mmname" :name,
 		"mmid" :mid,
@@ -47,12 +49,7 @@ $(document).on('click', '#btndelete', function() {
 				"Content-Type" : "application/json",
 				"X-HTTP-Method-Override" : "POST"
 			};		
-		});
 	
-		var headers = {
-				"Content-Type" : "application/json",
-				"X-HTTP-Method-Override" : "POST"
-		};	
 		$.ajax({
 			headers : headers,
 			type : "POST",
@@ -69,6 +66,7 @@ $(document).on('click', '#btndelete', function() {
 			}		
 		});	
 	});
+});
 </script>
 </head>
 <body>

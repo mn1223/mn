@@ -38,8 +38,6 @@ function btnlogin_click(){
 	
 	var pp=$("#mmid").val()+"";
 	var id=$("#mmpwd").val()+"";
-	alert(pp);
-	alert(id);
 	
 	var headers = {
 			"Content-Type" : "application/json",
@@ -53,7 +51,6 @@ function btnlogin_click(){
 	    url:"/uu",
 	    dataType:"text",
 	    success:function(data){
-	    	alert(data);
 	    	if(data=='x'){
 	    		alert("탈퇴한 회원입니다.");
 	    	}else{

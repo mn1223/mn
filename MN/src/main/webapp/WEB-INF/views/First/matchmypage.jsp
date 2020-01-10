@@ -66,7 +66,7 @@ $(document).on('click', '#btndelete', function() {
 			}		
 		});	
 	});
-});
+
 </script>
 </head>
 <body>

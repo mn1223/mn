@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 <script type="text/javascript"> 
 
- 
+/*
   function createSchoolSearch(){
    var renderTo = $("#school-grid");  
    if(!podo.ui.exists(renderTo)){
@@ -72,13 +72,37 @@
     });
    }    
   }
+*/
+function schoolSearch(){
+	var gubun = $("#gubun").val();
+	var region = $("#region").val();
+	var name = $("#name").val();
+
+	$.ajax({
+		url : "/schoolSearch",
+		data : {"gubun":gubun,"name":name,"region":region},
+		dataType : "json",
+		type : "POST",
+		success:function(data){
+			$(data).each(function(){
+				console.log(${test});
+				
+			});
+		},
+		error : function(e){
+			alert(e);	
+		}
+	});
+}
+
+
   </script>
 </head>
 <body>
 <div class="form-horizontal" id="search-block">
 
    <div class="margin-bottom-5">
-    <select class="form-control form-group-margin" data-bind="value: gubun" name="gubun" placeholder="구분">
+    <select class="form-control form-group-margin" id="gubun" name="gubun" placeholder="구분">
         <option value="elem_list">초등학교</option>
         <option value="midd_list">중학교</option>
         <option value="high_list">고등학교</option>
@@ -86,7 +110,7 @@
      </div>
  
 <div class="margin-bottom-5">
-<select class="form-control form-group-margin" data-bind="value: region" name="region" placeholder="지역">
+<select class="form-control form-group-margin" id="region" name="region" placeholder="지역">
         <option value="">전체</option>
         <option value="100260">서울특별시</option>
         <option value="100267">부산광역시</option>
@@ -108,10 +132,10 @@
      </div>
  
 <div class="margin-bottom-5">
-<input class="form-control" data-bind="value: name" placeholder="학교이름" type="text">
+<input class="form-control" id="name" placeholder="학교이름" type="text">
      </div>
 <div class="margin-bottom-5">
-<button class="btn btn-default" data-bind="click:search" type="button">검색</button>
+<button class="btn btn-default" id="search" type="button" onclick="schoolSearch()">검색</button>
      </div>
 </div>
 <div id="school-grid">

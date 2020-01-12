@@ -3,6 +3,10 @@ package SchoolAPI;
 import java.io.Serializable;
  
 public class SchoolVO  {
+	
+	public SchoolVO(String schoolName) {
+		SchoolName = schoolName;
+	}
  
     private String SchoolName;
 

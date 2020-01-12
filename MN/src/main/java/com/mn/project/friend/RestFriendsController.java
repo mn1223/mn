@@ -199,9 +199,41 @@ public class RestFriendsController {
 			HttpServletResponse response,Model model) {
 		
 		String encodeResult = URLEncoder.encode(name);
+		String urls = "http://www.career.go.kr/cnet/openapi/getOpenApi.json?apiKey=3e18babb4587b2528cc9032f119ab990&svcType=api&svcCode=SCHOOL&contentType=json";
+		urls += "&gubun="+gubun;
+		urls += "&region="+region;
+		urls += "&searchSchulNm="+encodeResult;
+		System.out.println(urls);
+		System.out.println(encodeResult);
+		ItemList items = new ItemList(Collections.EMPTY_LIST, 0);
+		 List<SchoolVO> list = new ArrayList<SchoolVO>();
+		try {
+			   URL url = new URL(urls);
+			   URLConnection connection = url.openConnection();
+			   InputStream is = connection.getInputStream();
+			   JsonNode jn = MAPPER.readTree(is);
+			   JsonNode jn2 = jn.get("dataSearch").get("content");
+			   Iterator<JsonNode> iter = jn2.elements();
+			  
+			   while(iter.hasNext()){
+			    JsonNode jn3 = iter.next();
+			    if( items.getTotalCount() == 0 )
+			        items.setTotalCount(jn3.get("totalCount").asInt());    
+			    list.add(new SchoolVO(
+			      jn3.get("schoolName").textValue()    
+			      ));
+			   } 
+			 
+			   items.setItems(list);
+			 
+			  } catch (Exception e) {
+			   logger.error("CAREER API ERROR", e);
+			  }
 		
-
 		
+		
+		
+		/*
 		ArrayList<SchoolVO> list = new ArrayList<SchoolVO>();
 		try {
 			
@@ -257,47 +289,9 @@ public class RestFriendsController {
 			e.printStackTrace();
 		}
 
-		/*
-		 * ItemList items = new ItemList(Collections.EMPTY_LIST, 0); StringBuilder sb =
-		 * new StringBuilder(
-		 * "http://www.career.go.kr/cnet/openapi/getOpenApi.json?apiKey=3e18babb4587b2528cc9032f119ab990&svcType=api&svcCode=SCHOOL&contentType=json"
-		 * ); sb.append("&gubun=").append(gubun); if( StringUtils.isNotEmpty(region)){
-		 * sb.append("&region=").append(region); }
-		 * 
-		 * if( StringUtils.isNotEmpty(name)){ sb.append("&searchSchulNm=").append(name);
-		 * }
-		 * 
-		 * sb.append("&thisPage=").append(page);
-		 * sb.append("&perPage=").append(pageSize);
-		 * 
-		 * BufferedReader br = null; try {
-		 * 
-		 * URL url = new URL(
-		 * "http://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=3e18babb4587b2528cc9032f119ab990&svcType=api&svcCode=SCHOOL&contentType=xml&gubun=elem_list&region=100269&searchSchulNm=%EC%84%9D%EB%82%A8"
-		 * ); System.out.println(url); HttpURLConnection urlconnection =
-		 * (HttpURLConnection) url.openConnection();
-		 * urlconnection.setRequestMethod("GET"); br = new BufferedReader(new
-		 * InputStreamReader(urlconnection.getInputStream(),"UTF-8")); String result =
-		 * ""; String line; while((line = br.readLine())!=null) { result = result +
-		 * line+"\n"; } System.out.println(result); /* URLConnection connection =
-		 * url.openConnection(); InputStream is = connection.getInputStream(); JsonNode
-		 * jn = MAPPER.readTree(is); JsonNode jn2 = jn.get("dataSearch").get("content");
-		 * Iterator<JsonNode> iter = jn2.elements(); List<School> list = new
-		 * ArrayList<School>(); while(iter.hasNext()){ JsonNode jn3 = iter.next(); if(
-		 * items.getTotalCount() == 0 )
-		 * items.setTotalCount(jn3.get("totalCount").asInt()); list.add(new School(
-		 * jn3.get("seq").asInt(0), jn3.get("schoolName").textValue(),
-		 * jn3.get("region").textValue(), jn3.get("adres").textValue() ));
-		 * 
-		 * }
-		 * 
-		 * //items.setItems(list);
-		 * 
-		 * 
-		 * } catch (Exception e) {
-		 * 
-		 * logger.error("CAREER API ERROR", e); } return items;
+		
 		 */
+		System.out.println(list);
 		return list;
 	}
 

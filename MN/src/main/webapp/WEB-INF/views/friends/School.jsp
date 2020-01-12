@@ -84,10 +84,14 @@ function schoolSearch(){
 		dataType : "json",
 		type : "POST",
 		success:function(data){
-			$(data).each(function(){
-				console.log(${test});
-				
+			var html = "";
+			console.log(data);
+			$(data).each(function(){				
+				html += '<tr>';
+				html +='<th>'+this.schoolName+'<th>';
+				html += '<tr>';
 			});
+			$("#school-grid").html(html);
 		},
 		error : function(e){
 			alert(e);	

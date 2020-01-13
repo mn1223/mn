@@ -9,10 +9,8 @@
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 <script type="text/javascript"> 
 
-function SchoolSearch(){
-	
-}
- 
+/*
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
   function createSchoolSearch(){
    var renderTo = $("#school-grid");  
    if(!podo.ui.exists(renderTo)){
@@ -75,13 +73,43 @@ function SchoolSearch(){
     });
    }    
   }
+*/
+
+function schoolSearch(){
+	var gubun = $("#gubun").val();
+	var region = $("#region").val();
+	var name = $("#name").val();
+	
+	$.ajax({
+		url : "/schoolSearch",
+		data : {"gubun":gubun,"name":name,"region":region},
+		dataType : "json",
+		type : "POST",
+		success:function(data){
+			var html = "";
+			console.log(data);
+			$(data).each(function(){				
+				html += '<tr>';
+				html +='<th>'+this.schoolName+'<th>';
+				html += '<tr>';
+			});
+			$("#school-grid").html(html);
+		},
+		error : function(e){
+			alert(e);	
+		}
+	});
+}
+
+
   </script>
 </head>
 <body>
 <div class="form-horizontal" id="search-block">
 
    <div class="margin-bottom-5">
-    <select class="form-control form-group-margin" id = "gubun" name="gubun" placeholder="구분">
+
+    <select class="form-control form-group-margin" id="gubun" name="gubun" placeholder="구분">
         <option value="elem_list">초등학교</option>
         <option value="midd_list">중학교</option>
         <option value="high_list">고등학교</option>
@@ -114,7 +142,7 @@ function SchoolSearch(){
 <input class="form-control" id="name" placeholder="학교이름" type="text">
      </div>
 <div class="margin-bottom-5">
-<button class="btn btn-default" id = "search" type="button" onclick= "SchoolSearch()">검색</button>
+<button class="btn btn-default" id="search" type="button" onclick="schoolSearch()">검색</button>
      </div>
 </div>
 <div id="school-grid">

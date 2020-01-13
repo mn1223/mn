@@ -2,6 +2,7 @@ package SchoolAPI;
 import org.slf4j.Logger;
 
 
+
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,8 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
  
  
-@Controller("user-data-controller")
-@RequestMapping("/accounts")
+@Controller
 public class AccountsDataController {
  
 private Logger logger = LoggerFactory.getLogger(getClass());
@@ -51,10 +51,10 @@ private static final ObjectMapper MAPPER = new ObjectMapper();
   * @param response
   * @return
   */
- 
- @RequestMapping(value="/school/list.json",method={RequestMethod.POST} )
+ /*
+ @RequestMapping(value="/schoolSearch",method={RequestMethod.POST} )
  @ResponseBody
- public ItemList findSchool(@RequestParam(value="gubun", defaultValue="elem_list" ) String gubun,
+ public List<SchoolVO> findSchool(@RequestParam(value="gubun", defaultValue="elem_list" ) String gubun,
    @RequestParam(value="name", required = false ) String name,
    @RequestParam(value="region", required = false ) String region,
    @RequestParam(value="page", defaultValue="1" ) Integer page,
@@ -74,7 +74,7 @@ private static final ObjectMapper MAPPER = new ObjectMapper();
  
   sb.append("&amp;thisPage=").append(page);
   sb.append("&amp;perPage=").append(pageSize);
- 
+  List<SchoolVO> list = new ArrayList<SchoolVO>();
   try {
    URL url = new URL(sb.toString());
    URLConnection connection = url.openConnection();
@@ -82,16 +82,13 @@ private static final ObjectMapper MAPPER = new ObjectMapper();
    JsonNode jn = MAPPER.readTree(is);
    JsonNode jn2 = jn.get("dataSearch").get("content");
    Iterator<JsonNode> iter = jn2.elements();
-   List<School> list = new ArrayList<School>();
+   
    while(iter.hasNext()){
     JsonNode jn3 = iter.next();
     if( items.getTotalCount() == 0 )
         items.setTotalCount(jn3.get("totalCount").asInt());    
-    list.add(new School(
-      jn3.get("seq").asInt(0),
-      jn3.get("schoolName").textValue(),
-      jn3.get("region").textValue(),
-      jn3.get("adres").textValue()
+    list.add(new SchoolVO(
+      jn3.get("schoolName").textValue()    
       ));
    } 
  
@@ -100,7 +97,9 @@ private static final ObjectMapper MAPPER = new ObjectMapper();
   } catch (Exception e) {
    logger.error("CAREER API ERROR", e);
   }
-  return items;
+  System.out.println(list);
+  return list;
  }
+ */
  
 }

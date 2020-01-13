@@ -1,6 +1,8 @@
 package com.mn.project.login;
 
+import java.security.Principal;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -8,6 +10,8 @@ import javax.inject.Inject;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,15 +25,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.mn.project.util.SessionClass;
 
 
+
 @Controller
 public class LoginController {
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Inject
 	private LoginService service;
 	
 	@Inject
 	private SessionClass session;
-	 
+	
+	@RequestMapping(value = "/login/loginForm", method = RequestMethod.GET)
+	public String loginFor(Locale locale, Model model) {
+		logger.info("Welcome Login Form!");
+		
+		return "login/loginForm";
+	}
+	
 	//로그인페이지로이동
 	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
     public String login(RedirectAttributes rttr) throws Exception{
@@ -39,10 +52,16 @@ public class LoginController {
 	
 	//로그인성공후 메인페이지로이동
 	@RequestMapping(value="/successcommonhome", method = {RequestMethod.POST,RequestMethod.GET})
-	public String success(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
+	public String success(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req, RedirectAttributes rttr,Principal principal) throws Exception{
         
-		session.getSessionId(req);
 		
+		session.getSessionId(req);
+		System.out.println(principal.getName());
+		session.setId("member",principal.getName());
+		
+		
+		
+		/*
 		LoginVO login = service.login(loginVO);
 	
          if(login == null) {
@@ -54,7 +73,9 @@ public class LoginController {
         	  session.setId("member",login.mmid);
         	  System.out.println(session.getId("member"));
         	 return "/First/commonhomecomplete"; 
-         }
+         }*/
+		
+		return "home";
          
 	}
 	
@@ -65,7 +86,7 @@ public class LoginController {
 		return "/First/idfind";
 	}
 	
-	// 아이디찾기페이지에서 아이디찾은정보페이지로 이동,아이디찾은정보페이지
+	//아이디찾기페이지에서 아이디찾은정보페이지로 이동,아이디찾은정보페이지
 	@RequestMapping(value="/idfindafter",method = {RequestMethod.POST,RequestMethod.GET})
     public String idfindafter(@ModelAttribute("LoginVO") LoginVO loginVO, Model model) throws Exception{
 		

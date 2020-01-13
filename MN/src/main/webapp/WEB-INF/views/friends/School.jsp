@@ -113,6 +113,7 @@ function schoolSearch(){
         <option value="elem_list">초등학교</option>
         <option value="midd_list">중학교</option>
         <option value="high_list">고등학교</option>
+        <option value="univ_list">대학교</option>
        </select>  
      </div>
  

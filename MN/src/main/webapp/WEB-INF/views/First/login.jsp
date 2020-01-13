@@ -46,10 +46,10 @@ function btnlogin_click(){
 	<form method="post" id="form"
 		action="${pageContext.request.contextPath}/successcommonhome">
 		<div>
-			<label>아이디</label> <input type="text" id="mmid" name="mmid" />
+			<label for="username">아이디</label> <input type="text" id="mmid" name="mmid" />
 		</div>
 		<div>
-			<label>비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
+			<label for="password">비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
 		</div>
 	</form>
 	<div id = "error"></div>

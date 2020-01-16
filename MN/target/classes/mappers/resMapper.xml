@@ -3,6 +3,28 @@
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mn.project.mappers.login">
+<mapper namespace="com.mn.project.mappers.resMapper">
 	
+	<!-- 전체 파티 검색 -->
+	<select id="pSearch" resultType="com.mn.project.resmanager.PartyManagerVO">
+		SELECT PNO, PDATE as"pDate",LOC as "pLoc",PRICE as "pPrice",CNT as "pCnt" 
+		FROM MBOOK
+	</select>
+	
+	<!-- 파티 번호 가져오기 -->
+	<select id= "getPno" parameterType = "com.mn.project.res.ResVO" resultType="com.mn.project.res.ResVO">
+		SELECT PNO FROM MBOOK WHERE PDATE = TO_DATE(#{pDate},'YYYYMMDD')
+	</select>
+	
+	<!-- 파티 신청 하기 -->
+	<insert id="insP" parameterType = "com.mn.project.res.ResVO">
+		INSERT INTO UBOOK(UPNO,UBOOKMMID)
+		VALUES(#{pno},#{ubookmmid})
+	</insert>
+	
+	
+	<!-- 이미 파티 신청한 회원인지 여부 확인 -->
+	<select id="check" parameterType = "com.mn.project.res.ResVO" resultType="int"> 
+		SELECT count(*) FROM UBOOK WHERE UPNO = #{pno} AND UBOOKMMID = #{ubookmmid}
+	</select>
 </mapper>

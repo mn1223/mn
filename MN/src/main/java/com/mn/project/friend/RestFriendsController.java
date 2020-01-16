@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,9 +61,9 @@ public class RestFriendsController {
 	SessionClass session;
 
 	@RequestMapping(value = "/searchData1", method = RequestMethod.POST)
-	public List<FriendVO> getSearchData(@RequestBody FriendVO vo) {
+	public List<FriendVO> getSearchData(@RequestBody FriendVO vo,Principal principal) {
 		System.out.println(vo);
-		System.out.println(session.getId("member"));
+		System.out.println(principal.getName());
 		List<FriendVO> list = friendService.searchData(vo);
 
 		System.out.println(list);
@@ -71,12 +72,12 @@ public class RestFriendsController {
 	}
 
 	@RequestMapping(value = "/addFriend", method = RequestMethod.GET)
-	public Map<String, Object> addFriendList(@RequestParam("yourid") String yourid) {
+	public Map<String, Object> addFriendList(@RequestParam("yourid") String yourid,Principal principal) {
 		Map<String, Object> result = new HashMap<>();
 		FriendVO vo = new FriendVO();
 
 		vo.setYourid(yourid);
-		vo.setMyid(session.getId("member"));
+		vo.setMyid(principal.getName());
 
 		System.out.println(vo);
 
@@ -190,7 +191,7 @@ public class RestFriendsController {
 		return nValue.getNodeValue();
 	}
 
-	@RequestMapping(value = "/schoolSearch", method =RequestMethod.POST)
+	@RequestMapping(value = "/schoolSearch", method =RequestMethod.GET)
 	public List<SchoolVO> findSchool(@RequestParam(value = "gubun", defaultValue = "elem_list") String gubun,
 			@RequestParam(value = "name", required = false) String name,
 			@RequestParam(value = "region", required = false) String region,

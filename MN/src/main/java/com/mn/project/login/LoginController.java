@@ -29,7 +29,9 @@ import com.mn.project.util.SessionClass;
 @Controller
 public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-
+	
+	
+	
 	@Inject
 	private LoginService service;
 	
@@ -57,7 +59,7 @@ public class LoginController {
 		
 		session.getSessionId(req);
 		System.out.println(principal.getName());
-		session.setId("member",principal.getName());
+		
 		
 		
 		
@@ -135,9 +137,9 @@ public class LoginController {
 	
     //마이페이지로이동
 	@RequestMapping(value="/matchmypage", method = {RequestMethod.POST,RequestMethod.GET})
-	public String gomypage(Model model) throws Exception{
+	public String gomypage(Model model,Principal principal) throws Exception{
 		LoginVO loginVO = new LoginVO();
-		loginVO.setMmid(session.getId("member"));
+		loginVO.setMmid(principal.getName());
 		
 		LoginVO tt = service.select(loginVO);
 		
@@ -155,9 +157,9 @@ public class LoginController {
 	
     //마이페이지에서 회원탈퇴누르시 탈퇴페이지로 이동
 	@RequestMapping(value="/home", method = {RequestMethod.POST,RequestMethod.GET})
-	public String delete(@ModelAttribute("LoginVO") LoginVO loginVO) throws Exception{
+	public String delete(@ModelAttribute("LoginVO") LoginVO loginVO,Principal principal) throws Exception{
 		
-		String mmid =  session.getId("member");	
+		String mmid =  principal.getName();	
 				
 		loginVO.setMmid(mmid);//로그인한 아이디의 정보를 loginVO에다 넣는다.
 		
@@ -170,7 +172,7 @@ public class LoginController {
          }else {
         	  session.setId("delete", tt.mmid);
         	  service.mmdelete(loginVO);
-        	 return "/First/home"; 
+        	 return "redirect:/"; 
          }
 	}	
 }

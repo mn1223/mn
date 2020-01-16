@@ -84,7 +84,7 @@ function schoolSearch(){
 		url : "/schoolSearch",
 		data : {"gubun":gubun,"name":name,"region":region},
 		dataType : "json",
-		type : "POST",
+		type : "GET",
 		success:function(data){
 			var html = "";
 			console.log(data);

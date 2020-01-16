@@ -97,7 +97,7 @@
 </script>
 </head>
 <body>
-	<form method="post" id ="form" name="form" onsubmit="return checkpwd()"
+	<form method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
 		<div>
 			<label>이름</label> <input type="text" id="mmname" name="mmname" />

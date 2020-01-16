@@ -78,7 +78,8 @@ $(document).on('click', '#btnSearch1', function() {
 		url : "/searchData1",
 		data : paramData,
 		dataType : "json",
-		success : function(data){			
+		success : function(data){
+			console.log(data);
 			var html = "";			
 			$(data).each(function(){				
 				html += '<tr>';
@@ -93,7 +94,7 @@ $(document).on('click', '#btnSearch1', function() {
 			$("#result").html(html);
 		},
 		error : function(e){
-			alert(e);
+			alert("에러");
 		}		
 	});	
 	}

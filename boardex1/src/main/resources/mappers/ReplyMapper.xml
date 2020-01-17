@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ram.boardex.mappers.ReplyMapper">
+	
+	<select id = "getReplyList" resultType = "com.ram.boardex.board.ReplyVO">
+	select rno,bno,text,reg_id,to_char(reg_dt,'yyyy-mm-dd')as reg_dt,to_char(edit_dt,'yyyy-mm-dd') as edit_dt 
+	from tbl_reply
+    where bno = #{bno} order by reg_dt desc
+	</select>
+	
+	<insert id ="saveReply" parameterType="com.ram.boardex.board.ReplyVO">
+		insert into tbl_reply(rno,bno,text,reg_id,reg_dt,edit_dt)
+		values(
+		rno_add.nextval,
+		#{bno},
+		#{text},
+		#{reg_id},
+		sysdate,
+		sysdate
+		)
+		
+	</insert>
+	
+	<update id= "updateReply" parameterType="com.ram.boardex.board.ReplyVO">
+		update tbl_reply set
+			text = #{text},
+			edit_dt = sysdate
+			where rno = #{rno}
+	</update>
+	
+	<delete id = "deleteReply" parameterType = "int">
+		delete from tbl_reply
+		where rno = #{rno}
+	</delete>
+	
+	
+</mapper>

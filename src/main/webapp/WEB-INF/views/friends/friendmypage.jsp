@@ -138,7 +138,7 @@ function showFriendListTrue(){
 			"Content-Type" : "application/json",
 			"X-HTTP-Method-Override" : "POST"
 		};
-	
+	//
 	$.ajax({
 		url : "/getFriendTrue",
 		headers : headers,

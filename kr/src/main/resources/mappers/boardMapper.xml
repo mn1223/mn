@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mn.project.mappers.boardMapper">
+	
+	<!-- 공통매퍼{s} -->
+	
+	<!-- 게시글 상세보기 -->
+	<select id="getBoardContent"
+		resultType="com.mn.project.board.BoardVO">
+		SELECT
+		BOMANAGENUM, BNO, TITLE, CONTENTS,
+		VIEWCNT, BOMMID,
+		BODATE
+		FROM BOARD
+		WHERE
+		BNO = #{bno}
+	</select>
+
+	<!-- 게시글 수정 -->
+	<update id="updateBoard"
+		parameterType="com.mn.project.board.BoardVO">
+		UPDATE BOARD SET
+		TITLE = #{title},
+		CONTENTS = #{contents}
+		WHERE
+		BNO = ${bno}
+	</update>
+
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM BOARD WHERE BNO=#{bno}
+	</delete>
+
+
+	<!-- 조회수 변경 -->
+	<update id="updateViewCnt"
+		parameterType="com.mn.project.board.BoardVO">
+		UPDATE BOARD SET
+		VIEWCNT = VIEWCNT + 1
+		WHERE
+		BNO = #{bno}
+	</update>
+	
+	<!-- 동적 쿼리 sql문(검색기능) -->
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND TITLE LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'c'.toString()">AND CONTENTS LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'w'.toString()">AND BOMMID LIKE '%' || #{keyword} || '%'</if>			
+		</if>
+	</sql>	
+	
+	<!-- 공통매퍼{e} -->
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<!-- 게시글 목록 보기(1번 게시판) -->
+	<select id="getBoardListOne"
+		resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=1]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+		
+	
+	<!-- 게시글 작성(1번 게시판) -->
+	<insert id="insertBoardOne">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		1,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+	
+	<!-- 게시글 총 갯수(1번 게시판) -->
+	<select id="getBoardListCntOne" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+		WHERE bomanagenum = 1
+		<include refid="search"></include>		
+	</select>
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	
+	<!-- 게시글 목록 보기(2번 게시판) -->
+	<select id="getBoardListTwo" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=2]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+	
+	
+
+	
+	
+	<!-- 게시글 작성(2번 게시판) -->
+	<insert id="insertBoardTwo">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		2,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+
+	
+	<!-- 게시글 총 갯수(2번 게시판) -->
+	<select id="getBoardListCntTwo" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+        where bomanagenum = 2
+		<include refid="search"></include>		
+	</select>
+	
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<!-- 게시글 목록 보기(3번 게시판) -->
+	<select id="getBoardListThree" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=3]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+	
+	
+	
+	<!-- 게시글 작성(3번 게시판) -->
+	<insert id="insertBoardThree">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		3,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+
+	
+	<!-- 게시글 총 갯수(3번 게시판) -->
+	<select id="getBoardListCntThree" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+        where bomanagenum = 3
+		<include refid="search"></include>		
+	</select>
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<!-- 게시글 목록 보기(4번 게시판) -->
+	<select id="getBoardListFour" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=4]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+	
+	
+	
+	<!-- 게시글 작성(4번 게시판) -->
+	<insert id="insertBoardFour">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		4,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+
+	
+	<!-- 게시글 총 갯수(4번 게시판) -->
+	<select id="getBoardListCntFour" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+        where bomanagenum = 4
+		<include refid="search"></include>		
+	</select>
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<!-- 게시글 목록 보기(5번 게시판) -->
+	<select id="getBoardListFive" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=5]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+	
+	
+	
+	<!-- 게시글 작성(5번 게시판) -->
+	<insert id="insertBoardFive">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		5,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+
+	
+	<!-- 게시글 총 갯수(5번 게시판) -->
+	<select id="getBoardListCntFive" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+        where bomanagenum = 5
+		<include refid="search"></include>		
+	</select>
+	
+	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+	
+	<!-- 게시글 목록 보기(6번 게시판) -->
+	<select id="getBoardListSix" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=6]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>	
+	</select>
+	
+	
+	
+	<!-- 게시글 작성(6번 게시판) -->
+	<insert id="insertBoardSix">
+		INSERT INTO BOARD (BOMANAGENUM, BNO,
+		TITLE, CONTENTS, VIEWCNT, BOMMID)
+		VALUES (
+		6,
+		SEQ_BOARD_BNO.nextval,
+		#{title},
+		#{contents},
+		0,
+		#{bommid}
+		)
+	</insert>
+
+	
+	<!-- 게시글 총 갯수(6번 게시판) -->
+	<select id="getBoardListCntSix" resultType="int">
+		SELECT COUNT(*) AS listCnt
+		FROM
+		BOARD
+        where bomanagenum = 6
+		<include refid="search"></include>		
+	</select>
+	
+	
+		
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

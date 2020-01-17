@@ -1,0 +1,60 @@
+package com.mn.project.res;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping(value="/user")
+public class ResController {
+	@Inject
+	private ResService service;
+
+
+	@RequestMapping(value="/user", method= RequestMethod.GET)
+	public String pIns(Model model) throws Exception {
+		model.addAttribute("tbook", service.pSearch());
+		return "user/user";
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/getPno",method = RequestMethod.GET)
+	public List<ResVO> getPno(@RequestParam("pdate") String date) throws Exception {
+		List<ResVO> list = null;
+		ResVO vo = new ResVO();
+		vo.setpDate(date);
+		list=service.getPno(vo);
+		System.out.println(list);
+		return list;
+	}
+
+
+	@ResponseBody
+	@RequestMapping(value="/insParty", method = RequestMethod.POST)
+	public String insParty(@RequestParam("pno") int pno, @RequestParam("ubookmmid") String ubookmmid) throws Exception{
+		String returnVal = "false";
+		ResVO vo = new ResVO();
+		vo.setPno(pno);
+		vo.setUbookmmid(ubookmmid);
+
+		System.out.println(vo);
+		if(service.check(vo)==0) {
+			if(service.insParty(vo)==1) {
+				returnVal="true";
+			}
+		}else {
+			returnVal = "NN";
+		}
+		
+		System.out.println(vo);
+		return returnVal;
+	}
+
+}

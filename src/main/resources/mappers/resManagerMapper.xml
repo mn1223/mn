@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mn.project.mappers.resManagerMapper">
+	<!-- 회원 관리  -->
+	<select id="list" resultType="com.mn.project.resmanager.ResManagerVO">
+	 	SELECT MMNAME, MMID, MMGENDER, MMPHONENUM, MMDATE, MMGRADE
+		FROM MEMBER
+		ORDER BY MMDATE ASC
+	</select>
+	
+	<select id="view" resultType="com.mn.project.resmanager.ResManagerVO">
+		SELECT MMNAME, MMID, MMGENDER, MMPHONENUM, MMDATE, MMGRADE
+		FROM MEMBER
+		WHERE 
+		MMNAME LIKE '%'||#{keyword}||'%' OR
+		MMID LIKE '%'||#{keyword}||'%'
+		ORDER BY MMDATE ASC
+	</select>
+	
+	<update id="mmupdate" parameterType="com.mn.project.resmanager.ResManagerVO">
+		UPDATE MEMBER
+		SET MMGRADE = #{mmgrade}
+		WHERE MMID = #{mmid}
+	</update>
+	
+	<!-- 파티 추가 -->
+	<insert id="pReg" parameterType="com.mn.project.resmanager.PartyManagerVO">
+		INSERT INTO MBOOK(PNO,PDATE,LOC,PRICE,CNT)
+		VALUES(SEQ_PNO.NEXTVAL,TO_DATE(#{pDate},'YYYYMMDD'),#{pLoc},#{pPrice},#{pCnt})
+	</insert>
+	
+	<!-- 전체 파티 검색 -->
+	<select id="pSearch" resultType="com.mn.project.resmanager.PartyManagerVO">
+		SELECT PNO, PDATE as"pDate",LOC as "pLoc",PRICE as "pPrice",CNT as "pCnt" 
+		FROM MBOOK
+	</select>
+
+	<!-- 파티 삭제 -->
+	<delete id="pDel" parameterType="com.mn.project.resmanager.PartyManagerVO">
+		DELETE FROM MBOOK WHERE PDATE = TO_DATE(#{pDate},'YYYYMMDD')
+	</delete>
+	
+	
+	<!-- 파티 회원 정보 출력 -->
+	<select id="puSearch" resultType="com.mn.project.resmanager.PartyReservationVO">
+		SELECT MEMBER.MMNAME as mmname, UINFO.PDATE as pdate, MEMBER.MMID as mmid,MEMBER.MMGENDER as mmgender,
+		MEMBER.mmphonenum as mmphonenum,uinfo.ubookstatus as ubookstatus, UINFO.ubookdeposit as ubookdeposit 
+		FROM MEMBER, UINFO
+		WHERE member.mmid = uinfo.ubookmmid AND PDATE = TO_DATE(#{pDate},'YYYYMMDD')
+	</select>
+	
+	<!-- 파티 회원 상태 변경 -->
+	<update id="puUpd" parameterType = "com.mn.project.resmanager.PartyReservationVO">
+		UPDATE UBOOK
+		SET UBOOKSTATUS = #{ubookstatus},
+		UBOOKDEPOSIT = #{ubookdeposit}
+		WHERE UBOOKMMID = #{mmid}
+	</update>
+
+	
+</mapper>

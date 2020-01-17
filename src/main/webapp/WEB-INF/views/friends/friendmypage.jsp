@@ -130,7 +130,7 @@ function addFriend(myid,yourid){
 	});
 	
 }
-//내 친구 목록 출력
+//내 친구 목록 출력 d
 function showFriendListTrue(){
 	var myid = $("#myid").val();
 	

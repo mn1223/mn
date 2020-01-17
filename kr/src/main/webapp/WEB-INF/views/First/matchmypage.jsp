@@ -14,8 +14,42 @@
 $(document).ready(function(){
 	$("#inform").show();
 	$("#editform").hide();
-	
+	$("#eschool").show();
+	$("#mschool").hide();
+	$("#hschool").hide();
+	$("#uschool").hide();
+	$("#editeschool").hide();
+	$("#editmschool").hide();
+	$("#edithschool").hide();
+	$("#edituschool").hide();
 });
+function eschool(){
+	$("#eschool").show();
+	$("#mschool").hide();
+	$("#hschool").hide();
+	$("#uschool").hide();
+}
+
+function mschool(){
+	$("#eschool").hide();
+	$("#mschool").show();
+	$("#hschool").hide();
+	$("#uschool").hide();
+}
+
+function hschool(){
+	$("#eschool").hide();
+	$("#mschool").hide();
+	$("#hschool").show();
+	$("#uschool").hide();
+}
+
+function uschool(){
+	$("#eschool").hide();
+	$("#mschool").hide();
+	$("#hschool").hide();
+	$("#uschool").show();
+}
 
 //삭제 버튼 클릭 이벤트
 $(document).on('click', '#btndelete', function() {
@@ -27,7 +61,7 @@ $(document).on('click', '#btndelete', function() {
 	$(document).on('click', '#btnupdate', function() {
 		$("#inform").hide();
 		$("#editform").show();
-	});	
+	});
 	
 	$(document).on('click', '#btnsave', function() {
 		var name = $('#mmname').val();
@@ -66,6 +100,25 @@ $(document).on('click', '#btndelete', function() {
 			}		
 		});	
 	});
+	
+	function editeschoolinfo(){
+		$("#eschool").hide();
+		$("#editeschool").show();
+	}
+	function editmschoolinfo(){
+		$("#mschool").hide();
+		$("#editmschool").show();
+	}
+	function edithschoolinfo(){
+		$("#hschool").hide();
+		$("#edithschool").show();
+	}
+	function edituschoolinfo(){
+		$("#uschool").hide();
+		$("#edituschool").show();
+	}
+	
+
 
 </script>
 </head>
@@ -101,47 +154,70 @@ $(document).on('click', '#btndelete', function() {
 	<label>성별</label><input type="text" id="mmgender" value="${userInfo.mmgender}"><br>
 	<button type="submit" id="btnsave">저장하기</button>
 </div>
+<br>
+<!-- 학교 정보 입력 form -->
 
-	<br> 회원정보 수정
+
+
+	<input type="button" value ="초등학교" onclick ="eschool()">
+	<input type="button" value ="중학교" onclick ="mschool()">
+	<input type="button" value ="고등학교" onclick ="hschool()">
+	<input type="button" value ="대학교" onclick ="uschool()">
 	<form name="form" id="form" role="form" modelAttribute="LoginVO"
 		method="post" action="${pageContext.request.contextPath}/saveBoard">
-		<div>
+		<div id = "eschool">
+			<label>초등학교:</label><c:out value="초등학교"/><br>
+			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<button type="button" id="btnschool" onclick="editeschoolinfo()">등록및 수정</button>		
+		</div>
+		<div id = "editeschool">
 			<label>초등학교</label> <input type="text" id="eschool" name="eschool" />
-		</div>
-		<div>
+			<button>학교 찾기</button>
+			<br>
 			<label>초등학교졸업년도</label> <input type="text" id="eschoolgy"
-				name="eschoolgy" />
+				name="eschoolgy" /><br>
+			<button type="button"  onclick="eschooleditcom()">완료</button>	
 		</div>
+		
+		<div id = "mschool">	
+			<label>중학교:</label><c:out value="중학교"/><br>
+			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<button type="button"  onclick="editmschoolinfo()">등록및 수정</button>			
+		</div>
+		<div id = "editmschool">
+		<label>중학교</label> <input type="text" id="mschool" name="mschool" />
+		<button>학교 찾기</button>
 		<br>
-		<div>
-			<label>중학교</label> <input type="text" id="mschool" name="mschool" />
+		<label>졸업년도</label> <input type="text" id="mschoolgy"
+				name="mschoolgy" /><br>
+		<button type="button"  onclick="mschooleditcom()">완료</button>		
 		</div>
-		<div>
-			<label>중학교졸업년도</label> <input type="text" id="mschoolgy"
-				name="mschoolgy" />
+		
+		<div id = "hschool">	
+			<label>고등학교:</label><c:out value="고등학교"/><br>
+			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<button type="button"  onclick="edithschoolinfo()">등록및 수정</button>
+			
 		</div>
-		<br>
-		<div>
-			<label>고등학교</label> <input type="text" id="hschool" name="hschool" />
+		<div id = "edithschool">
+		<label>고등학교</label> <input type="text" id="mschool" name="mschool" />
+		<button>학교 찾기</button><br>
+			<label>졸업년도</label> <input type="text" id="mschoolgy"
+				name="mschoolgy" /><br>
+		<button type="button" onclick="hschooleditcom()">완료</button>	
 		</div>
-		<div>
-			<label>고등학교졸업년도</label> <input type="text" id="hschoolgy"
-				name="hschoolgy" />
+		
+		<div id = "uschool">	
+			<label>대학교:</label><c:out value="대학교"/><br>
+			<label>입학년도:</label><c:out value ="9999년"/><br>
+			<button type="button"  onclick="edituschoolinfo()">등록및 수정</button>	
 		</div>
-		<br>
-		<div>
-			<label>대학교</label> <input type="text" id="uschool" name="uschool" />
-		</div>
-		<div>
-			<label>대학교학과</label> <input type="text" id="uschoolma"
-				name="uschoolma" />
-		</div>
-		<div>
-			<label>입학년도</label> <input type="text" id="uschooley"
-				name="uschooley" />
-		</div>
-		<div>
-			<button type="button" id="btnschool onclick="insert">등록및 수정</button>
+		<div id = "edituschool">
+			<label>대학교</label> <input type="text" id="mschool" name="mschool" />
+			<button>학교 찾기</button><br>
+			<label>입학년도</label> <input type="text" id="mschoolgy"
+				name="mschoolgy" /><br>
+			<button type="button" onclick="uschooleditcom()">완료</button>
 		</div>
 	</form>
 	<br>

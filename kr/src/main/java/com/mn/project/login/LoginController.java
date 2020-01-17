@@ -39,8 +39,9 @@ public class LoginController {
 	private SessionClass session;
 	
 	@RequestMapping(value = "/login/loginForm", method = RequestMethod.GET)
-	public String loginFor(Locale locale, Model model) {
+	public String loginFor(Locale locale, Model model,HttpServletRequest req) {
 		logger.info("Welcome Login Form!");
+		session.getSessionId(req);
 		
 		return "view/third";
 	}
@@ -77,7 +78,7 @@ public class LoginController {
 		
 			return "/friends/nfmain";
 		}
-	
+	/*
 	//로그인성공후 메인페이지로이동
 	@RequestMapping(value="/successcommonhome", method = {RequestMethod.POST,RequestMethod.GET})
 	public String success(@ModelAttribute("LoginVO") LoginVO loginVO, HttpServletRequest req, RedirectAttributes rttr,Principal principal) throws Exception{
@@ -89,7 +90,7 @@ public class LoginController {
 		
 		
 		
-		/*
+		
 		LoginVO login = service.login(loginVO);
 	
          if(login == null) {
@@ -101,11 +102,12 @@ public class LoginController {
         	  session.setId("member",login.mmid);
         	  System.out.println(session.getId("member"));
         	 return "/First/commonhomecomplete"; 
-         }*/
+         }
 		
 		return "home";
          
-	}
+	}*/
+		
 	
 	//로그인페이지에서 아이디찾기페이지로이동
 	@RequestMapping(value="/idfind",method = {RequestMethod.POST,RequestMethod.GET})

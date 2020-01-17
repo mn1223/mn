@@ -43,8 +43,8 @@ public class EchoHandler extends TextWebSocketHandler {
 
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-		File file = new File("C:\\Users\\11\\Desktop\\" + getids.getId("myid")+ getids.getId("yourid") + ".txt");
-		File file2 = new File("C:\\Users\\11\\Desktop\\" + getids.getId("yourid")+ getids.getId("myid") + ".txt");
+		File file = new File("D:\\log\\" + getids.getId("myid")+ getids.getId("yourid") + ".txt");
+		File file2 = new File("D:\\log\\" + getids.getId("yourid")+ getids.getId("myid") + ".txt");
 
 		FileWriter writer = null;
 		FileWriter writer2 = null;
@@ -59,6 +59,7 @@ public class EchoHandler extends TextWebSocketHandler {
 				e.printStackTrace();
 			}
 		}
+		
 		String mes = message.getPayload();
 		
 		for (WebSocketSession sess : sessionList) {

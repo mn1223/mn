@@ -3,6 +3,7 @@ package com.mn.project.friend;
 
 
 import java.io.File;
+
 import java.io.FileReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -83,7 +84,7 @@ public class FriendController  {
 	
 	@RequestMapping(value="/chating",method = RequestMethod.GET)
 	public String chating(Model model ,@RequestParam("myid")String myid,@RequestParam("yourid")String yourid) {			
-		Path path = Paths.get("C:\\Users\\11\\Desktop\\" + myid+yourid+ ".txt");
+		Path path = Paths.get("D:\\log\\" + myid+yourid+ ".txt");
 		StringBuffer sb = new StringBuffer();
 		Charset cs = StandardCharsets.UTF_8;
 		
@@ -98,10 +99,10 @@ public class FriendController  {
 			sb.append(readLine+"<br>");
 		}
 		
-		System.out.println(sb.toString());
+		session.setId("myid",myid);
+		session.setId("yourid",yourid);
+		
 		System.out.println("너와나의 연결고리 :"+myid+yourid);
-		session.setId("yourid", yourid);
-		session.setId("myid", myid);
 		
 		model.addAttribute("yourid",yourid);
 	    model.addAttribute("myid",myid);

@@ -24,6 +24,8 @@ public interface FriendService {
 	public void deleteFriendStatus(FriendVO friendVO);
 	
 	public void deleteFriendListTrue(FriendVO friendVO);
+	
+	public void schoolUpd(FriendVO friendVO);
 
 
 

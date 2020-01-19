@@ -117,6 +117,22 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	delete from nflist where myid = #{myid} and yourid = #{yourid} and status = 'T'
 	</delete>
 	
+	<update id="eschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
+	
+	</update>
+	
+	<update id="mschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
+		
+	</update>
+	
+	<update id="hschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
+	
+	</update>
+	
+	<update id="uschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
+	
+	</update>
+	
 	
 	
 	

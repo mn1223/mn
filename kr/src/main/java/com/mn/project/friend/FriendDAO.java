@@ -25,6 +25,8 @@ public interface FriendDAO {
 	
 	public void deleteFriendListTrue(FriendVO friendVO);
 	
+	public void schoolUpd(FriendVO friendVO);
+	
 	
 	
 }

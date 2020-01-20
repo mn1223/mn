@@ -49,4 +49,16 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
       where mmid=#{mmid} and mmpwd=#{mmpwd}
 	</delete>
 	
+		
+	<!-- 유저 실시간 예약 현황-->
+	<select id="rInfo" resultType="com.mn.project.login.LoginVO">
+		SELECT PNO,PDATE,UBOOKSTATUS,UBOOKMMID,UBOOKDEPOSIT FROM UINFO WHERE UBOOKMMID = #{mmid} 
+	</select>
+	
+	<!-- 유저 파티 신청 삭제 -->
+	<delete id="rDel" parameterType="com.mn.project.login.LoginVO">
+	  DELETE FROM UINFO WHERE PNO = #{pno}
+	</delete>
+	
+	
 </mapper>

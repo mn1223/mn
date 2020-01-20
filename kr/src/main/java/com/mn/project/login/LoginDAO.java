@@ -1,5 +1,7 @@
 package com.mn.project.login;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import com.mn.project.friend.FriendVO;
@@ -29,4 +31,11 @@ public interface LoginDAO {
 	
 	//학교정보 가져오기
 	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception;
+	
+	//실시간 예약 현황 가져오기
+	public List<LoginVO> getRInfo(String mmid) throws Exception; 
+	
+	//예약 현황 취소(삭제)
+	public int delParty(int pno) throws Exception;
+	
 }

@@ -460,7 +460,7 @@ $(document).on('click', '#btndelete', function() {
  		        	$("#uInfo").html("");
 	        		var htmls = "";
 	        		if(data.length < 1){
-	        			alert("x");
+	        			//alert("x");
 	        		}else{
 	        			console.log(data);
 	        			

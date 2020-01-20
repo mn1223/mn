@@ -1,5 +1,6 @@
 package com.mn.project.res;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,8 +20,9 @@ public class ResController {
 
 
 	@RequestMapping(value="/user", method= RequestMethod.GET)
-	public String pIns(Model model) throws Exception {
+	public String pIns(Model model,Principal principal) throws Exception {
 		model.addAttribute("tbook", service.pSearch());
+		model.addAttribute("myid",principal.getName());
 		return "user/user";
 	}
 

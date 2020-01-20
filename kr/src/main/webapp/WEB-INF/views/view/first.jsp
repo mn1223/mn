@@ -104,4 +104,43 @@ header div.logo {
 	width: 100%;
 }
 
+
+footer table {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	width: 100%;
+	height: 80%;
+}
+
+footer table tr td:last-child {
+	width: 40%;
+}
+
+footer table tr td:not(:last-child){
+width:12%;
+font-size: 0.12rem;
+}
+
+footer table tr:first-child td:not (:last-child ), footer table tr:nth-child(2) td:first-child
+	{
+	text-align: center;
+}
+
+footer table tr td {
+	border-top: 1px solid black;
+}
+
+footer table tr:nth-child(2) td {
+	border-bottom: 1px solid black;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 1.4rem;
+	width: 100%;
+}
+
 </style>

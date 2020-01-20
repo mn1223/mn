@@ -230,7 +230,7 @@ function pad(n, width) {
 					$(".modal-body").html(
 							"<p>Modal body text goes here.</p>"+
 							"<input type='hidden' id='pno'>"+
-					        "<input type='hidden' id= 'ubookmmid' value='park'>"+
+					        "<input type='hidden' id= 'ubookmmid' value='${myid}'>"+
 				            "파티날짜 :  <input class='party-date' style='width:300px; height:20px;'><br />"+
 				            "인원수   :  <input class='party-cnt' value='30' readonly style='width:100px; height: 20px;'><br />"+
 				            "금액     :  <input class='party-price' value='50000' readonly style='width:100px; height: 20px;'><br />"+

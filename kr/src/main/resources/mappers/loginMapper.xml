@@ -45,7 +45,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 	<delete id="mmdelete" parameterType="com.mn.project.login.LoginVO">
 	  update member 
-      set mmgrade='x'
+      set mmgrade='x',enabled='0'
       where mmid=#{mmid} and mmpwd=#{mmpwd}
 	</delete>
 	

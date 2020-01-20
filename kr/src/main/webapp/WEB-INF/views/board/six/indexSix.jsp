@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="/WEB-INF/views/layout/header.jsp"%>
+<%@ include file="/WEB-INF/views/layout/headerNF.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +10,7 @@
 
 <title>board</title>
 <style>
-body {
-	padding-top: 70px;
-	padding-bottom: 30px;
-}
+
 </style>
 
 <script>	

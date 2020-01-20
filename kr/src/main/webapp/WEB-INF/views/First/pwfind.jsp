@@ -30,8 +30,8 @@ function aaaa(){
 		<label>아이디</label> <input type="text" id="mmid" name="mmid"/>
 	</div>
 	 <div>
-		<label>질문</label> <input type="text" id="mmq" name="mmq"/>
-		<select id="box2" >
+		<label>질문</label> 
+		<select id="mmq" name="mmq" >
 			         <option value="어디서 태어났습니까?" selected="selected">어디서 태어났습니까?</option>
                      <option value="가장 애정하는 물품은?" >가장 애정하는 물품은?</option>
                      <option value="좋아하는 노래는?">좋아하는 노래는?</option>

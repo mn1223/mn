@@ -8,6 +8,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').focus()
+	})
+</script>
 <script>
 
 	$(document).ready(function(){
@@ -131,8 +143,8 @@
 		<input type="radio" name="mmgender" value="여자" checked>여 
 		</div>
 		<div>
-			<label>질문</label> <input type="text" id="mmq" name="mmq" />
-			  <select id="box2" >
+			<label>질문</label> 
+			  <select id="box2" id="mmq" name="mmq"  >
 			         <option value="어디서 태어났습니까?" selected="selected">어디서 태어났습니까?</option>
                      <option value="가장 애정하는 물품은?" >가장 애정하는 물품은?</option>
                      <option value="좋아하는 노래는?">좋아하는 노래는?</option>

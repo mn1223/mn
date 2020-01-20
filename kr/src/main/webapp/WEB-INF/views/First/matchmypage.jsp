@@ -27,7 +27,7 @@ $(document).ready(function(){
 	getpartylist();
 	
 });
-function eschool(){
+function eschool(){ 
 	$("#eschool").show();
 	$("#mschool").hide();
 	$("#hschool").hide();
@@ -363,11 +363,11 @@ $(document).on('click', '#btndelete', function() {
 			<button type="button" id="btnschool" onclick="editeschoolinfo()">등록및 수정</button>		
 		</div>
 		<div id = "editeschool">
-			<label>초등학교</label> <input type="text" id="eschoolName" name="eschoolName" value ="${scinfo.eschool}"/>
+			<label>초등학교</label> <input type="text" id="eschoolName" name="eschoolName" value ="${scinfo.eschool}" readonly/>
 			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
 			<br>
 			<label>초등학교졸업년도</label> <input type="text" id="eschoolgy"
-				name="eschoolgy" value="${scinfo.eschoolgy}년" /><br>
+				name="eschoolgy" value="${scinfo.eschoolgy}" /><br>
 			<button type="button"  onclick="eschooleditcom()">완료</button>	
 		</div>
 		
@@ -377,11 +377,11 @@ $(document).on('click', '#btndelete', function() {
 			<button type="button"  onclick="editmschoolinfo()">등록및 수정</button>			
 		</div>
 		<div id = "editmschool">
-		<label>중학교</label> <input type="text" id="mschoolName" name="mschoolName" value="${scinfo.mschool}" />
+		<label>중학교</label> <input type="text" id="mschoolName" name="mschoolName" value="${scinfo.mschool}" readonly/>
 		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
 		<br>
 		<label>졸업년도</label> <input type="text" id="mschoolgy"
-				name="mschoolgy" value="${scinfo.mschoolgy}년"/><br>
+				name="mschoolgy" value="${scinfo.mschoolgy}"/><br>
 		<button type="button"  onclick="mschooleditcom()">완료</button>		
 		</div>
 		
@@ -392,10 +392,10 @@ $(document).on('click', '#btndelete', function() {
 			
 		</div>
 		<div id = "edithschool">
-		<label>고등학교</label> <input type="text" id="hschoolName" name="hschoolName" value="${scinfo.hschool}" />
+		<label>고등학교</label> <input type="text" id="hschoolName" name="hschoolName" value="${scinfo.hschool}" readonly/>
 		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
 			<label>졸업년도</label> <input type="text" id="hschoolgy"
-				name="hschoolgy" value ="${scinfo.hschoolgy}년"/><br>
+				name="hschoolgy" value ="${scinfo.hschoolgy}"/><br>
 		<button type="button" onclick="hschooleditcom()">완료</button>	
 		</div>
 		
@@ -406,11 +406,11 @@ $(document).on('click', '#btndelete', function() {
 			<button type="button"  onclick="edituschoolinfo()">등록및 수정</button>	
 		</div>
 		<div id = "edituschool">
-			<label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="${scinfo.uschool}" />
+			<label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="${scinfo.uschool}" readonly/>
 			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
 			<label>학과</label> <input type="text" id="uschoolma" name="uschoolma" value="${scinfo.uschoolma}" /><br>
 			<label>입학년도</label> <input type="text" id="uschooley"
-				name="uschooley" value ="${scinfo.uschooley}년"/><br>
+				name="uschooley" value ="${scinfo.uschooley}"/><br>
 			<button type="button" onclick="uschooleditcom()">완료</button>
 		</div>
 

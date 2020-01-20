@@ -15,26 +15,33 @@
         <intercept-url pattern="/searchData1" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')" />
 
         <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
-        <!--<intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />-->
-		<!--<intercept-url pattern="/friendmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />-->
+        <intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/friendmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-
+        
+        <intercept-url pattern="/board/boardFormThree" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+        <intercept-url pattern="/board/boardFormTwo" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/board/getBoardListFive" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/chatList" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/search" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		
+		
+		
+		
         <intercept-url pattern="/**" access="permitAll" />
 
     
         <!-- 
 		<intercept-url pattern="/**" access="permitAll" />
-		<intercept-url pattern="/admin/**" access="hasRole('USER,ADMIN')" />-->
+		<intercept-url pattern="/admin/**" access="hasRol('USER,ADMIN')" />-->
 		        
         <form-login login-page="/login/loginForm"
                     default-target-url="/"
                     authentication-failure-url="/login/loginForm?error"
                     username-parameter="mmid"
                     password-parameter="mmpwd" />
-        <logout logout-url="/logout"
-                logout-success-url="/"/>
-        <logout logout-url="/home"
-                logout-success-url="/"/>
+        <logout logout-url="/logout" logout-success-url="/"/>
+
                    
           <access-denied-handler error-page="/login/accessDenied"/>
            

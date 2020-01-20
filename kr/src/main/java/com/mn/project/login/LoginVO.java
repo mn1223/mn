@@ -11,8 +11,39 @@ public class LoginVO {
     String mmdate;
     String mmq;
     String mma;
-    String mmgrade;
     
+    String mmgrade;
+    String pdate;
+    String ubookstatus;
+	String ubookdeposit;
+	int pno;
+	
+    
+	
+	public int getPno() {
+		return pno;
+	}
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+	public String getPdate() {
+		return pdate;
+	}
+	public void setPdate(String pdate) {
+		this.pdate = pdate;
+	}
+	public String getUbookstatus() {
+		return ubookstatus;
+	}
+	public void setUbookstatus(String ubookstatus) {
+		this.ubookstatus = ubookstatus;
+	}
+	public String getUbookdeposit() {
+		return ubookdeposit;
+	}
+	public void setUbookdeposit(String ubookdeposit) {
+		this.ubookdeposit = ubookdeposit;
+	}
 	public String getMmname() {
 		return mmname;
 	}
@@ -73,12 +104,15 @@ public class LoginVO {
 	public void setMmgrade(String mmgrade) {
 		this.mmgrade = mmgrade;
 	}
-	
 	@Override
 	public String toString() {
 		return "LoginVO [mmname=" + mmname + ", mmid=" + mmid + ", mmpwd=" + mmpwd + ", re_mmpwd=" + re_mmpwd
 				+ ", mmphonenum=" + mmphonenum + ", mmgender=" + mmgender + ", mmdate=" + mmdate + ", mmq=" + mmq
-				+ ", mma=" + mma + ", mmgrade=" + mmgrade + "]";
+				+ ", mma=" + mma + ", mmgrade=" + mmgrade + ", pdate=" + pdate + ", ubookstatus=" + ubookstatus
+				+ ", ubookdeposit=" + ubookdeposit + ", pno=" + pno + "]";
 	}
+	
+	
+	
     
 }

@@ -24,6 +24,8 @@ $(document).ready(function(){
 	$("#editmschool").hide();
 	$("#edithschool").hide();
 	$("#edituschool").hide();
+	getpartylist();
+	
 });
 function eschool(){ 
 	$("#eschool").show();
@@ -437,19 +439,73 @@ $(document).on('click', '#btndelete', function() {
 	        		<th>파티일자</th>
 	        		<th>입금상태</th>
 	        		<th>예약상태</th>
-	        		<th id=rCancel>예약취소</th>
+	        		<th>예약취소</th>
         		</tr>
         	</thead>
-        	
         	<tbody id="uInfo">
-        	
-			</tbody>
+        	</tbody>
       	</table>    
       	
       	<script>
-      		$("#rCancel").on("click",function(){
-      			alert("삭제버튼입니다.");
-      		});
+      		function getpartylist(){
+      		$.ajax({
+ 		    	type : "POST",
+ 		    	
+ 		        url: "/getpartylist",
+ 		        
+ 		        dateType : 'json',
+
+ 		        success: function(data){
+ 		        	console.log(data.length);
+ 		        	$("#uInfo").html("");
+	        		var htmls = "";
+	        		if(data.length < 1){
+	        			alert("x");
+	        		}else{
+	        			console.log(data);
+	        			
+	        			$(data).each(function(){
+	          				htmls = "<tr>";
+	          				htmls += "<td>"+this.pno+"</td>";
+	        				htmls += "<td>"+this.pdate+"</td>";
+	        				htmls += "<td>"+this.ubookstatus+"</td>";
+	        				htmls += "<td>"+this.ubookdeposit+"</td>";
+	        				htmls += "<td><button type='button' onclick=rInfo('"+this.pno+"');>삭제</button></td>";
+	      					htmls += "</tr>";
+	      					$("#uInfo").append(htmls);
+	      				});
+	        		}
+	        }//Ajax Seccess end
+	      }); //Ajax end
+      		};
+
+	     function rInfo(pno){
+      		alert("삭제버튼입니다.");
+      		$.ajax({
+ 		    	type : "POST",
+ 		    	
+ 		        url: "/delParty",
+ 		        
+ 		       data: {"pno":pno},
+
+	        success: function(data){
+	        	console.log(data);
+	        	if(data!="false"){ 
+	        		data='Y'
+	        		location.reload();
+		       		alert("삭제 성공 !!!!");
+	        	}else{
+	        		data='N'
+	        		alert("삭제 실패 !!!!");
+	        		location.reload();
+	        	}
+	        },
+	        error: function (){        
+	        	alert("통신상태가 안좋음");
+	        }
+	      });
+	        		
+         };
       	
       	</script>
 	

@@ -1,5 +1,7 @@
 package com.mn.project.login;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -75,5 +77,15 @@ public class LoginDAOImpl implements LoginDAO{
 	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("com.mn.project.mappers.friend.getSchoolInfo",loginVO);
+	}
+
+	@Override
+	public List<LoginVO> getRInfo(String mmid) throws Exception {
+		return sqlSession.selectList(namespace+".rInfo",mmid);
+	}
+
+	@Override
+	public int delParty(int pno) throws Exception {
+		return sqlSession.delete(namespace+".rDel",pno);
 	}	
 }

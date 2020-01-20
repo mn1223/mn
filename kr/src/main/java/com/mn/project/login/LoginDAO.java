@@ -2,6 +2,8 @@ package com.mn.project.login;
 
 import javax.inject.Inject;
 
+import com.mn.project.friend.FriendVO;
+
 public interface LoginDAO {
 	
 	public LoginVO login(LoginVO loginVO) throws Exception;
@@ -24,4 +26,7 @@ public interface LoginDAO {
 	
 	//중복확인
 	public int duplicate(LoginVO loginVO) throws Exception;
+	
+	//학교정보 가져오기
+	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception;
 }

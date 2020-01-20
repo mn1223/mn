@@ -78,4 +78,10 @@ public class FriendServiceImpl implements FriendService {
 		
 	}
 
+	@Override
+	public void schoolUpd(FriendVO friendVO) {
+		friendDAO.schoolUpd(friendVO);
+		
+	}
+
 }

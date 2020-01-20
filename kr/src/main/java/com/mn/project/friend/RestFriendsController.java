@@ -2,6 +2,7 @@ package com.mn.project.friend;
 
 import java.io.BufferedReader;
 
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -184,14 +185,6 @@ public class RestFriendsController {
 		return result;
 	}
 
-	private static String getTagValue(String tag, Element eElement) {
-		NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
-		Node nValue = (Node) nlList.item(0);
-		if (nValue == null)
-			return null;
-		return nValue.getNodeValue();
-	}
-
 	@RequestMapping(value = "/schoolSearch", method =RequestMethod.GET)
 	public List<SchoolVO> findSchool(@RequestParam(value = "gubun", defaultValue = "elem_list") String gubun,
 			@RequestParam(value = "name", required = false) String name,
@@ -233,69 +226,16 @@ public class RestFriendsController {
 			   logger.error("CAREER API ERROR", e);
 			  }
 		
-		
-		
-		
-		/*
-		ArrayList<SchoolVO> list = new ArrayList<SchoolVO>();
-		try {
-			
-			String url = "http://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=3e18babb4587b2528cc9032f119ab990&svcType=api&svcCode=SCHOOL&contentType=xml";
-					url += "&gubun="+gubun;
-					url += "&region="+region;
-					url += "&searchSchulNm="+encodeResult;
-					System.out.println(url);
-					System.out.println(encodeResult);
-
-			while(true) {
-
-			DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
-			Document doc = dBuilder.parse(url);
-			
-			doc.getDocumentElement().normalize();
-			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-			
-			NodeList nList = doc.getElementsByTagName("content");
-			//System.out.println("파싱할 리스트 수 : "+ nList.getLength());
-			
-			for(int temp = 0; temp < nList.getLength(); temp++){
-				SchoolVO vo = new SchoolVO();
-				Node nNode = nList.item(temp);
-				if(nNode.getNodeType() == Node.ELEMENT_NODE){
-					
-					Element eElement = (Element) nNode;
-					System.out.println("######################");
-					//System.out.println(eElement.getTextContent());
-					System.out.println("link  : " + getTagValue("link", eElement));
-					System.out.println("adres  : " + getTagValue("adres", eElement));
-					System.out.println("학교이름 : " + getTagValue("schoolName", eElement));
-					System.out.println("region  : " + getTagValue("region", eElement));
-					vo.setSchoolName(getTagValue("schoolName", eElement));
-				}	// fif end
-				list.add(vo);
-				System.out.println(vo.getSchoolName());
-			}	// for end
-			
-			JSONArray json = new JSONArray(list);
-			
-			model.addAttribute("test",json);
-			
-			System.out.println(json);
-			
-			break;
-			
-			
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		
-		 */
 		System.out.println(list);
 		return list;
 	}
+	
+	@RequestMapping(value="schoolUpd",method = RequestMethod.POST)
+	public void schoolUpd(@RequestBody FriendVO friendVO,Principal principal) {
+		friendVO.setScmmid(principal.getName());
+		System.out.println(friendVO);
+		friendService.schoolUpd(friendVO);
+	}
+	
 
 }

@@ -15,8 +15,8 @@
         <intercept-url pattern="/searchData1" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')" />
 
         <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
-        <intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
-		<intercept-url pattern="/friendmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+        <!--<intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />-->
+		<!--<intercept-url pattern="/friendmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />-->
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 
         <intercept-url pattern="/**" access="permitAll" />
@@ -45,14 +45,17 @@
         <authentication-provider>
             <!--  
             <user-service>
-                <user name="user" password="password" authorities="ROLE_USER" />
+                <user name="user" password="password" authorities="ROLE_MEMBER" />
                 <user name="admin" password="password" authorities="ROLE_ADMIN" />
             </user-service>
-            -->
+            
+             -->
             <jdbc-user-service data-source-ref="dataSource"
             	users-by-username-query="SELECT mmid AS userName,mmpwd AS password,enabled FROM member where mmid = ?"
             	authorities-by-username-query = "SELECT mmid AS userName, authority FROM member WHERE mmid = ?"/>
+       
         </authentication-provider>
+        
     </authentication-manager>
     
  

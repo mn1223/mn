@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mn.project.friend.FriendVO;
 import com.mn.project.util.SessionClass;
 
 
@@ -170,9 +171,9 @@ public class LoginController {
 		loginVO.setMmid(principal.getName());
 		
 		LoginVO tt = service.select(loginVO);
-		
+		FriendVO friendVO = service.getSchoolInfo(loginVO);
 		model.addAttribute("userInfo",tt);
-
+		model.addAttribute("scinfo",friendVO);
 		return "/First/matchmypage";
 	}
 	

@@ -1,5 +1,7 @@
 package com.mn.project.login;
 
+import com.mn.project.friend.FriendVO;
+
 public interface LoginService {
 	
 	public LoginVO login(LoginVO loginVO) throws Exception;
@@ -20,4 +22,7 @@ public interface LoginService {
 	public void update(LoginVO loginVO) throws Exception;
 	//아이디 중복체크
 	public int duplicate(LoginVO loginVO) throws Exception;
+	
+	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception;
+
 }

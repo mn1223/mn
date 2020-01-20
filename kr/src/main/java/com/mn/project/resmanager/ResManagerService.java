@@ -25,7 +25,7 @@ public interface ResManagerService {
 	public List<PartyReservationVO> puSearch(String pDate) throws Exception;
 	
 	//파티 회원 정보 수정
-	public int puUpd(PartyReservationVO vo) throws Exception;
+	public int puUpd(PartyReservationVO vo);
 
 }
 

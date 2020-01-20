@@ -200,7 +200,7 @@ public class LoginController {
          }else {
         	  
         	  service.mmdelete(loginVO);
-        	 return "redirect:/"; 
+        	 return "/First/deletecomplete";
          }
 	}	
 }

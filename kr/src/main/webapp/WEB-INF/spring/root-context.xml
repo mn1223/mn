@@ -20,10 +20,6 @@
 
 		<property value="MN_DBA" name="username" />
 
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 		<!-- 오라클 사용자 비밀번호 -->
 		<!--  <property value="1234" name="password" />-->
 		<property value="1234" name="password" />

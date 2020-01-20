@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mn.project.login.LoginService;
+import com.mn.project.login.LoginVO;
 import com.mn.project.util.SessionClass;
 
 import chat.EchoHandler;
@@ -36,6 +38,9 @@ public class FriendController  {
 	
 	@Inject
 	FriendService friendService;
+	
+	@Inject
+	LoginService loginService;
 	
 	@RequestMapping("/search")
 	public String search(Model model,Principal principal) {
@@ -62,8 +67,16 @@ public class FriendController  {
 		return "friends/chatList";
 	}
 	@RequestMapping(value="/friendmypage",method = RequestMethod.GET)
-	public String friendMypage(Model model, Principal principal) {
+	public String friendMypage(Model model, Principal principal) throws Exception {
 		model.addAttribute("myid",principal.getName());
+		LoginVO loginVO = new LoginVO();
+		loginVO.setMmid(principal.getName());
+		
+		LoginVO tt = loginService.select(loginVO);
+		FriendVO friendVO = loginService.getSchoolInfo(loginVO);
+		
+		model.addAttribute("userInfo",tt);
+		model.addAttribute("scinfo",friendVO);
 		
 		
 		return "friends/friendmypage";

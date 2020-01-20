@@ -1,5 +1,7 @@
 package com.mn.project.login;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -69,5 +71,15 @@ public class LoginServiceImpl implements LoginService {
 	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.getSchoolInfo(loginVO);
+	}
+
+	@Override
+	public List<LoginVO> getRInfo(String mmid) throws Exception {
+		return dao.getRInfo(mmid);
+	}
+
+	@Override
+	public int delParty(int pno) throws Exception {
+		return dao.delParty(pno);
 	}
 }

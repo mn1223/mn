@@ -2,6 +2,7 @@ package com.mn.project.login;
 
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -168,14 +169,46 @@ public class LoginController {
 	@RequestMapping(value="/matchmypage", method = {RequestMethod.POST,RequestMethod.GET})
 	public String gomypage(Model model,Principal principal) throws Exception{
 		LoginVO loginVO = new LoginVO();
-		loginVO.setMmid(principal.getName());
-		System.out.println(principal.getName());
+		String mmid = principal.getName();
+		
+		loginVO.setMmid(mmid);
+		System.out.println(mmid);
+		
 		LoginVO tt = service.select(loginVO);
 		FriendVO friendVO = service.getSchoolInfo(loginVO);
+		
 		model.addAttribute("userInfo",tt);
 		model.addAttribute("scinfo",friendVO);
+		
 		return "/First/matchmypage";
 	}
+	
+	
+	//실시간 예약 현황
+	@ResponseBody
+	@RequestMapping(value="/getpartylist", method= RequestMethod.POST)
+	public List<LoginVO> getpartyList(Principal principal) throws Exception {
+		String mmid = principal.getName();
+		List<LoginVO> list=null;
+		list = service.getRInfo(mmid);
+		System.out.println(list);
+		return list;
+	}
+	//예약 현황 취소(삭제)
+	@ResponseBody
+	@RequestMapping(value="/delParty", method=RequestMethod.POST)
+	public String delParty(@RequestParam int pno) throws Exception {
+		String returnVal = "false";
+		if(service.delParty(pno)==1) {
+			returnVal = "true";
+		}
+		
+		return returnVal;
+	}
+	
+	
+	
+	
 	
     //삭제페이지로이동
 	@RequestMapping(value="/delete", method = {RequestMethod.POST,RequestMethod.GET})

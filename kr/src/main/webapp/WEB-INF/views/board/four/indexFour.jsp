@@ -10,10 +10,7 @@
 
 <title>board</title>
 <style>
-body {
-	padding-top: 70px;
-	padding-bottom: 30px;
-}
+
 </style>
 
 <script>	

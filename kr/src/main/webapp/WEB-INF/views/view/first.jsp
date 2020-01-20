@@ -105,7 +105,7 @@ header div.logo {
 	width: 100%;
 }
 
-<<<<<<< HEAD
+
 footer table {
 	position: absolute;
 	top: 50%;
@@ -143,6 +143,5 @@ footer {
 	height: 1.4rem;
 	width: 100%;
 }
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+
 </style>

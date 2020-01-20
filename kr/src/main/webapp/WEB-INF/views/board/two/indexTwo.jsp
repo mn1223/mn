@@ -10,15 +10,11 @@
 
 <title>board</title>
 <style>
-body {
-	padding-top: 70px;
-	padding-bottom: 30px;
-}
+
+
 </style>
 
-<script>	
-		
-
+<script>
 	//작성버튼 클릭시
 	$(document).on('click', "#btnWriteForm", function(e) {
 		e.preventDefault();
@@ -189,12 +185,15 @@ body {
 				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">				
 			</div>
 			<div>
-				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch" >검색</button>
-			</div>
-			
+				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch" type="submit" >검색</button>
+			</div>			
 		</div>
 		<!-- search{e} -->
+		<!-- footer{s} -->
+			
+		<!-- footer{e} -->		
 		</div>
-	</article>
+		
+	</article>	
 </body>
 </html>

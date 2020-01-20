@@ -4,6 +4,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.mn.project.friend.FriendVO;
+
 @Service
 public class LoginServiceImpl implements LoginService {
 
@@ -61,5 +63,11 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public int duplicate(LoginVO loginVO) throws Exception {
 		return dao.duplicate(loginVO);
+	}
+
+	@Override
+	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.getSchoolInfo(loginVO);
 	}
 }

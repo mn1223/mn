@@ -56,5 +56,14 @@ public class ResController {
 		System.out.println(vo);
 		return returnVal;
 	}
+	
+	//실시간 예약 현황
+	@ResponseBody
+	@RequestMapping(value="/uInfo", method=RequestMethod.POST)
+	public List<ResVO> uInfo(@RequestParam("ubookmmid") String ubookmmid) throws Exception {
+		List<ResVO> list = null;
+		
+		return list;
+	}
 
 }

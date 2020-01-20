@@ -47,7 +47,7 @@ public class ResManagerServiceImpl implements ResManagerService{
 	}
 
 	@Override
-	public int puUpd(PartyReservationVO vo) throws Exception {
+	public int puUpd(PartyReservationVO vo){
 		return dao.puUpd(vo);
 	}
 

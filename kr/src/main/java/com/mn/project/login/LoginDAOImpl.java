@@ -5,6 +5,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mn.project.friend.FriendVO;
+
 @Repository
 public class LoginDAOImpl implements LoginDAO{
 
@@ -67,5 +69,11 @@ public class LoginDAOImpl implements LoginDAO{
 	public int duplicate(LoginVO loginVO) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace2+".idcheck",loginVO);
+	}
+
+	@Override
+	public FriendVO getSchoolInfo(LoginVO loginVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("com.mn.project.mappers.friend.getSchoolInfo",loginVO);
 	}	
 }

@@ -118,20 +118,25 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</delete>
 	
 	<update id="eschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
-	
+	update scinfo set eschool = #{eschool},eschoolgy = #{eschoolgy} where scmmid = #{scmmid}
 	</update>
 	
 	<update id="mschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
-		
+	update scinfo set mschool = #{mschool},mschoolgy = #{mschoolgy} where scmmid = #{scmmid}
 	</update>
 	
 	<update id="hschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
-	
+	update scinfo set hschool = #{hschool},hschoolgy = #{hschoolgy} where scmmid = #{scmmid}
 	</update>
 	
 	<update id="uschoolUpd" parameterType ="com.mn.project.friend.FriendVO">
+	update scinfo set uschool = #{uschool},uschooley = #{uschooley} ,uschoolma = #{uschoolma} where scmmid = #{scmmid}
 	
 	</update>
+	
+	<select id ="getSchoolInfo" parameterType="com.mn.project.login.LoginVO" resultType = "com.mn.project.friend.FriendVO">
+	select scmmid,eschool,eschoolgy,mschool,mschoolgy,hschool,hschoolgy,uschool,uschoolma,uschooley from scinfo where scmmid = #{mmid}
+	</select>
 	
 	
 	

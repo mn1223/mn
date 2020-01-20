@@ -104,19 +104,19 @@ public class FriendDAOImpl implements FriendDAO {
 		switch(type) {
 		case "es":
 			System.out.println("초등학교 입력"+type);
-			//session.selectList(namespace+".eschoolUpd",friendVO);	
+			session.selectList(namespace+".eschoolUpd",friendVO);	
 			break;
 		case "ms" :
 			System.out.println("중학교 입력"+type);
-			//session.selectList(namespace+".mschoolUpd",friendVO);
+			session.selectList(namespace+".mschoolUpd",friendVO);
 			break;
 		case "hs" :
 			System.out.println("고등학교 입력"+type);
-			//session.selectList(namespace+".hschoolUpd",friendVO);
+			session.selectList(namespace+".hschoolUpd",friendVO);
 			break;
 	    default :
 			System.out.println("대학교 입력"+type);
-			//session.selectList(namespace+".uschoolUpd",friendVO);
+			session.selectList(namespace+".uschoolUpd",friendVO);
 			break;
 
 		}

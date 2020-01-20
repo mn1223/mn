@@ -58,7 +58,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SET UBOOKSTATUS = #{ubookstatus},
 		UBOOKDEPOSIT = #{ubookdeposit}
 		WHERE UBOOKMMID = #{mmid}
+		AND UPNO = (SELECT PNO FROM MBOOK WHERE PDATE = TO_DATE(#{pdate},'YYYYMMDD'))
 	</update>
-
+	
 	
 </mapper>

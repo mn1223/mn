@@ -15,7 +15,11 @@
 		<property value="jdbc:oracle:thin:@192.168.0.241:1521:xe" name="url" />
 		<!-- 오라클 사용자 이름 -->
 		<!-- <property value="MN_DBA" name="username" /> -->
+<<<<<<< HEAD
 		<property value="MN_DBA" name="username" />
+=======
+		<property value="mn_dba" name="username" />
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 		<!-- 오라클 사용자 비밀번호 -->
 		<!--  <property value="1234" name="password" />-->
 		<property value="1234" name="password" />

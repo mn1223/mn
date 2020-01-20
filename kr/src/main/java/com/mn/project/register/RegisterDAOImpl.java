@@ -17,6 +17,7 @@ public class RegisterDAOImpl implements RegisterDAO {
 	public void insertUser(RegisterVO registerVO) throws Exception {
 		
 		 sqlSession.insert(namespace+".insertUser",registerVO);
+		 sqlSession.insert(namespace+".insertScinfo",registerVO);
 	}
     
 }

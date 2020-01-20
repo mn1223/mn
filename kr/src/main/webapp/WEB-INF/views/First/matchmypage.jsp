@@ -356,59 +356,59 @@ $(document).on('click', '#btndelete', function() {
 	<input type="button" id = "bt_u" value ="대학교" onclick ="uschool()">
 
 		<div id = "eschool">
-			<label>초등학교:</label><c:out value="초등학교"/><br>
-			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<label>초등학교:</label><c:out value= "${scinfo.eschool}"/><br>
+			<label>졸업년도:</label><c:out value ="${scinfo.eschoolgy}년"/><br>
 			<button type="button" id="btnschool" onclick="editeschoolinfo()">등록및 수정</button>		
 		</div>
 		<div id = "editeschool">
-			<label>초등학교</label> <input type="text" id="eschoolName" name="eschoolName" value =""/>
+			<label>초등학교</label> <input type="text" id="eschoolName" name="eschoolName" value ="${scinfo.eschool}"/>
 			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
 			<br>
 			<label>초등학교졸업년도</label> <input type="text" id="eschoolgy"
-				name="eschoolgy" /><br>
+				name="eschoolgy" value="${scinfo.eschoolgy}년" /><br>
 			<button type="button"  onclick="eschooleditcom()">완료</button>	
 		</div>
 		
 		<div id = "mschool">	
-			<label>중학교:</label><c:out value="중학교"/><br>
-			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<label>중학교:</label><c:out value="${scinfo.mschool}"/><br>
+			<label>졸업년도:</label><c:out value ="${scinfo.mschoolgy}년"/><br>
 			<button type="button"  onclick="editmschoolinfo()">등록및 수정</button>			
 		</div>
 		<div id = "editmschool">
-		<label>중학교</label> <input type="text" id="mschoolName" name="mschoolName" value="" />
+		<label>중학교</label> <input type="text" id="mschoolName" name="mschoolName" value="${scinfo.mschool}" />
 		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
 		<br>
 		<label>졸업년도</label> <input type="text" id="mschoolgy"
-				name="mschoolgy" /><br>
+				name="mschoolgy" value="${scinfo.mschoolgy}년"/><br>
 		<button type="button"  onclick="mschooleditcom()">완료</button>		
 		</div>
 		
 		<div id = "hschool">	
-			<label>고등학교:</label><c:out value="고등학교"/><br>
-			<label>졸업년도:</label><c:out value ="9999년"/><br>
+			<label>고등학교:</label><c:out value="${scinfo.hschool}"/><br>
+			<label>졸업년도:</label><c:out value ="${scinfo.hschoolgy}년"/><br>
 			<button type="button"  onclick="edithschoolinfo()">등록및 수정</button>
 			
 		</div>
 		<div id = "edithschool">
-		<label>고등학교</label> <input type="text" id="hschoolName" name="hschoolName" value="" />
+		<label>고등학교</label> <input type="text" id="hschoolName" name="hschoolName" value="${scinfo.hschool}" />
 		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
 			<label>졸업년도</label> <input type="text" id="hschoolgy"
-				name="hschoolgy" /><br>
+				name="hschoolgy" value ="${scinfo.hschoolgy}년"/><br>
 		<button type="button" onclick="hschooleditcom()">완료</button>	
 		</div>
 		
 		<div id = "uschool">	
-			<label>대학교:</label><c:out value="대학교"/><br> 
-			<label>학과:</label><c:out value="학과"/><br>
-			<label>입학년도:</label><c:out value ="9999년"/><br>
+			<label>대학교:</label><c:out value="${scinfo.uschool}"/><br> 
+			<label>학과:</label><c:out value="${scinfo.uschoolma}"/><br>
+			<label>입학년도:</label><c:out value ="${scinfo.uschooley}년"/><br>
 			<button type="button"  onclick="edituschoolinfo()">등록및 수정</button>	
 		</div>
 		<div id = "edituschool">
-			<label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="" />
+			<label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="${scinfo.uschool}" />
 			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
-			<label>학과</label> <input type="text" id="uschoolma" name="uschoolma" value="" /><br>
+			<label>학과</label> <input type="text" id="uschoolma" name="uschoolma" value="${scinfo.uschoolma}" /><br>
 			<label>입학년도</label> <input type="text" id="uschooley"
-				name="uschooley" /><br>
+				name="uschooley" value ="${scinfo.uschooley}년"/><br>
 			<button type="button" onclick="uschooleditcom()">완료</button>
 		</div>
 

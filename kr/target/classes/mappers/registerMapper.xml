@@ -17,6 +17,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
         #{mmq},
         #{mma}
    )
+
+</insert>
+<insert id ="insertScinfo" parameterType ="com.mn.project.register.RegisterVO">
+   insert into scinfo(scmmid) values (#{mmid})
 </insert>
 
 </mapper>

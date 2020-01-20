@@ -170,32 +170,11 @@ footer table tr td:last-child {
 	width: 40%;
 }
 
-footer
- 
-table
- 
-tr
- 
-td
-:not
- 
-(
-:last-child
- 
-){
-width
-:
- 
-12%;
-font-size
-:
- 
-0
-.12rem
-;
-
-
+footer table tr td:not(:last-child){
+width:12%;
+font-size: 0.12rem;
 }
+
 footer table tr:first-child td:not (:last-child ), footer table tr:nth-child(2) td:first-child
 	{
 	text-align: center;

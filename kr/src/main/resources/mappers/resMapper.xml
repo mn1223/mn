@@ -27,4 +27,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="check" parameterType = "com.mn.project.res.ResVO" resultType="int"> 
 		SELECT count(*) FROM UBOOK WHERE UPNO = #{pno} AND UBOOKMMID = #{ubookmmid}
 	</select>
+	
+	<!-- 유저 실시간 예약 현황-->
+	<select id="uInfo" resultType="com.mn.project.res.ResVO">
+		SELECT PNO,PDATE,UBOOKSTATUS,UBOOKDEPOSIT FROM UINFO WHERE UBOOKMMID = #{ubookmmid} 
+	</select>
+
 </mapper>

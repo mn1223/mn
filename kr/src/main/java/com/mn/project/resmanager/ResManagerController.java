@@ -1,10 +1,12 @@
  package com.mn.project.resmanager;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -104,19 +106,27 @@ public class ResManagerController {
 	@ResponseBody
 	@RequestMapping(value="/puUpd", method=RequestMethod.POST)
 	public String puUpd(@RequestParam String mmid,@RequestParam String ubookdeposit
-						, @RequestParam String ubookstatus) throws Exception {
+						, @RequestParam String ubookstatus, @RequestParam String pdate){
 		String returnVal = "false";
 		PartyReservationVO vo = new PartyReservationVO();
 	
 		vo.setUbookstatus(ubookstatus);
 		vo.setUbookdeposit(ubookdeposit);
 		vo.setMmid(mmid);
-		
+		vo.setPdate(pdate);
 		System.out.println(vo);
 		System.out.println(mmid + " " +ubookdeposit+ " " + ubookstatus);
-		if(service.puUpd(vo)==1) {
-			returnVal = "true";
+		try {
+			if(service.puUpd(vo)==1) {
+				returnVal = "true";
+				System.out.println(returnVal);
+			}
+			System.out.println("controller start");
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("controller end");
 		}
+		
 		return returnVal;
 	}
 }

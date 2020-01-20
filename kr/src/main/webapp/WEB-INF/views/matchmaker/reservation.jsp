@@ -155,10 +155,8 @@
         		</tr>
         	</thead>
         	
-        	
         	<tbody id="plist" id=po4>
-				
-        	</tbody>
+			</tbody>
       	</table>    
 </body>
 
@@ -202,7 +200,7 @@
 			yy = pad(yy, 4);
 			mm = pad(mm, 2);
 			value = pad(value, 2);
-			pDate = yy+""+mm+""+value;
+			pDate = yy+''+mm+''+value;
 			console.log(pDate);
 			
 			$.ajax({
@@ -238,11 +236,8 @@
 		        				htmls +=  "<td id=po8><select name ='ubookdeposit' >"
 	        						 	 +"<option value='N'>입금 확인X</option>"
 	        						 	 +"<option value='Y'>입금 확인O</option></select></td>";
-	        						 	 
-	        				 	
-	    		        		
 	    		        				
-		        				htmls += "<td class=po9><button type='button' onclick=regInfo('"+this.mmid+"',this);>수정</button></td>";
+		        				htmls += "<td class=po9><button type='button' onclick=regInfo('"+this.mmid+"',this,'"+this.pdate.split("-")[0]+""+this.pdate.split("-")[1]+""+this.pdate.split("-")[2].split(" ")[0]+"');>수정</button></td>";
 		      					htmls += "</tr>";
 		      					$("#plist").append(htmls);
 		      					
@@ -266,7 +261,8 @@
 		      }); //Ajax end
 		}
 	});
-	function regInfo(mmid,self){
+	
+	function regInfo(mmid,self,date){
 		var ubookstatus = $(self).parent().prev().find("option:selected").val();
 		var ubookdeposit = $(self).parent().prev().prev().find("option:selected").val();
 		//alert(ubookstatus+"/"+ubookdeposit);
@@ -279,17 +275,18 @@
 
 		        data: {"ubookstatus":ubookstatus, 
 		        	   "ubookdeposit":ubookdeposit,
-		        	   "mmid":mmid},
+		        	   "mmid":mmid,
+		        	   "pdate":date},
 
 		        success: function(data){
 		        	console.log(data);
 		        	if(data!="false"){ 
 		        		data='Y'
 		        		location.reload();
-			       		//alert("수정 성공했습니다");
+			       		alert("수정 성공 !!!!");
 		        	}else{
 		        		data='N'
-		        		//alert("수정 실패했습니다");
+		        		alert("수정 실패 !!!!");
 		        		location.reload();
 		        	}
 		        },

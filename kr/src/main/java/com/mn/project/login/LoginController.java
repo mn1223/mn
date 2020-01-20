@@ -169,7 +169,7 @@ public class LoginController {
 	public String gomypage(Model model,Principal principal) throws Exception{
 		LoginVO loginVO = new LoginVO();
 		loginVO.setMmid(principal.getName());
-		
+		System.out.println(principal.getName());
 		LoginVO tt = service.select(loginVO);
 		FriendVO friendVO = service.getSchoolInfo(loginVO);
 		model.addAttribute("userInfo",tt);

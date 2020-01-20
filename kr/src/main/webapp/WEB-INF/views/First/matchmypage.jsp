@@ -319,7 +319,6 @@ $(document).on('click', '#btndelete', function() {
 	<br>
 	<h2>회원 정보</h2>
 <div id="inform">
-
 		<div>
 			<label>이름:</label><c:out value="${userInfo.mmname}"/>
 		</div>
@@ -419,6 +418,42 @@ $(document).on('click', '#btndelete', function() {
 	<hr>
 	<br> 1:1문의 및 대학교 인증<br>
 	<a href="/board/getBoardListFour">문의게시판 이동</a>
+	<br>
+	<br>
+	<hr>
+	<h2>실시간 예약 현황</h2>
+	 <table border="1">
+        	<colgroup>
+				<col style="width: 10%;" />
+				<col style="width: 10%;" />
+				<col style="width: 10%;" />
+				<col style="width: 10%;" />
+				<col style="width: 10%;" />
+			</colgroup>
+			
+			<thead id=po3>
+        		<tr>
+        			<th>파티번호</th>
+	        		<th>파티일자</th>
+	        		<th>입금상태</th>
+	        		<th>예약상태</th>
+	        		<th id=rCancel>예약취소</th>
+        		</tr>
+        	</thead>
+        	
+        	<tbody id="uInfo">
+        	
+			</tbody>
+      	</table>    
+      	
+      	<script>
+      		$("#rCancel").on("click",function(){
+      			alert("삭제버튼입니다.");
+      		});
+      	
+      	</script>
+	
+	
 	
 	
 	<!-- 학교 찾기 modal -->

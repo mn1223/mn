@@ -190,7 +190,7 @@
 		</div>
 		<!-- search{e} -->
 		<!-- footer{s} -->
-			
+		<jsp:include page="/WEB-INF/views/view/footer.jsp"></jsp:include>
 		<!-- footer{e} -->		
 		</div>
 		

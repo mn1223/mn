@@ -70,10 +70,6 @@
 
 
 <style>
-body {
-	padding-top: 70px;
-	padding-bottom: 30px;
-}
 
 .contents img { max-width:600px; height:auto; }
 </style>

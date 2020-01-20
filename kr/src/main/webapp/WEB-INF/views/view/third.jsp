@@ -114,14 +114,14 @@
 		<div class="col-sm-9 main-section">
 			<div class="modal-content">
 				<div class="col-12 user-img">
-					<img src="resources/img/matchmaker.png">
+					<img src="/resources/img/face.png">
 				</div>
 
 				<div class="col-12 form-input">
 					<form:form name="f" action="${loginUrl}" method="POST"
 						modelAttribute="LoginVO">
 						<c:if test="${param.error != null}">
-							<p>아이디와 비밀번호가 잘못되었습니다.</p>
+							<p style="color:red">아이디와 비밀번호가 잘못되었습니다.</p>
 						</c:if>
 						<c:if test="${param.logout != null}">
 							<p>로그아웃 하였습니다.</p>

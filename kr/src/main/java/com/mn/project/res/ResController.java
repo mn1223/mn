@@ -1,5 +1,6 @@
 package com.mn.project.res;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,8 +20,9 @@ public class ResController {
 
 
 	@RequestMapping(value="/user", method= RequestMethod.GET)
-	public String pIns(Model model) throws Exception {
+	public String pIns(Model model,Principal principal) throws Exception {
 		model.addAttribute("tbook", service.pSearch());
+		model.addAttribute("myid",principal.getName());
 		return "user/user";
 	}
 
@@ -55,6 +57,15 @@ public class ResController {
 		
 		System.out.println(vo);
 		return returnVal;
+	}
+	
+	//실시간 예약 현황
+	@ResponseBody
+	@RequestMapping(value="/uInfo", method=RequestMethod.POST)
+	public List<ResVO> uInfo(@RequestParam("ubookmmid") String ubookmmid) throws Exception {
+		List<ResVO> list = null;
+		
+		return list;
 	}
 
 }

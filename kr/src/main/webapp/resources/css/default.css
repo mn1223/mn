@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: inherit;
+}
+
+table {
+	border-spacing: 0
+}
+
+body {
+	background: white;
+}
+
+html {
+	font-size: 100px
+}
+
+div.base {
+	width: 8.4rem;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	background: white;
+}
+
+
+
+
+
+
+
+
+
+
+div.base div.main button:first-child {
+	float: left;
+}
+
+div.base div.main button:nth-child(2) {
+	float: right;
+}
+
+div.base div.main button {
+	background: #eee;
+	border:1px solid #bbb;
+	box-shadow: 0 0 11px 5px rgba(0,0,0,0.07);
+	width: 4.06rem;
+	height: 5.90rem;
+	margin: 0.25rem 0 1.65rem 0;
+}
+
+header {
+	text-align: right;
+	height: 1.6rem;
+	width: 100%;
+}
+
+header table {
+	height: 0.25rem;
+	width: 28%;
+	font-size: 0.12rem;
+	line-height: 0.25rem;
+	margin-left: 72%;
+}
+
+header div.logo {
+	height: 1.35rem;
+	text-align: center;
+	font-size: 0.6rem;
+	line-height: 1.35rem;
+	width: 100%;
+}

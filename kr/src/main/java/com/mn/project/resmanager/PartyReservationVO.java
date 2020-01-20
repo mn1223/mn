@@ -1,5 +1,6 @@
 package com.mn.project.resmanager;
 
+
 public class PartyReservationVO {
 	private String mmname;
 	private String mmid;

@@ -60,10 +60,7 @@ src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js">
 
 
 <style>
-body {
-	padding-top: 70px;
-	padding-bottom: 30px;
-}
+
 </style>
 </head>
 <body>

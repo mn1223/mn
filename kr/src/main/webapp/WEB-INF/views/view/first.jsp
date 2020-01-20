@@ -8,6 +8,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<script type="text/javascript" src="/resources/fontawesome/js/all.js"></script>
+<link rel="stylesheet" href="/resources/css/default.css" type="text/css">
 <title>1번째</title>
 </head>
 <body>
@@ -31,94 +33,38 @@
 							<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><input type="submit" value="로그아웃" /></td>
+							<td><a href="/matchmaker/managermain">관리자 페이지</a></td>
 						</form:form>
 					</tr>
-
-
-					<div class="logo">
+				</sec:authorize>
+			</table>
+			<div class="logo">
 						로고
 						<!-- <img alt="로고" src=""> -->
 					</div>
-					<td><a style="visibility: hidden;">공간띄기</a></td>
-					<td><a style="visibility: hidden;">공간띄기</a></td>
-					<td><a href="/managermain"></a></td>
-			
-			</sec:authorize>
-			</table>
 		</header>
 		<div class="main">
 			<button style="cursor: pointer;" onclick="location.href='/mmmain'">
-				<img alt="매치 메이커" src="resources/img/matchmaker.png"> <br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />메치 메이커<br />(페이지 이동)
+				<div style="height:178px;position:relative;">
+				<img alt="매치 메이커" src="resources/img/matchmaker.png" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"> <br />
+				</div>
+				메치 메이커<br />
+				(페이지 이동)
 			</button>
 			<button style="cursor: pointer;" onclick="location.href='/nfmain'">
-				<img alt="반갑다 친구야" src="resources/img/nicemeetyou.png"> <br />반갑다
-				친구야<br />(페이지 이동)
+				<div style="height:178px;position:relative;">
+				<img alt="반갑다 친구야" src="resources/img/nicemeetyou.png" style="height:178px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+				</div>
+				반갑다 친구야<br />
+				(페이지 이동)
 			</button>
 		</div>
-		<footer>
-			<table>
-				<tr>
-					<td><a>회사소개</a></td>
-					<td><a>개인정보취급방침</a></td>
-					<td><a>서비스약관</a></td>
-					<td><a>제휴문의</a></td>
-					<td><a>이메일수집거부</a></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td><a>로고</a></td>
-					<td><a>주소</a><br /> <a>카피라이트</a></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-		</footer>
+		<jsp:include page="/WEB-INF/views/view/footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>
 <style>
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	background: none;
-	color: inherit;
-}
 
-table {
-	border-spacing: 0
-}
-
-body {
-	background: white;
-}
-
-html {
-	font-size: 100px
-}
-
-div.base {
-	width: 8.4rem;
-	min-height: 100%;
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translate(-50%);
-	background: white;
-}
 
 div.base div.main button:first-child {
 	float: left;
@@ -129,7 +75,9 @@ div.base div.main button:nth-child(2) {
 }
 
 div.base div.main button {
-	background: #2EFEF7;
+	background: #eee;
+	border:1px solid #bbb;
+	box-shadow: 0 0 11px 5px rgba(0,0,0,0.07);
 	width: 4.06rem;
 	height: 5.90rem;
 	margin: 0.25rem 0 1.65rem 0;
@@ -157,6 +105,7 @@ header div.logo {
 	width: 100%;
 }
 
+
 footer table {
 	position: absolute;
 	top: 50%;
@@ -170,32 +119,11 @@ footer table tr td:last-child {
 	width: 40%;
 }
 
-footer
- 
-table
- 
-tr
- 
-td
-:not
- 
-(
-:last-child
- 
-){
-width
-:
- 
-12%;
-font-size
-:
- 
-0
-.12rem
-;
-
-
+footer table tr td:not(:last-child){
+width:12%;
+font-size: 0.12rem;
 }
+
 footer table tr:first-child td:not (:last-child ), footer table tr:nth-child(2) td:first-child
 	{
 	text-align: center;
@@ -215,4 +143,5 @@ footer {
 	height: 1.4rem;
 	width: 100%;
 }
+
 </style>

@@ -116,6 +116,7 @@ ul,li{list-style:none;}
 #pos2:checked ~ .bullet label:nth-child(2),
 #pos3:checked ~ .bullet label:nth-child(3),
 #pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+
 table {
 	border-spacing: 0
 }

@@ -36,5 +36,5 @@
  		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" /> 
 	</bean>
 	
-	<context:component-scan base-package="com.mn.project" />
+	
 </beans>

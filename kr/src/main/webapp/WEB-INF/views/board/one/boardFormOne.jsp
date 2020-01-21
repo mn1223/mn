@@ -81,11 +81,10 @@ src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js">
 
 				<div class="mb-3">
 					<label for="bommid">작성자</label>
-					<form:input path="bommid" id="bommid" class="form-control"
-						placeholder="이름을 입력해 주세요" />
+					<form:input path="bommid" id="bommid" class="form-control" placeholder="이름을 입력해 주세요" value="${myid }" readonly="true"/>
 				</div>
 
-				<div class="mb-3">
+				<div class="mb-3"> 
 					<label for="contents">내용</label>
 					<form:textarea path="contents" id="contents" name="contents" class="form-control"
 						rows="5" placeholder="내용을 입력해 주세요" /> 

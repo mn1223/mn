@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 <%-- fontawesome script --%>
 <script type="text/javascript" src="/resources/fontawesome/js/all.js"></script>	
@@ -42,8 +45,29 @@
       </div>
       <div id="btnMenu">
       	<div id="btnMenuIn">
-          <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+      	          	<sec:authorize access="isAnonymous()">
+				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
+			</sec:authorize>
+
+			<sec:authorize access="isAuthenticated()">
+          		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
+          		<c:set var="name" value="${admin }" />
+
+				<c:choose>
+					<c:when test="${name eq 'admin@naver.com'}">
+        			
+	
+						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>
+					
+   	 				</c:when>
+
+					<c:otherwise>
+     						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/friendmypage">마이페이지</a>
+					 </c:otherwise>
+				</c:choose>
+			</sec:authorize>
+          		
         </div>
       </div>
     </div>    
@@ -54,7 +78,7 @@
 	<div id="menu1" >
 		<ul>
 			 <li><a href="${pageContext.request.contextPath}/search">친구찾기</a></li>
-			 <li><a href="${pageContext.request.contextPath}/chatList">채팅목록</a></li>
+			 <li><a href="${pageContext.request.contextPath}/chatList">친구목록</a></li>
 			 <li><a href="${pageContext.request.contextPath}/board/getBoardListSix">Q&A</a></li>
 	    </ul>
 	</div>	

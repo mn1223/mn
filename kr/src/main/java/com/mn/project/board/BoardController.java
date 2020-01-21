@@ -1,6 +1,8 @@
 package com.mn.project.board;
 
 
+import java.security.Principal;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -73,8 +75,10 @@ public class BoardController {
 
 	//게시글 작성(1번 게시판)
 	@RequestMapping(value="/boardFormOne", method=RequestMethod.GET)
-	public String boardFormOne(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+	public String boardFormOne(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		
+		model.addAttribute("myid",principal.getName());
+		
 		return "board/one/boardFormOne";
 	}
 
@@ -95,8 +99,10 @@ public class BoardController {
 
 	//게시글 내용 상세보기(1번 게시판)
 	@RequestMapping(value = "/getBoardContentOne", method = RequestMethod.GET)
-	public String getBoardContentOne(Model model,@RequestParam("bno") int bno) throws Exception {
-
+	public String getBoardContentOne(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		
+		model.addAttribute("myid",principal.getName());
+		
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -160,8 +166,9 @@ public class BoardController {
 
 	//게시글 작성(2번 게시판)
 	@RequestMapping(value="/boardFormTwo", method=RequestMethod.GET)
-	public String boardFormTwo(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+	public String boardFormTwo(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
+	
 		return "board/two/boardFormTwo";
 	}
 
@@ -182,8 +189,9 @@ public class BoardController {
 
 	//게시글 내용 상세보기(2번 게시판)
 	@RequestMapping(value = "/getBoardContentTwo", method = RequestMethod.GET)
-	public String getBoardContentTwo(Model model,@RequestParam("bno") int bno) throws Exception {
-
+	public String getBoardContentTwo(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
+		
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -247,8 +255,10 @@ public class BoardController {
 
 	//게시글 작성(3번 게시판)
 	@RequestMapping(value="/boardFormThree", method=RequestMethod.GET)
-	public String boardFormThree(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+	public String boardFormThree(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		
+		model.addAttribute("myid",principal.getName());
+		
 		return "board/three/boardFormThree";
 	}
 
@@ -269,8 +279,8 @@ public class BoardController {
 
 	//게시글 내용 상세보기(3번 게시판)
 	@RequestMapping(value = "/getBoardContentThree", method = RequestMethod.GET)
-	public String getBoardContentThree(Model model,@RequestParam("bno") int bno) throws Exception {
-
+	public String getBoardContentThree(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -338,8 +348,8 @@ public class BoardController {
 
 	//게시글 작성(4번 게시판)
 	@RequestMapping(value="/boardFormFour", method=RequestMethod.GET)
-	public String boardFormFour(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+	public String boardFormFour(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
 		return "board/four/boardFormFour";
 	}
 
@@ -360,8 +370,8 @@ public class BoardController {
 
 	//게시글 내용 상세보기(4번 게시판)
 	@RequestMapping(value = "/getBoardContentFour", method = RequestMethod.GET)
-	public String getBoardContentFour(Model model,@RequestParam("bno") int bno) throws Exception {
-
+	public String getBoardContentFour(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -424,8 +434,8 @@ public class BoardController {
 
 	//게시글 작성(5번 게시판)
 	@RequestMapping(value="/boardFormFive", method=RequestMethod.GET)
-	public String boardFormFive(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+	public String boardFormFive(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
 		return "board/five/boardFormFive";
 	}
 
@@ -446,8 +456,8 @@ public class BoardController {
 
 	//게시글 내용 상세보기(5번 게시판)
 	@RequestMapping(value = "/getBoardContentFive", method = RequestMethod.GET)
-	public String getBoardContentFive(Model model,@RequestParam("bno") int bno) throws Exception {
-
+	public String getBoardContentFive(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -510,8 +520,8 @@ public class BoardController {
 
 		//게시글 작성(6번 게시판)
 		@RequestMapping(value="/boardFormSix", method=RequestMethod.GET)
-		public String boardFormSix(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception {
-
+		public String boardFormSix(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+			model.addAttribute("myid",principal.getName());
 			return "board/six/boardFormSix";
 		}
 
@@ -532,8 +542,8 @@ public class BoardController {
 
 		//게시글 내용 상세보기(6번 게시판)
 		@RequestMapping(value = "/getBoardContentSix", method = RequestMethod.GET)
-		public String getBoardContentSix(Model model,@RequestParam("bno") int bno) throws Exception {
-
+		public String getBoardContentSix(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+			model.addAttribute("myid",principal.getName());
 			//내용 출력
 			model.addAttribute("boardContent", service.getBoardContent(bno));
 

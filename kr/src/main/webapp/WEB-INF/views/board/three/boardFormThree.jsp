@@ -94,7 +94,7 @@
 				<div class="mb-3">
 					<label for="bommid">작성자</label>
 					<form:input path="bommid" id="bommid" class="form-control"
-						placeholder="이름을 입력해 주세요" />
+						value ="${myid }" placeholder="이름을 입력해 주세요" readonly="true"/>
 				</div>
 
 				<div class="mb-3">

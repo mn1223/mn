@@ -10,9 +10,15 @@
 <head>
 <script type="text/javascript" src="/resources/fontawesome/js/all.js"></script>
 <link rel="stylesheet" href="/resources/css/default.css" type="text/css">
+
 <title>1번째</title>
 </head>
 <body>
+	<div>
+	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; float:left;">
+	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; margin-left: 270px; float:left;">	
+	</div>	
+	
 	<div class="base">
 		<header>
 			<table>
@@ -20,27 +26,33 @@
 					<tr>
 						<td><a style="visibility: hidden;">공간띄기</a></td>
 						<td><a style="visibility: hidden;">공간띄기</a></td>
-						<td><a href="/login/loginForm">로그인</a></td>
-						<td><a href="/signup">회원가입</a></td>
+						
+						<!-- <td><a href="/login/loginForm">로그인</a></td> -->
+						<!-- <td><a href="/signup">회원가입</a></td> -->
+						
+						<td>
+						<button id="login" type="button" 
+								onclick="location.href='${pageContext.request.contextPath}/login/loginForm'">로그인</button>
+						</td>						
+						<td><button id="signUp" type="button" onclick="location.href='${pageContext.request.contextPath}/signup'">회원가입</button></td>
 					</tr>
 				</sec:authorize>
 
 				<sec:authorize access="isAuthenticated()">
 					<tr>
-						<form:form action="${pageContext.request.contextPath}/logout"
-							method="POST">
-							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>
+						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+							<td><a style="visibility: hidden;">공간띄기</a></td>							
 							<td><input type="submit" value="로그아웃" /></td>
-							<td><a href="/matchmaker/managermain">관리자 페이지</a></td>
+							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->
+							
+							<td><button type="button" onclick="location.href='${pageContext.request.contextPath}//matchmaker/managermain'">관리자 페이지</button></td>
 						</form:form>
 					</tr>
 				</sec:authorize>
 			</table>
-			<div class="logo">
-						로고
-						<!-- <img alt="로고" src=""> -->
-					</div>
+				<div class="logo">
+					<img alt="로고" src="resources/img/logoMain.png" height="200px" width="auto">
+				</div>
 		</header>
 		<div class="main">
 			<button style="cursor: pointer;" onclick="location.href='/mmmain'">
@@ -63,7 +75,21 @@
 </body>
 </html>
 <style>
+#login{
+	border: 1px solid #fff;
+	background-color: #00B4DB;
+	color: #fff;
+	padding: 5px;	
+	margin-top: 2px;
+}
 
+#signUp{
+	border: 1px solid #fff;
+	background-color: #00B4DB;
+	color: #fff;
+	padding: 5px;
+	margin-top: 2px;
+}
 
 div.base div.main button:first-child {
 	float: left;

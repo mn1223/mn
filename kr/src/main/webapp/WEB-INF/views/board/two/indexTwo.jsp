@@ -192,10 +192,9 @@
 		<!-- search{e} -->
 		
 		<!-- footer{s} -->
-		<div>
-		<jsp:include page="/WEB-INF/views/view/footer.jsp"></jsp:include>
+		
 		<!-- footer{e} -->
-		</div>		
+				
 </div>
 		
 	</article>	

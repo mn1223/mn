@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
+=======
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
@@ -35,9 +40,11 @@
       <div class="col-4 text-center">
         <h1>
         	<a class="blog-header-logo text-dark" href="${pageContext.request.contextPath}/mmmain">
+        		
         		<!-- font awesome{s} -->
       			<i class="fas fa-heart fa-3x" style="color:#FF0000;"></i>
       			<!-- font awesome{e} -->
+      			
         	</a>
         </h1>
       </div>
@@ -79,7 +86,8 @@
 <body>
  <div style="width: 100%; text-align:center;">
 	<div id="menu1" >
-		<ul>
+		<ul> 
+			 <li><a href="${pageContext.request.contextPath}/board/getBoardListOne">공지사항</a></li>
 			 <li><a href="${pageContext.request.contextPath}/user/user">파티참석</a></li>
 			 <li><a href="${pageContext.request.contextPath}/board/getBoardListTwo">서비스 후기</a></li>
 			 <li><a href="${pageContext.request.contextPath}/board/getBoardListThree">Q&A</a></li>
@@ -133,7 +141,7 @@ li{
 
 #menu1 ul li{
 	float:left;
-	width:33%;
+	width:25%;
 	height: auto;
 	line-height: 47px;
 	text-align:center;	

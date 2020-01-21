@@ -1,48 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/WEB-INF/views/layout/headerNF.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.left-box {
-  
-  float: left;
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	showFriendListTrue();
+});
+
+function showFriendListTrue(){
+	var myid = $("#myid").val();
+	
+	var headers = {
+			"Content-Type" : "application/json",
+			"X-HTTP-Method-Override" : "POST"
+		};
+	
+	$.ajax({
+		url : "/getFriendTrue",
+		headers : headers,
+		data : {"myid":myid},
+		dataType:"json",
+		type : "GET",
+		success: function(data){
+			var html = "";
+			$(data).each(function(){
+				html += '<tr>';
+				html += '<th>'+this.mmname+'<th>';
+				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T")>친구 삭제</button><th>';
+				html += '<th><button onclick = gochat("'+this.yourid+'")>채팅 하기</button><th>' 
+				html += '<tr>';
+			});
+			$("#friendTrue").html(html);
+		},
+		
+		error : function(e){
+			alert(e);
+		}
+	});
+	
 }
-.right-box {
-  
-  float: right;
+
+
+function gochat(yourid){
+	location.href = "/chating?myid=${myid}&yourid="+yourid;
 }
-</style>
+
+
+
+</script>
+
 </head>
 <body>
-<div class='left-box'>
-	<h2>친구 목록</h2>
-	<c:choose>
-	
-		<c:when test="${empty list}">
-			<tr>
-				<td colspan="5" align="center">데이터가 없습니다</td>
-			</tr>
-		</c:when>
-		
-		<c:when test="${!empty list}">
-			<c:forEach var ="list" items="${list}">
-				<tr>
-					<td>
-						<c:out value="${list.mmname}"/>
-					</td>
-				</tr>
-			</c:forEach>			
-		</c:when>
-	
-	</c:choose>
+<input type="hidden" id = "myid" value="${myid}">
+<div id ="friendTrue">
+
+
 </div>
-<div class='right-box'>
-	<h2>채팅 목록</h2>
-</div>
+
 </body>
 </html>

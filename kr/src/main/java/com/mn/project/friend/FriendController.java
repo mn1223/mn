@@ -4,6 +4,7 @@ package com.mn.project.friend;
 
 import java.io.File;
 
+
 import java.io.FileReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -53,16 +54,8 @@ public class FriendController  {
 	
 	@RequestMapping(value = "/chatList",method = RequestMethod.GET)
 	public String chatList(Model model,Principal principal) {
-		List<FriendVO> list = null;
-		FriendVO vo = new FriendVO();
-		
-		vo.setMyid(principal.getName());
-		
-		list = friendService.getFriendTrue(vo);
-		
-		System.out.println(list);
-		
-		model.addAttribute("list", list);
+
+		model.addAttribute("myid", principal.getName());
 				
 		return "friends/chatList";
 	}
@@ -122,13 +115,5 @@ public class FriendController  {
 	    model.addAttribute("chatList",sb);
 		    
 		return "friends/chatroom";
-	}
-
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

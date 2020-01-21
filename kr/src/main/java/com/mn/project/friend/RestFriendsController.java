@@ -224,8 +224,7 @@ public class RestFriendsController {
 			 
 			  } catch (Exception e) {
 			   logger.error("CAREER API ERROR", e);
-			  }
-		
+			  }		
 		System.out.println(list);
 		return list;
 	}

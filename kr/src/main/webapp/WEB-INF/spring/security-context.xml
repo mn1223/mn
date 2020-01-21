@@ -12,7 +12,6 @@
     	<csrf disabled="true"/>
     	       
 
-        <intercept-url pattern="/searchData1" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')" />
 
         <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
         <intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />

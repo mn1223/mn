@@ -182,4 +182,55 @@ body {
 	color: #daf1ff;
 }
 </style>
+<<<<<<< HEAD
 </html>
+=======
+</head>
+<body>
+	<c:url value="/login" var="loginUrl" />
+	<div class="modal-dialog text-center">
+		<div class="col-sm-9 main-section">
+			<div class="modal-content">
+				<div class="col-12 user-img">
+					<img src="/resources/img/face.png">
+				</div>
+
+				<div class="col-12 form-input">
+					<form:form name="f" action="${loginUrl}" method="POST"
+						modelAttribute="LoginVO">
+						<c:if test="${param.error != null}">
+							<p style="color:red">탈퇴한 회원이거나 아이디와 비밀번호가 잘못되었습니다.</p>
+						</c:if>
+						<c:if test="${param.logout != null}">
+							<p>로그아웃 하였습니다.</p>
+						</c:if>
+						<div class="form-group">
+							<input type="text" id="mmid" name="mmid" class="form-control"
+								placeholder="Enter Email">
+						</div>
+						<div class="form-group">
+							<input type="password" id="mmpwd" name="mmpwd" class="form-control"
+								placeholder="Enter Password">
+						</div>
+
+						<button type="submit" class="btn btn-success">로그인</button>
+					</form:form>
+
+				</div>
+
+				<div class="col-12 forgodid">
+					<a href="/idfind">아이디를 잊어버리셨나요?</a>
+				</div>
+
+				<div class="col-12 forgotpwd">
+					<a href="/pwfind">비밀번호를 잊어버리셨나요?</a>
+				</div>
+				<div class="col-12 forgotpwd">
+					<a href="/signup">회원가입</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git

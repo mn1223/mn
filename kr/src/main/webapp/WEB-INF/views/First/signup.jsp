@@ -178,6 +178,8 @@ body {
   max-width: 600px;
   padding: 15px;
   margin: 0 auto;
+  background-color: rgb(232 217 255);
+  boarder-radius:10px;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -215,5 +217,6 @@ background-image: linear-gradient(to bottom,#337ab7 0,#792688 100%);
 .btn-block {
     display: block;
     width: 50%; 
+
 }
 </style>

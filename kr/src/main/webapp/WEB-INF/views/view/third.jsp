@@ -26,7 +26,7 @@
 </head>
 <div>
 <a href="${pageContext.request.contextPath}/">
-<img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:860px; margin-top:50px;" >
+<img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:970px; margin-top:50px;" >
 </a>
 </div>
 
@@ -58,11 +58,6 @@
 
 						<button type="submit" class="btn btn-success">로그인</button>
 					</form:form>
-
-				
-					
-				
-					
 
 				</div>
 				<br/>
@@ -182,5 +177,9 @@ body {
 	color: #daf1ff;
 }
 </style>
+<<<<<<< HEAD
+</html>
+=======
 
 </html>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git

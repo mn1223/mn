@@ -132,11 +132,20 @@
 				</table>
 			</div>
 			<div>
+				<c:set var ="name" value ="${myid }"/>
+				<c:choose>
+				<c:when test="${name eq 'admin@naver.com'}">
 				<button type="button" class="btn btn-sm btn-primary"
 					id="btnWriteForm">글쓰기</button>
-			
 				<button type="button" class="btn btn-sm btn-primary"
 					id="btnlistForm">목록</button>
+				</c:when>
+				<c:otherwise>
+					<button type="button" class="btn btn-sm btn-primary"
+					id="btnlistForm">목록</button>
+				</c:otherwise>
+					
+				</c:choose>
 			</div>
 			<br />			
 

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
@@ -45,14 +46,29 @@
           	
           	<sec:authorize access="isAnonymous()">
 				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
-				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>
-				
+				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
 			</sec:authorize>
 
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
-          	</sec:authorize>
+          		<c:set var="name" value="${admin }" />
+
+				<c:choose>
+					<c:when test="${name eq 'admin@naver.com'}">
+        			
+	
+						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>
+					
+   	 				</c:when>
+
+					<c:otherwise>
+     						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+					 </c:otherwise>
+				</c:choose>
+			</sec:authorize>
+          		
+          	
+
           	
         </div>
         

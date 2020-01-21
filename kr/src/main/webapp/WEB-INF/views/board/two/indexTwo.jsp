@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -189,10 +190,13 @@
 			</div>			
 		</div>
 		<!-- search{e} -->
+		
 		<!-- footer{s} -->
-			
-		<!-- footer{e} -->		
-		</div>
+		<div>
+		<jsp:include page="/WEB-INF/views/view/footer.jsp"></jsp:include>
+		<!-- footer{e} -->
+		</div>		
+</div>
 		
 	</article>	
 </body>

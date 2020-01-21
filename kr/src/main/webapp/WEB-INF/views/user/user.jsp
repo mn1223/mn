@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import ="java.util.Calendar"%>
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/views/layout/header.jsp"%>
+
 <%
 	Calendar cal = Calendar.getInstance();
 	int yy = cal.get(Calendar.YEAR); 
@@ -263,7 +265,7 @@ function pad(n, width) {
 					      				alert("이미 파티 신청을 한 상태입니다.");
 					      			}
 					        		if(data!="false"){
-					        			//alert("파티 신청 성공!!!!!");
+					        			alert("파티 신청 성공!!!!!");
 					        			$("#"+value+" div").remove();
 					        			$(".btn.btn-secondary").trigger("click");
 					        			location.reload();

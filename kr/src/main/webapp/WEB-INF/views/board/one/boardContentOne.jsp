@@ -5,6 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -244,9 +245,20 @@
 			</div>
 
 			<div style="margin-top: 20px">
-				<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">수정</button>
-				<button type="button" class="btn btn-sm btn-primary" id="btnDelete">삭제</button>
-				<button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+			<c:set var ="name" value="${myid }"/>
+			<c:set var ="bname" value="${boardContent.bommid}"/>
+			<c:choose>
+				<c:when test="${name == bname }">
+					<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">수정</button>
+					<button type="button" class="btn btn-sm btn-primary" id="btnDelete">삭제</button>
+					<button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>				
+				</c:when>
+				
+				<c:otherwise>
+					<button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+				</c:otherwise>
+			</c:choose>
+			
 			</div>
 			
 			<!-- Reply Form {s} -->

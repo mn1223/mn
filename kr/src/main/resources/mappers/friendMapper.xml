@@ -63,7 +63,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	from scname
 	<trim prefix="WHERE" prefixOverrides="AND|OR">							
 		<if test="searchType=='us' and mmname != null and mmname != '' ">
-			and mmname like '%' || #{mmname} || '%' and uschool like '%' || #{uschool} || '%' and mmgrade ='N';
+			and mmname like '%' || #{mmname} || '%' and uschool like '%' || #{uschool} || '%' and mmgrade ='N'
 		</if>	
 		<if test="searchType=='us' and uschool != null and uschool != '' ">
 			and uschool like '%' || #{uschool} || '%' and mmgrade ='N'

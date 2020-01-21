@@ -12,7 +12,6 @@
     	<csrf disabled="true"/>
     	       
 
-        <intercept-url pattern="/searchData1" access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')" />
 
         <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
         <intercept-url pattern="/matchmypage" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
@@ -21,9 +20,11 @@
         
         <intercept-url pattern="/board/boardFormThree" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
         <intercept-url pattern="/board/boardFormTwo" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
-		<intercept-url pattern="/board/getBoardListFive" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
 		<intercept-url pattern="/chatList" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
 		<intercept-url pattern="/search" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/board/boardFormSix" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		<intercept-url pattern="/board/getBoardContentSix" access="hasAnyRole('ROLE_USER','ROLE_MEMBER','ROLE_ADMIN')" />
+		
 		
 		
 		

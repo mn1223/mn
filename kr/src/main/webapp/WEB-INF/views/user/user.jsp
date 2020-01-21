@@ -263,7 +263,7 @@ function pad(n, width) {
 					      				alert("이미 파티 신청을 한 상태입니다.");
 					      			}
 					        		if(data!="false"){
-					        			//alert("파티 신청 성공!!!!!");
+					        			alert("파티 신청 성공!!!!!");
 					        			$("#"+value+" div").remove();
 					        			$(".btn.btn-secondary").trigger("click");
 					        			location.reload();

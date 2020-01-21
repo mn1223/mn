@@ -1,33 +1,13 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <<<<<<< HEAD
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 =======
-
-<<<<<<< HEAD
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-=======
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 >>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
@@ -53,10 +33,15 @@
 
 <!--메뉴바 추가 부분-->
 
-<header class="blog-header py-3">
+<header class="blog-header py-3" style="height: 155px; weight: auto;">
     <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 pt-1">        
+      <div class="col-4 pt-1">
+      
+      <a href="${pageContext.request.contextPath}/">
+      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:400px; float:left;">
+      </a>
       </div>
+      
       <div class="col-4 text-center">
         <h1>
         	<a class="blog-header-logo text-dark" href="${pageContext.request.contextPath}/mmmain">
@@ -67,10 +52,13 @@
       			
         	</a>
         </h1>
-      </div>
+      </div>      
       <div id="btnMenu">
       	<div id="btnMenuIn">
 <<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
           	
           	<sec:authorize access="isAnonymous()">
 				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
@@ -94,9 +82,12 @@
 					 </c:otherwise>
 				</c:choose>
 			</sec:authorize>
-=======
+<<<<<<< HEAD
+
           <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
           <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+
+=======
 >>>>>>> branch 'master' of https://github.com/mn1223/mn.git
         </div>
       </div>
@@ -175,13 +166,4 @@ li{
 	color:#fff;
 	background:#2478FF;	
 }
-</style>     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</style>

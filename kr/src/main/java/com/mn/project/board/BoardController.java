@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mn.project.reply.ReplyVO;
+import com.mn.project.util.SessionClass;
 
 @Controller
 @RequestMapping(value="/board")
@@ -49,9 +50,14 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search			
-			) throws Exception {
-
+			@ModelAttribute("search") Search search,			
+			Principal principal) throws Exception {
+		
+		try {
+		model.addAttribute("myid",principal.getName());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
 		//검색
 		model.addAttribute("search", search);
@@ -70,15 +76,18 @@ public class BoardController {
 		//게시글 화면 출력
 		model.addAttribute("boardList", service.getBoardListOne(search));
 		return "board/one/indexOne";
-
 	}
 
 	//게시글 작성(1번 게시판)
 	@RequestMapping(value="/boardFormOne", method=RequestMethod.GET)
 	public String boardFormOne(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
-		
+		try {
 		model.addAttribute("myid",principal.getName());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
+
 		return "board/one/boardFormOne";
 	}
 
@@ -100,9 +109,13 @@ public class BoardController {
 	//게시글 내용 상세보기(1번 게시판)
 	@RequestMapping(value = "/getBoardContentOne", method = RequestMethod.GET)
 	public String getBoardContentOne(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
-		
+		try {
+	
 		model.addAttribute("myid",principal.getName());
-		
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));
 
@@ -190,7 +203,13 @@ public class BoardController {
 	//게시글 내용 상세보기(2번 게시판)
 	@RequestMapping(value = "/getBoardContentTwo", method = RequestMethod.GET)
 	public String getBoardContentTwo(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
-		model.addAttribute("myid",principal.getName());
+		try {
+			
+			model.addAttribute("myid",principal.getName());
+
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		
 		//내용 출력
 		model.addAttribute("boardContent", service.getBoardContent(bno));

@@ -41,9 +41,9 @@ public class LoginController {
 	private SessionClass session;
 	
 	@RequestMapping(value = "/login/loginForm", method = RequestMethod.GET)
-	public String loginFor(Locale locale, Model model,HttpServletRequest req) {
+	public String loginFor(Locale locale, Model model,HttpServletRequest req,Principal principal) {
 		logger.info("Welcome Login Form!");
-		session.getSessionId(req);
+
 		
 		return "view/third";
 	}

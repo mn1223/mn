@@ -25,10 +25,15 @@
 
 <!--메뉴바 추가 부분-->
 
-<header class="blog-header py-3">
+<header class="blog-header py-3" style="height: 155px; weight: auto;">
     <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 pt-1">        
+      <div class="col-4 pt-1">
+      
+      <a href="${pageContext.request.contextPath}/">
+      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:400px; float:left;">
+      </a>
       </div>
+      
       <div class="col-4 text-center">
         <h1>
         	<a class="blog-header-logo text-dark" href="${pageContext.request.contextPath}/mmmain">
@@ -39,7 +44,7 @@
       			
         	</a>
         </h1>
-      </div>
+      </div>      
       <div id="btnMenu">
       	<div id="btnMenuIn">
 
@@ -143,13 +148,4 @@ li{
 	color:#fff;
 	background:#2478FF;	
 }
-</style>     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</style>

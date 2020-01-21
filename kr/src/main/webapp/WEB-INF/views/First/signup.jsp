@@ -1,27 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-    
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
+
+<html lang="en">
+  <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
-$('#myModal').on('shown.bs.modal', function () {
-	  $('#myInput').focus()
-	})
-</script>
-<script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+  
+    <title>Signin Template for Bootstrap</title>
+
+ 
+  </head>
+<script>
 	$(document).ready(function(){
 		$('#box').change(function() {
 			if($(this).val()=="1"){
@@ -108,13 +113,15 @@ $('#myModal').on('shown.bs.modal', function () {
 	});	
 </script>
 </head>
-<body>
-	<form method="get" id ="form" name="form" onsubmit="return checkpwd()"
+  <body>
+    <div class="container">
+      <form class="form-signin" method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
-		<div>
+        <h2 class="form-signin-heading">Please sign in</h2>
+      <div>
 			<label>이름</label> <input type="text" id="mmname" name="mmname" />
 		</div>
-		<div id="divInputId">
+	<div id="divInputId">
 			<label>아이디(4~8자의 영문 대소문자와 숫자로만 입력)</label><br> 
 			<input type="text" id="mmid" name="mmid"/> @ 
 			<input type="text" id="mmid2" name="mmid2"/>
@@ -153,9 +160,60 @@ $('#myModal').on('shown.bs.modal', function () {
 		<div>
 			<label>질문대답</label> <input type="text" id="mma" name="mma" />
 		</div>
-	</form>
-	<div style="margin-top: 10px">
-			<button type="button" id="btnSignup">가입하기</button>
-	</div>
-</body>
+		<br>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignup">가입하기</button>
+      </form>
+
+    </div> <!-- /container -->
+  </body>
 </html>
+<style>
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ddd;
+}
+
+.form-signin {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-primary{
+background-image: linear-gradient(to bottom,#337ab7 0,#792688 100%);
+ border-color:#792688;
+}
+.btn-block {
+    display: block;
+    width: 50%; 
+}
+</style>

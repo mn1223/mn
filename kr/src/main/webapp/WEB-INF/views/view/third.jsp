@@ -121,7 +121,7 @@
 					<form:form name="f" action="${loginUrl}" method="POST"
 						modelAttribute="LoginVO">
 						<c:if test="${param.error != null}">
-							<p style="color:red">아이디와 비밀번호가 잘못되었습니다.</p>
+							<p style="color:red">탈퇴한 회원이거나 아이디와 비밀번호가 잘못되었습니다.</p>
 						</c:if>
 						<c:if test="${param.logout != null}">
 							<p>로그아웃 하였습니다.</p>
@@ -137,11 +137,6 @@
 
 						<button type="submit" class="btn btn-success">로그인</button>
 					</form:form>
-
-				
-					
-				
-					
 
 				</div>
 

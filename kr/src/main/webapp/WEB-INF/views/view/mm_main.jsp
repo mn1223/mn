@@ -5,6 +5,8 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/WEB-INF/views/layout/header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,12 +24,9 @@ div.logo {
 </style>
 </head>
 <body>
-<div class="logo">
-						로고
-						<!-- <img alt="로고" src=""> -->
-</div>
-	<h1>메치메이커 메인</h1>
+	<!-- <h1>메치메이커 메인</h1> -->
 	<header>
+	<!-- 
 		<table>
 			<sec:authorize access="isAnonymous()">
 				<tr>
@@ -65,11 +64,14 @@ div.logo {
 				</c:choose>
 			</sec:authorize>
 		</table>
+			 -->
 	</header>
 
-	<a href="/user/user">파티참석</a>
-	<a href="/board/getBoardListTwo">서비스 후기</a>
-	<a href="/board/getBoardListThree">Q&A</a>
+	
+	<div>
+	<jsp:include page="/WEB-INF/views/view/footer.jsp"></jsp:include>
+	</div>
+
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
@@ -40,9 +42,20 @@
       </div>
       <div id="btnMenu">
       	<div id="btnMenuIn">
-          <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+          	
+          	<sec:authorize access="isAnonymous()">
+				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>
+				
+			</sec:authorize>
+
+			<sec:authorize access="isAuthenticated()">
+          		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
+          		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+          	</sec:authorize>
+          	
         </div>
+        
       </div>
     </div>    
   </header>

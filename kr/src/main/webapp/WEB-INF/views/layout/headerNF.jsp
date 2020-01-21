@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>	
 	
 <%-- fontawesome script --%>
 <script type="text/javascript" src="/resources/fontawesome/js/all.js"></script>	
@@ -42,8 +44,19 @@
       </div>
       <div id="btnMenu">
       	<div id="btnMenuIn">
+      	<sec:authorize access="isAuthenticated()">
           <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
           <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
+          </sec:authorize>
+          			<sec:authorize access="isAnonymous()">
+				<tr>
+					<td><a style="visibility: hidden;">공간띄기</a></td>
+					<td><a style="visibility: hidden;">공간띄기</a></td>
+					<td><a href="/login/loginForm">로그인</a></td>
+					<td><a href="/signup">회원가입</a></td>
+			
+				</tr>
+			</sec:authorize>
         </div>
       </div>
     </div>    

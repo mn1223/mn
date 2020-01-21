@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import ="java.util.Calendar"%>
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/views/layout/header.jsp"%>
+
 <%
 	Calendar cal = Calendar.getInstance();
 	int yy = cal.get(Calendar.YEAR); 

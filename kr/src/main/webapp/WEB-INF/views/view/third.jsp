@@ -182,10 +182,6 @@ body {
 	color: #daf1ff;
 }
 </style>
-<<<<<<< HEAD
-</html>
-=======
-</head>
 <body>
 	<c:url value="/login" var="loginUrl" />
 	<div class="modal-dialog text-center">
@@ -233,4 +229,3 @@ body {
 	</div>
 </body>
 </html>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git

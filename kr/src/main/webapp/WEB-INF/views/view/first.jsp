@@ -31,8 +31,7 @@
 						<!-- <td><a href="/signup">회원가입</a></td> -->
 						
 						<td>
-						<button id="login" type="button" 
-								onclick="location.href='${pageContext.request.contextPath}/login/loginForm'">로그인</button>
+						<button id="login" type="button" onclick="location.href='${pageContext.request.contextPath}/login/loginForm'">로그인</button>
 						</td>						
 						<td><button id="signUp" type="button" onclick="location.href='${pageContext.request.contextPath}/signup'">회원가입</button></td>
 					</tr>
@@ -41,10 +40,14 @@
 				<sec:authorize access="isAuthenticated()">
 					<tr>
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+
 							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>
+								<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><a style="visibility: hidden;">공간띄기</a></td>								
-							<td><input type="submit" value="로그아웃" /></td>			
+							<td>
+							<!-- <input type="submit" value="로그아웃" /> -->
+							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
+							</td>
 						</form:form>
 					</tr>
 				</sec:authorize>

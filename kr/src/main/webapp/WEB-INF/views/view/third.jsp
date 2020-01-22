@@ -173,11 +173,6 @@ body {
 .forgotid a {
 	color: #daf1ff;
 }
-<<<<<<< HEAD
-</style>
-</html>
-=======
-</style>
 
+</style>
 </html>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git

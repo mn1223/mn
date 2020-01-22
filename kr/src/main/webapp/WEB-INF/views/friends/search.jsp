@@ -316,67 +316,69 @@ $(document).on('click', '#btnSearch4', function() {
 </head>
 
 <body>
-
-<input type="button" value ="초등학교 동창" onclick ="esc()">
-<input type="button" value ="중학교 동창" onclick ="msc()">
-<input type="button" value ="고등학교 동창" onclick ="hsc()">
-<input type="button" value ="대학교 동창" onclick ="usc()">
+<div>
+<img alt="친구 찾기" src="/resources/img/fs.png" height="70px" width="auto" style="margin-left:500px; margin-top:10px;" >
+</div>
+<input type="button" value ="초등학교 동창" onclick ="esc()" style="margin-left:500px; margin-top: 40px;">
+<input type="button" value ="중학교 동창" onclick ="msc()" style="margin-left:200px;">
+<input type="button" value ="고등학교 동창" onclick ="hsc()" style="margin-left:200px;">
+<input type="button" value ="대학교 동창" onclick ="usc()" style="margin-left:200px;">
 <input type="hidden" id = loginId value = ${id}>
 
 
 <div id = "es">
-		<h2>초등학교 검색</h2>
-		<div>
+		<h2 style="margin-left:500px; margin-top: 40px;">초등학교 검색</h2>
+		<div style="margin-left:500px; margin-top: 40px;">
 			 <input type ="text" name ="mmname" id ="mmname" placeholder="이름을 입력해 주세요">
 			 <input type ="text" name ="eschool" id = "eschool" placeholder="초등학교를 입력해 주세요">
 			 <input type ="text" name ="eschoolgy" id = "eschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType" id = "searchType" value="es">
 		</div>
-		<div>
+		<div style="margin-left:500px; margin-top: 40px;">
 			<button type="button" id="btnSearch1">검색</button>
 		</div>
 	
 </div>
 <div id = "ms">
-		<h2>중학교 검색</h2>
-		<div>
+		<h2 style="margin-left:500px; margin-top: 40px;">중학교 검색</h2>
+		<div style="margin-left:500px; margin-top: 40px;">
 			 <input type ="text" name ="mmname2" id ="mmname2" placeholder="이름을 입력해 주세요">
 			 <input type ="text" name ="mschool" id = "mschool" placeholder="중학교를 입력해 주세요">
 			 <input type ="text" name ="mschoolgy" id = "mschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType2" id = "searchType2" value="ms">
 		</div>
-		<div>
+		<div style="margin-left:500px; margin-top: 40px;">
 			<button type="button" id="btnSearch2">검색</button>
 		</div>
 </div>
 <div id = "hs">
-		<h2>고등학교 검색</h2>
-		<div>
+		<h2 style="margin-left:500px; margin-top: 40px;">고등학교 검색</h2>
+		<div style="margin-left:500px; margin-top: 40px;">
 			 <input type ="text" name ="mmname3" id ="mmname3" placeholder="이름을 입력해 주세요">
 			 <input type ="text" name ="hschool" id = "hschool" placeholder="고교를 입력해 주세요">
 			 <input type ="text" name ="hschoolgy" id = "hschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType3" id = "searchType3" value="hs">
 		</div>
-		<div>
+		<div style="margin-left:500px; margin-top: 40px;">
 			<button type="button" id="btnSearch3">검색</button>
 		</div>
 </div>
 <div id = "us">
-		<h2>대학교 검색</h2>
-		<div>
+		<h2 style="margin-left:500px; margin-top: 40px;">대학교 검색</h2>
+		<div style="margin-left:500px; margin-top: 40px;">
 			 <input type ="text" name ="mmname4" id ="mmname4" placeholder="이름을 입력해 주세요">
 			 <input type ="text" name ="uschool" id = "uschool" placeholder="대학교를 입력해 주세요">
 			 <input type ="text" name ="uschoolma" id = "uschoolma" placeholder="학과를 입력해 주세요">
 			 <input type ="text" name ="uschooley" id = "uschooley" placeholder="입학년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType4" id = "searchType4" value="us">
 		</div>
-		<div>
+		<div style="margin-left:500px; margin-top: 40px;">
 			<button type="button" id="btnSearch4">검색</button>
 		</div>
 </div>
 
 <div>
-	<table>
+	<table style="margin-left:500px; margin-top: 40px;">
 		<thead>
 			<tr>
 				<th>이름</th>

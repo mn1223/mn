@@ -107,11 +107,31 @@ public class FriendController  {
 		
 		session.setId("myid",myid);
 		session.setId("yourid",yourid);
+			
+		int yournum;
+		int mynum;
+		String reyourid;
+		String remyid;
 		
-		System.out.println("너와나의 연결고리 :"+myid+yourid);
+		yournum = yourid.indexOf("@");
+		mynum = myid.indexOf("@");
+		System.out.println(yournum);
+		System.out.println(mynum);
+		if(yournum == -1) {
+			reyourid = yourid;
+		}else {			
+			reyourid = yourid.substring(0,yourid.indexOf("@"));
+		}
 		
-		model.addAttribute("yourid",yourid);
-	    model.addAttribute("myid",myid);
+		if(mynum==-1) {
+			remyid = myid;
+
+		}else {			
+			remyid = myid.substring(0,myid.indexOf("@"));
+		}		
+
+		model.addAttribute("yourid",reyourid);
+	    model.addAttribute("myid",remyid);
 	    model.addAttribute("chatList",sb);
 		    
 		return "friends/chatroom";

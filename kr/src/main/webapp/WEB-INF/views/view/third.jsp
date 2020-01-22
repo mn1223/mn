@@ -177,8 +177,21 @@ body {
 	color: #daf1ff;
 }
 </style>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+</html>
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 </html>
 
+<<<<<<< HEAD
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git

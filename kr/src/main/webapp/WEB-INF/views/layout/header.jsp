@@ -1,9 +1,30 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
@@ -32,7 +53,7 @@
       <div class="col-4 pt-1">
       
       <a href="${pageContext.request.contextPath}/">
-      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:400px; float:left;">
+      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:530px; float:left;">
       </a>
       </div>
       
@@ -49,9 +70,24 @@
       </div>      
       <div id="btnMenu">
       	<div id="btnMenuIn">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+          	
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+
+<<<<<<< HEAD
 
 
-
+=======
+=======
+       	
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
           	<sec:authorize access="isAnonymous()">
 				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
 				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
@@ -73,7 +109,19 @@
      						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
 					 </c:otherwise>
 				</c:choose>
+<<<<<<< HEAD
 			</sec:authorize>
+=======
+			</sec:authorize>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
         </div>
       </div>
     </div>    

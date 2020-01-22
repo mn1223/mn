@@ -664,12 +664,7 @@ th{
 	      });
 	        		
          };
-      	
-      	</script>
-
-	
-	
-	
+      	</script>	
 	<!-- 학교 찾기 modal -->
 <!-- Modal -->
 <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

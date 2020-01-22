@@ -202,7 +202,7 @@
 	<include refid="search"></include>
 	<![CDATA[
 	) mp
-	where rNum > #{endList} and rNum <= #{startList} and bommid =#{mmid}
+	where rNum > #{endList} and rNum <= #{startList}
 	order by rnum desc
 	]]>	
 	</select>

@@ -33,7 +33,7 @@ function showFriendListTrue(){
 				html += '<tr>';
 				html += '<th>'+this.mmname+'<th>';
 				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T")>친구 삭제</button><th>';
-				html += '<th><button onclick = gochat("'+this.yourid+'")>채팅 하기</button><th>' 
+				html += '<th><button onclick = gochat("'+this.yourid+'","'+this.mmname+'")>채팅 하기</button><th>' 
 				html += '<tr>';
 			});
 			$("#friendTrue").html(html);
@@ -47,8 +47,8 @@ function showFriendListTrue(){
 }
 
 
-function gochat(yourid){
-	location.href = "/chating?myid=${myid}&yourid="+yourid;
+function gochat(yourid,mmname){
+	location.href = "/chating?myid=${myid}&yourid="+yourid+"&mmname="+mmname;
 }
 
 

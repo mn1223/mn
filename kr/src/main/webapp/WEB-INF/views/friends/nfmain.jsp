@@ -78,13 +78,6 @@ ul,li{list-style:none;}
 						<li></li>
 						<li></li>
 					</ul>
-					
-					<p class="bullet">
-						<label for="pos1">1</label>
-						<label for="pos2">2</label>
-						<label for="pos3">3</label>
-						<label for="pos4">4</label>
-					</p>
 			</div>
 			
 		</div>

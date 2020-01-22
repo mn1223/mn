@@ -62,7 +62,7 @@ ul,li{list-style:none;}
 #pos1:checked ~ .bullet label:nth-child(1),
 #pos2:checked ~ .bullet label:nth-child(2),
 #pos3:checked ~ .bullet label:nth-child(3),
-#pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+#pos4:checked ~ .bullet label:nth-child(4)
 </style>
 </head>
 <body>
@@ -82,12 +82,6 @@ ul,li{list-style:none;}
 						<li></li>
 					</ul>
 					
-					<p class="bullet">
-						<label for="pos1">1</label>
-						<label for="pos2">2</label>
-						<label for="pos3">3</label>
-						<label for="pos4">4</label>
-					</p>
 			</div>
 			
 		</div>

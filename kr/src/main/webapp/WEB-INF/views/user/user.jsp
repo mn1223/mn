@@ -62,7 +62,43 @@
 </head>
 <body>
 <div class="total">
+	
+	<h2 style="text-align:center">파티 정보</h2>
+	<div style="text-align: center;"><img alt="" src="/resources/img/pd.jpg"><br>
+	<div style="text-align: center; font-style: oblique; font-size: 18pt; font-weight: bold;">파티디렉터</div>
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">전문 진행자</div>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt;">현) 총괄 디렉터</div>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt;">경력)200회 이상 진행</div>
+	</div>
+	<br><br>
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">분위기 좋은 파티 플레이스</div>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">일시 : 매주 토요일 오후 7시 입장</div>
+	<div style="text-align: center;"><img alt="" src="/resources/img/pl.png"></div>
+	<br><br><br><br>
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">주류와 간식이 제공됩니다.</div>
+	<div style="text-align: center;"><img alt="" src="/resources/img/pl2.png"></div>
+	<br><br><br><br>
+	
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">파티의 분위기를 살짝 공개합니다..^-^</div>
+	<div style="text-align: center;"><img alt="" src="/resources/img/p1.jpg"></div><br>
+    <div style="text-align: center;"><img alt="" src="/resources/img/p2.png"></div>
+	<br><br><br><br>
+	
+	
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">저희 파티는..</div>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">혼자 참석하셔도 어색하지 않게 모든 파티 진행을 총괄해드립니다.</div><br>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">자유로운 연락처 교환이 가능합니다.</div><br>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">파티가 끝난 이후에도 연락처 교환이 가능합니다.</div><br>
+	<br><br><br><br>
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">학생증 확인을 합니다.</div><br>
+	<div style="text-align: center;"><img alt="" src="/resources/img/uinfo.png"></div>
+	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">학생증 확인 후 입장이 가능합니다.</div>
+	<br><br><br><br>
+	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">(당일접수 가능)</div>
+	<div style="text-align: center;"><img alt="" src="/resources/img/res.png"></div>
 	<br/><br/>
+	
+	<br/><br/><br/><br/><br/><br/>
 		<h2 style="text-align:center">파티신청하기</h2> 
 	
 <c:forEach var="list" items="${tbook}" varStatus="status">
@@ -120,42 +156,6 @@
 			%>
 		</tr>
 	</table>
-	<br/><br/><br/><br/><br/><br/>
-	<h2 style="text-align:center">파티 정보</h2>
-	<div style="text-align: center;"><img alt="" src="/resources/img/pd.jpg"><br>
-	<div style="text-align: center; font-style: oblique; font-size: 18pt; font-weight: bold;">파티디렉터</div>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">전문 진행자</div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt;">현) 총괄 디렉터</div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt;">경력)200회 이상 진행</div>
-	</div>
-	<br><br>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">분위기 좋은 파티 플레이스</div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">일시 : 매주 토요일 오후 7시 입장</div>
-	<div style="text-align: center;"><img alt="" src="/resources/img/pl.png"></div>
-	<br>
-	<div style="text-align: center;"><img alt="" src="/resources/img/pl2.png"></div>
-	<br><br><br><br>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">주류와 간식이 제공됩니다.</div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">우리의 분위기를 한껏 달아오르게 할 소주와 음료,간식이 준비되어 있습니다.</div>
-	<div style="text-align: center;"><img alt="" src="/resources/img/food.jpg"></div>
-	<br><br><br><br>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">파티의 분위기를 살짝 공개합니다..^-^</div>
-	<div style="text-align: center;"><img alt="" src="/resources/img/p1.jpg"></div><br>
-    <div style="text-align: center;"><img alt="" src="/resources/img/p2.png"></div>
-	<br><br><br><br>
-	
-	
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">저희 파티는..</div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">혼자 참석하셔도 어색하지 않게 모든 파티 진행을 총괄해드립니다.</div><br>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">자유로운 연락처 교환이 가능합니다.</div><br>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">파티가 끝난 이후에도 연락처 교환이 가능합니다.</div><br>
-	<br><br><br><br>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">학생증 확인을 합니다.</div><br>
-	<div style="text-align: center;"><img alt="" src="/resources/img/uinfo.png"></div>
-	<div style="text-align: center; font-style: oblique; font-size: 15pt; font-weight: bold;">학생증 확인 후 입장이 가능합니다.</div>
-	<br><br><br><br>
-	<div style="text-align: center; font-style: oblique; font-size: 30pt; font-weight: bold;">(당일접수 가능)</div>
-	<div style="text-align: center;"><img alt="" src="/resources/img/res.png"></div>
 	
 	<br><br><br><br>
 	<h2 style="text-align:center">오시는 길</h2> 

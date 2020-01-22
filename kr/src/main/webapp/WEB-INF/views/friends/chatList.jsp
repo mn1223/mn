@@ -31,9 +31,15 @@ function showFriendListTrue(){
 			var html = "";
 			$(data).each(function(){
 				html += '<tr>';
+<<<<<<< HEAD
 				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
 				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T") style="margin-left:230px; padding: 5px;">친구 삭제</button><th>';
 				html += '<th><button onclick = gochat("'+this.yourid+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>' 
+=======
+				html += '<th>'+this.mmname+'<th>';
+				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T")>친구 삭제</button><th>';
+				html += '<th><button onclick = gochat("'+this.yourid+'","'+this.mmname+'")>채팅 하기</button><th>' 
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				html += '<tr>';
 			});
 			$("#friendTrue").html(html);
@@ -47,8 +53,8 @@ function showFriendListTrue(){
 }
 
 
-function gochat(yourid){
-	location.href = "/chating?myid=${myid}&yourid="+yourid;
+function gochat(yourid,mmname){
+	location.href = "/chating?myid=${myid}&yourid="+yourid+"&mmname="+mmname;
 }
 
 

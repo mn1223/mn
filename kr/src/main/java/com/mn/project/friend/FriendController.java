@@ -45,7 +45,7 @@ public class FriendController  {
 	
 	@RequestMapping("/search")
 	public String search(Model model,Principal principal) {
-		
+		model.addAttribute("myid",principal.getName());
 		model.addAttribute("id",principal.getName());
 		
 		

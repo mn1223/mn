@@ -26,7 +26,14 @@ public class ResManagerController {
 	
 	@RequestMapping(value="/managermain")
 	public String managermain(Principal principal,Model model) {
-		
+		try{
+			if(principal.getName().equals("admin@naver.com")) {		
+			model.addAttribute("admin",principal.getName()); 
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	
 		return "matchmaker/managermain";
 	}
 	

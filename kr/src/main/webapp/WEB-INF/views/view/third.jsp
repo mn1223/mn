@@ -29,7 +29,6 @@
 <img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:970px; margin-top:50px;" >
 </a>
 </div>
-
 <div id="loginForm" >
 	<c:url value="/login" var="loginUrl" />
 	<div class="modal-dialog text-center" >				  
@@ -37,7 +36,6 @@
 			  <div class="col-12 user-img">
 					<img src="/resources/img/face.png">
 				</div>
-
 				<div class="col-12 form-input">
 					<form:form name="f" action="${loginUrl}" method="POST"
 						modelAttribute="LoginVO">
@@ -58,7 +56,6 @@
 
 						<button type="submit" class="btn btn-success">로그인</button>
 					</form:form>
-
 				</div>
 				<br/>
 				<div class="col-12 forgotid">
@@ -176,8 +173,14 @@ body {
 .forgotid a {
 	color: #daf1ff;
 }
+<<<<<<< HEAD
 </style>
 
 </html>
 
 
+=======
+</style>
+</html>
+
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git

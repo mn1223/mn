@@ -65,7 +65,7 @@ ul,li{list-style:none;}
 </head>
 <body>
 	<div class="base">
-		<div class="main" style="padding-bottom: 100px;">
+		<div class="main" style="padding-bottom: 45px;">
 			<div class="slide">
 					<input type="radio" name="pos" id="pos1" checked="checked">
 					<input type="radio" name="pos" id="pos2">

@@ -54,7 +54,7 @@
 
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          		<c:set var="name" value="${admin }" />
+          		<c:set var="name" value="${myid }" />
 
 				<c:choose>
 					<c:when test="${name eq 'admin@naver.com'}">

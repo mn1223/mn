@@ -38,8 +38,8 @@ function showMyFriendListFalse(){
 			var html = "";
 			$(data).each(function(){
 				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th><button onclick =deleteFriendFalse("'+this.myid+'","'+this.yourid+'","F")>삭제</button><th>'
+				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
+				html += '<th><button onclick =deleteFriendFalse("'+this.myid+'","'+this.yourid+'","F") style="margin-left:300px;">삭제</button><th>'
 				html += '<tr>';
 			});
 			$("#myfriendFalse").html(html);
@@ -69,9 +69,9 @@ function showFriendListFalse(){
 			var html = "";
 			$(data).each(function(){
 				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th><button onclick =addFriend("'+this.myid+'","'+this.yourid+'")>친구 추가</button><th>';
-				html += '<th><button onclick =deleteFriendFalse("'+this.myid+'","'+this.yourid+'","F")>삭제</button><th>'
+				html += '<th style="font-size:20px;">'+this.mmname+'<th>';				
+				html += '<th><button onclick =addFriend("'+this.myid+'","'+this.yourid+'") style="margin-left:200px;">친구 추가</button><th>';
+				html += '<th><button onclick =deleteFriendFalse("'+this.myid+'","'+this.yourid+'","F") style="margin-left:0px;">삭제</button><th>'
 				html += '<tr>';
 			});
 			$("#friendFalse").html(html);
@@ -157,9 +157,9 @@ function showFriendListTrue(){
 			var html = "";
 			$(data).each(function(){
 				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T")>친구 삭제</button><th>';
-				html += '<th><button onclick = gochat("'+this.yourid+'")>채팅 하기</button><th>' 
+				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
+				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T") style="margin-left:230px;">친구 삭제</button><th>';
+				html += '<th><button onclick = gochat("'+this.yourid+'") style="margin-left:0px;">채팅 하기</button><th>' 
 				html += '<tr>';
 			});
 			$("#friendTrue").html(html);
@@ -473,126 +473,291 @@ $(document).on('click', '#btndelete', function() {
    			}
    		});
    	}
-
-
-
-
 </script>
+
+<style>
+* {
+	padding : 0px;
+	margin : 0px;
+}
+
+body {
+	padding : 0px;
+	margin : 0px;
+	width : auto;
+	height : 915px;
+	background-color: #F3F3F3;
+}
+
+html {
+	padding : 0px;
+	margin : 0px;
+	width: 1903px;
+	height: 2200px;
+	background-color: #F3F3F3;
+}
+
+button {
+	margin-left: 500px;
+	border: 1px solid #368AFF;
+	background-color: #FAFAFA;
+	color: #368AFF;
+	padding: 5px;
+	font-size : 15px;
+}
+
+input{
+	margin-left: 10px;	
+	padding: 5px;
+	font-size : 15px;
+}
+
+td{
+	padding: 10px;
+	text-align : center;	
+}
+
+th{
+	padding: 5px;
+	text-align : center;
+}
+
+</style>
+
 </head>
 <body>
-<h2>마이페이지(반갑다 친구야)</h2>
+<div>
+	<a href="${pageContext.request.contextPath}/nfmain">
+		<img alt="반갑다친구야 메인" src="/resources/img/nfLogo.png" height="80px" width="auto" style="margin-left:750px; margin-top:50px; " >
+	</a>
+</div>
+<br/>
+<br/>
+<div>
+	<img alt="마이 페이지" src="/resources/img/myPage.png" height="50px" width="auto" style="margin-left:350px; margin-top:50px;" >
+</div>
+
+
 <input type="hidden" id = "myid" value="${myid}">
 
-<h3>받은 친구요청 리스트</h3>
-<div id = "friendFalse">친구 요청
+<div>
+<img alt="받은  리스트" src="/resources/img/yourRequestList.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+<div id = "friendFalse" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+친구 요청
+</div>
 </div>
 
-<h3>나의 친구요청 리스트</h3>
-<div id = "myfriendFalse">친구 요청
+
+
+<div>
+<img alt="나의 친구요청 리스트" src="/resources/img/myRequestList.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+<div id = "myfriendFalse" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+친구 요청
+</div>
 </div>
 
-<h3>친구 리스트</h3>
-<div id = "friendTrue">친구 목록
-</div><br><br>
-
-	<h2>회원 정보</h2>
-<div id="inform">
-
-		<div>
-			<label>이름:</label><c:out value="${userInfo.mmname}"/>
-		</div>
-		<div>
-			<label>아이디:</label><c:out value="${userInfo.mmid}"/>
-		</div>
-		<div>
-			<label>비밀번호수정:</label><c:out value="${userInfo.mmpwd}"/>
-		</div>
-		<div>
-			<label>전화번호:</label><c:out value="${userInfo.mmphonenum}"/>
-		</div>
-		<div>
-			<label>성별:</label><c:out value="${userInfo.mmgender}"/>
-		</div>
-		<button type="button" id="btnupdate">수정하기</button>
+<div>
+<img alt="친구 리스트" src="/resources/img/friendList.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+<div id = "friendTrue" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+친구 목록
+</div>
 </div>
 
-<div id= "editform">
-	<label>이름</label> <input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
-	<label>아이디</label><input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly"><br>
-	<label>비밀번호수정</label><input type="text" id="mmpwd" value="${userInfo.mmpwd}"><br>
-	<label>전화번호</label><input type="text" id="mmphonenum" value="${userInfo.mmphonenum}"><br>
-	<label>성별</label><input type="text" id="mmgender" value="${userInfo.mmgender}"><br>
-	<button type="submit" id="btnsave">저장하기</button>
+
+<!-- 회원 정보  -->
+	<div>
+	<img alt="회원 정보" src="/resources/img/memberInfo.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+
+	<div id="inform" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+				
+				<div style="font-size: 15pt;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름:&nbsp;&nbsp;<c:out value="${userInfo.mmname}"/>
+				</div>
+				<br/>  
+				<div style="font-size: 15pt;">
+					&nbsp;&nbsp;&nbsp;아이디:&nbsp;&nbsp;<c:out value="${userInfo.mmid}"/>
+				</div>
+				<br/>  
+				<div style="font-size: 15pt;">
+					비밀번호:&nbsp;&nbsp;<c:out value="${userInfo.mmpwd}"/>
+				</div>
+				<br/>  
+				<div style="font-size: 15pt;">
+					전화번호:&nbsp;&nbsp;<c:out value="${userInfo.mmphonenum}"/>
+				</div>
+				<br/>  
+				<div style="font-size: 15pt;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별:&nbsp;&nbsp;<c:out value="${userInfo.mmgender}"/>
+				</div>
+				<br/>  
+					<button type="button" id="btnupdate">비밀번호 수정하기</button>
+		</div>
+
+
+<!-- 회원정보 수정  -->
+<div id= "editform" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+	
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;<input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
+	</div>
+	<br/>
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;<input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly">
+	</div>
+	<br/>
+	<div style="font-size: 15pt;">비밀번호&nbsp;&nbsp;<input type="text" id="mmpwd" value="${userInfo.mmpwd}">
+	</div>
+	<br/>
+	<div style="font-size: 15pt;">전화번호&nbsp;&nbsp;<input type="text" id="mmphonenum" value="${userInfo.mmphonenum}">
+	</div>
+	<br/>
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별&nbsp;&nbsp;<input type="text" id="mmgender" value="${userInfo.mmgender}">
+	</div>
+		
+	<br/>
+	<button type="submit" id="btnsave">비밀번호 저장하기</button>
+	
 </div>
 <br>
 
 <!-- 학교 정보 입력 form -->
-
-
+<img alt="학교 정보" src="/resources/img/schoolInfo.png" height="30px" width="auto" style="margin-left: 350px; margin-top:50px;" >
+<div id="schoolInfo" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 
 	<input type="button" id = "bt_e" value ="초등학교" onclick ="eschool()">
 	<input type="button" id = "bt_m" value ="중학교" onclick ="mschool()">
 	<input type="button" id = "bt_h" value ="고등학교" onclick ="hschool()">
 	<input type="button" id = "bt_u" value ="대학교" onclick ="uschool()">
-
+	<button type="button" id="btndelete" style="margin-left: 700px; font-size:20px; font-weight: bold;">회원탈퇴</button>
+	<br/>
+	<br/>
+		<!-- eschool{s} -->
 		<div id = "eschool">
-			<label>초등학교:</label><c:out value= "${scinfo.eschool}"/><br>
-			<label>졸업년도:</label><c:out value ="${scinfo.eschoolgy}년"/><br>
-			<button type="button" id="btnschool" onclick="editeschoolinfo()">등록및 수정</button>		
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;초등학교:&nbsp;&nbsp;<c:out value= "${scinfo.eschool}"/></div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;졸업년도:&nbsp;&nbsp;<c:out value ="${scinfo.eschoolgy}년"/><br/></div>
+			<br/>
+			<br/>
+			<button type="button" id="btnschool" onclick="editeschoolinfo()" >등록 및 수정</button>
 		</div>
+		
 		<div id = "editeschool">
-			<label>초등학교</label> <input type="text" id="eschoolName" name="eschoolName" value ="${scinfo.eschool}" readonly/>
-			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
-			<br>
-			<label>초등학교졸업년도</label> <input type="text" id="eschoolgy"
-				name="eschoolgy" value="${scinfo.eschoolgy}" /><br>
-			<button type="button"  onclick="eschooleditcom()">완료</button>	
+			<div style="font-size: 20pt;">초등학교 
+			<input type="text" id="eschoolName" name="eschoolName" value ="${scinfo.eschool}" readonly/>			
+			<input type="button" id ="schoolSearch" data-toggle="modal" data-target="#myModal" value="학교찾기"></input>
+			</div>			
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">졸업년도 
+			<input type="text" id="eschoolgy" name="eschoolgy" value="${scinfo.eschoolgy}" />
+			<br/>
+			<br/>
+			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			</div>	
 		</div>
+		<!-- eschool{e} -->
 		
+		<!-- mschool{s} -->
 		<div id = "mschool">	
-			<label>중학교:</label><c:out value="${scinfo.mschool}"/><br>
-			<label>졸업년도:</label><c:out value ="${scinfo.mschoolgy}년"/><br>
-			<button type="button"  onclick="editmschoolinfo()">등록및 수정</button>			
-		</div>
-		<div id = "editmschool">
-		<label>중학교</label> <input type="text" id="mschoolName" name="mschoolName" value="${scinfo.mschool}" readonly/>
-		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button>
-		<br>
-		<label>졸업년도</label> <input type="text" id="mschoolgy"
-				name="mschoolgy" value="${scinfo.mschoolgy}"/><br>
-		<button type="button"  onclick="mschooleditcom()">완료</button>		
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;중학교:&nbsp;&nbsp;<c:out value= "${scinfo.mschool}"/></div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;졸업년도:&nbsp;&nbsp;<c:out value ="${scinfo.mschoolgy}년"/><br/></div>
+			<br/>
+			<br/>
+			<button type="button" id="btnschool" onclick="editmschoolinfo()">등록 및 수정</button>		
 		</div>
 		
+		<div id = "editmschool">		
+		<div style="font-size: 20pt; margin-left:20px;">중학교 
+			<input type="text" id="mschoolName" name="mschoolName" value ="${scinfo.mschool}" readonly/>			
+			<input type="button" id ="schoolSearch" data-toggle="modal" data-target="#myModal" value="학교찾기"></input>
+			</div>			
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">졸업년도 
+			<input type="text" id="mschoolgy" name="mschoolgy" value="${scinfo.mschoolgy}" />
+			<br/>
+			<br/>
+			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			</div>		
+		</div>
+		<!-- eschool{e} -->
+		
+		<!-- hschool{s} -->
 		<div id = "hschool">	
-			<label>고등학교:</label><c:out value="${scinfo.hschool}"/><br>
-			<label>졸업년도:</label><c:out value ="${scinfo.hschoolgy}년"/><br>
-			<button type="button"  onclick="edithschoolinfo()">등록및 수정</button>
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;고등학교:&nbsp;&nbsp;<c:out value= "${scinfo.hschool}"/></div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;졸업년도:&nbsp;&nbsp;<c:out value ="${scinfo.hschoolgy}년"/><br/></div>
+			<br/>
+			<br/>
+			<button type="button" id="btnschool" onclick="edithschoolinfo()">등록 및 수정</button>
 			
 		</div>
-		<div id = "edithschool">
-		<label>고등학교</label> <input type="text" id="hschoolName" name="hschoolName" value="${scinfo.hschool}" readonly/>
-		<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
-			<label>졸업년도</label> <input type="text" id="hschoolgy"
-				name="hschoolgy" value ="${scinfo.hschoolgy}"/><br>
-		<button type="button" onclick="hschooleditcom()">완료</button>	
+		
+		<div id = "edithschool">		
+		<div style="font-size: 20pt;" >고등학교
+			<input type="text" id="hschoolName" name="hschoolName" value ="${scinfo.hschool}" readonly />			
+			<input type="button" id ="schoolSearch" data-toggle="modal" data-target="#myModal" value="학교찾기"></input>
+			</div>			
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">졸업년도 
+			<input type="text" id="hschoolgy" name="hschoolgy" value="${scinfo.hschoolgy}" />
+			<br/>
+			<br/>
+			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			</div>
+		</div>
+		<!-- hschool{e} -->
+		
+		<!-- uschool{s} -->
+		<div id = "uschool">			
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;&nbsp;대학교:&nbsp;&nbsp;<c:out value= "${scinfo.uschool}"/></div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학과:&nbsp;&nbsp;<c:out value ="${scinfo.uschoolma}"/><br/></div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">입학년도:&nbsp;&nbsp;<c:out value ="${scinfo.uschooley}년"/><br/></div>
+			<br/>
+			<br/>
+			<button type="button" id="btnschool" onclick="edituschoolinfo()">등록 및 수정</button>
 		</div>
 		
-		<div id = "uschool">	
-			<label>대학교:</label><c:out value="${scinfo.uschool}" /><br> 
-			<label>학과:</label><c:out value="${scinfo.uschoolma}"/><br>
-			<label>입학년도:</label><c:out value ="${scinfo.uschooley}년"/><br>
-			<button type="button"  onclick="edituschoolinfo()">등록및 수정</button>	
+		<div id = "edituschool">			
+			<div style="font-size: 20pt; margin-left: 20px" >대학교
+			<input type="text" id="uschoolName" name="uschoolName" value ="${scinfo.uschool}" readonly />			
+			<input type="button" id ="schoolSearch" data-toggle="modal" data-target="#myModal" value="학교찾기"></input>
+			</div>			
+			<br/>
+			<br/>
+			<div style="font-size: 20pt; margin-left: 50px" >학과
+			<input type="text" id="uschoolName" name="uschoolName" value ="${scinfo.uschoolma}" readonly />
+			</div>
+			<br/>
+			<br/>
+			<div style="font-size: 20pt;">입학년도 
+			<input type="text" id="uschoolgy" name="uschoolgy" value="${scinfo.uschooley}" />
+			<br/>
+			<br/>
+			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			</div>
 		</div>
-		<div id = "edituschool">
-			<label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="${scinfo.uschool}" readonly/>
-			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
-			<label>학과</label> <input type="text" id="uschoolma" name="uschoolma" value="${scinfo.uschoolma}" /><br>
-			<label>입학년도</label> <input type="text" id="uschooley"
-				name="uschooley" value ="${scinfo.uschooley}"/><br>
-			<button type="button" onclick="uschooleditcom()">완료</button>
-		</div>
+		<!-- uschool{e} -->	
+	</div>
 
-<a href ="/board/getBoardListSix">1대1 문의</a>
+	<!-- 1:1문의 -->
+	<img alt="1:1문의 및 대학교 인증" src="/resources/img/nfOneToOne.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+	<div id="oneToOne" style="padding : 50px; margin-left : 350px; width: 1300px; height: 150px; background-color: #FAFAFA; ">
+		<div style="font-size: 25px; float: left; margin-top : 15px;">
+			<a href="/board/getBoardListSix">1:1문의 및 대학교 인증 게시판 이동하기(클릭)</a>
+		</div>
+	</div>
 
 	<!-- 학교 찾기 modal -->
 <!-- Modal -->

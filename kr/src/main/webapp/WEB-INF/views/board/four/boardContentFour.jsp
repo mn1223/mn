@@ -235,7 +235,7 @@
 <body>
 	<article>
 		<div class="container" role="main">
-			<h2>board Content</h2>
+			<h2>1:1문의(매치메이커)</h2>
 
 			<div class="bg-white rounded shadow-sm">
 				<div class="board_title">

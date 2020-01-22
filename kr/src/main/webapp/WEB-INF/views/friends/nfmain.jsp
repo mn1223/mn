@@ -65,7 +65,7 @@ ul,li{list-style:none;}
 </head>
 <body>
 	<div class="base">
-		<div class="main" style="padding-bottom: 100px;">
+		<div class="main" style="padding-bottom: 45px;">
 			<div class="slide">
 					<input type="radio" name="pos" id="pos1" checked="checked">
 					<input type="radio" name="pos" id="pos2">
@@ -78,13 +78,6 @@ ul,li{list-style:none;}
 						<li></li>
 						<li></li>
 					</ul>
-					
-					<p class="bullet">
-						<label for="pos1">1</label>
-						<label for="pos2">2</label>
-						<label for="pos3">3</label>
-						<label for="pos4">4</label>
-					</p>
 			</div>
 			
 		</div>

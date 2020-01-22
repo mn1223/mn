@@ -26,7 +26,7 @@ public class RegisterController {
 	public String signUpcomplete(@ModelAttribute("RegisterVO") RegisterVO registerVO) throws Exception{
 		System.out.println(registerVO);
 		service.insertUser(registerVO);
-		return "/First/congratulation";
+		return "/view/first";
 	}
 
 	//회원가입성공페이지에서 메인페이지로 이동

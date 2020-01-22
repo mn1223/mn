@@ -32,7 +32,7 @@
 	int week = cal.get(Calendar.DAY_OF_WEEK);
 	int lastday = cal.getActualMaximum(Calendar.DATE);
 %>
-
+<%@ include file="/WEB-INF/views/layout/headerM.jsp"%>
 <!DOCTYPE html>
 <html>
 <!-- JQuery -->
@@ -231,7 +231,7 @@
 				        	}
 				        },
 				        error: function (){        
-				        	alert("통신상태가 안좋음");
+				        	alert("파티에 예약한 회원이 이미 있습니다");
 				        }
 				      });
 				});

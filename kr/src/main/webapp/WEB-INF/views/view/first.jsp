@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
@@ -40,22 +39,14 @@
 				<sec:authorize access="isAuthenticated()">
 					<tr>
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-<<<<<<< HEAD
-							<td><a style="visibility: hidden;">공간띄기</a></td>							
+
+							<td><a style="visibility: hidden;">공간띄기</a></td>	
+							<td><a style="visibility: hidden;">공간띄기</a></td>
+							<td><a style="visibility: hidden;">공간띄기</a></td>						
 							<td>
 							<!-- <input type="submit" value="로그아웃" /> -->
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그인</button>
 							</td>
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->							
-							<td>
-							<button type="button" onclick="location.href='${pageContext.request.contextPath}//matchmaker/managermain'">관리자 페이지</button>
-							</td>
-=======
-							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>								
-							<td><input type="submit" value="로그아웃" /></td>			
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 						</form:form>
 					</tr>
 				</sec:authorize>

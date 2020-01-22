@@ -117,7 +117,7 @@
     <div class="container">
       <form class="form-signin" method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">   Please sign in</h2>
       <div>
 			<label>이름</label> <input type="text" id="mmname" name="mmname" />
 		</div>
@@ -161,7 +161,7 @@
 			<label>질문대답</label> <input type="text" id="mma" name="mma" />
 		</div>
 		<br>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignup">가입하기</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignup">signup</button>
       </form>
 
     </div> <!-- /container -->
@@ -169,16 +169,17 @@
 </html>
 <style>
 body {
-  padding-top: 40px;
+  padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #ddd;
+  background-color: #eee;
+  background-image:url('mainPage.png');
 }
 
 .form-signin {
   max-width: 600px;
   padding: 15px;
   margin: 0 auto;
-  background-color: rgb(232 217 255);
+  
   boarder-radius:10px;
 }
 .form-signin .form-signin-heading,
@@ -210,13 +211,5 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.btn-primary{
-background-image: linear-gradient(to bottom,#337ab7 0,#792688 100%);
- border-color:#792688;
-}
-.btn-block {
-    display: block;
-    width: 50%; 
 
-}
 </style>

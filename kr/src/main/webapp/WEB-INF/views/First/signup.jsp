@@ -117,7 +117,7 @@
     <div class="container">
       <form class="form-signin" method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
-        <h2 class="form-signin-heading">   Please sign in</h2>
+        <h2 class="form-signin-heading"><center>Please sign in</center></h2>
       <div>
 			<label>이름</label> <input type="text" id="mmname" name="mmname" />
 		</div>
@@ -150,7 +150,7 @@
 		<input type="radio" name="mmgender" value="여자" checked>여 
 		</div>
 		<div>
-			<label>질문</label> 
+			<label >질문</label> 
 			  <select id="box2" id="mmq" name="mmq"  >
 			         <option value="어디서 태어났습니까?" selected="selected">어디서 태어났습니까?</option>
                      <option value="가장 애정하는 물품은?" >가장 애정하는 물품은?</option>
@@ -161,34 +161,37 @@
 			<label>질문대답</label> <input type="text" id="mma" name="mma" />
 		</div>
 		<br>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignup">signup</button>
+		<div class="oo" >
+        <center><button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignup" >signup</button></center>
+         </div>     
       </form>
-
     </div> <!-- /container -->
   </body>
 </html>
 <style>
+input[type='text'] {
+    border-radius:5px; 
+}
+#box2{
+ border-radius:5px; 
+}
+
 body {
   padding-top: 90px;
   padding-bottom: 40px;
   background-color: #eee;
-  background-image:url('mainPage.png');
 }
-
 .form-signin {
   max-width: 600px;
   padding: 15px;
   margin: 0 auto;
-  
-  boarder-radius:10px;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
-.form-signin .checkbox {
-  font-weight: normal;
-}
+
 .form-signin .form-control {
   position: relative;
   height: auto;
@@ -211,5 +214,14 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
+.btn-primary{
+   border-radius:300px;
+   width:300px;
+   background-color: #1c6288;
+   border: 1px solid #daf1ff;
+    background: linear-gradient(to right,#9575CD,#F48FB1 );
+}
+.oo{ 
+margin:auto;
+}
 </style>

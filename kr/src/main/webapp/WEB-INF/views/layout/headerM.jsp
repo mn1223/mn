@@ -49,31 +49,10 @@
         </h1>
       </div>      
       <div id="btnMenu">
-      	<div id="btnMenuIn">
-       	
-          	<sec:authorize access="isAnonymous()">
-				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
-				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
-			</sec:authorize>
-
+      	<div id="btnMenuIn">     
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          		<c:set var="name" value="${admin }" />
-
-				<c:choose>
-					<c:when test="${name eq 'admin@naver.com'}">
-        			
-	
-						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>
-					
-   	 				</c:when>
-
-					<c:otherwise>
-     						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
-					 </c:otherwise>
-				</c:choose>
 			</sec:authorize>
-
         </div>
       </div>
     </div>    
@@ -83,10 +62,9 @@
  <div style="width: 100%; text-align:center;">
 	<div id="menu1" >
 		<ul> 
-			 <li><a href="${pageContext.request.contextPath}/board/getBoardListOne">회원관리</a></li>
-			 <li><a href="${pageContext.request.contextPath}/user/user">파티관리</a></li>
-			 <li><a href="${pageContext.request.contextPath}/board/getBoardListTwo">예약관리</a></li>
-			 <li><a href="${pageContext.request.contextPath}/board/getBoardListThree">Q&A</a></li>
+			 <li><a href="${pageContext.request.contextPath}/matchmaker/member">회원관리</a></li>
+			 <li><a href="${pageContext.request.contextPath}/matchmaker/party">파티관리</a></li>
+			 <li><a href="${pageContext.request.contextPath}/matchmaker/reservation">예약관리</a></li>
 	    </ul>
 	</div>	
  </div>

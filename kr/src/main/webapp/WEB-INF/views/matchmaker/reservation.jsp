@@ -32,7 +32,7 @@
 	int week = cal.get(Calendar.DAY_OF_WEEK);
 	int lastday = cal.getActualMaximum(Calendar.DATE);
 %>
-
+<%@ include file="/WEB-INF/views/layout/headerM.jsp"%>
 <!DOCTYPE html>
 <html>
 <!-- JQuery -->

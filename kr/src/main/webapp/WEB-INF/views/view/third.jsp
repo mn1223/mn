@@ -178,8 +178,8 @@ body {
 	color: #daf1ff;
 }
 </style>
-<<<<<<< HEAD
 </html>
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 </html>
@@ -191,4 +191,7 @@ body {
 </html>
 >>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 >>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+=======
+
 >>>>>>> branch 'master' of https://github.com/mn1223/mn.git

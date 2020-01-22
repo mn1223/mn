@@ -270,7 +270,7 @@
 						<form:textarea path="contents" id="contents" class="form-control" rows="3" placeholder="댓글을 입력해 주세요"></form:textarea>
 					</div>
 					<div class="col-sm-2">
-						<form:input path="boremmid" class="form-control" id="boremmid" placeholder="댓글 작성자"></form:input>
+						<form:input path="boremmid" class="form-control" id="boremmid" placeholder="댓글 작성자" readonly ="true" value ="${myid }"></form:input>
 						<button type="button" class="btn btn-sm btn-primary" id="btnReplySave" style="width: 100%; margin-top: 10px"> 저 장 </button>
 					</div>
 				</div>

@@ -43,7 +43,7 @@ public class LoginController {
 	@RequestMapping(value = "/login/loginForm", method = RequestMethod.GET)
 	public String loginFor(Locale locale, Model model,HttpServletRequest req,Principal principal) {
 		logger.info("Welcome Login Form!");
-
+		session.getSessionId(req);
 		
 		return "view/third";
 	}
@@ -55,8 +55,9 @@ public class LoginController {
 		return "/First/login";
 	}
 	
-		@RequestMapping(value="/mmmain",method = {RequestMethod.POST,RequestMethod.GET})
-	    public String mmmain(RedirectAttributes rttr,Principal principal,Model model) throws Exception{
+		
+	@RequestMapping(value="/mmmain",method = {RequestMethod.POST,RequestMethod.GET})
+	public String mmmain(RedirectAttributes rttr,Principal principal,Model model) throws Exception{
 			try{
 				if(principal.getName().equals("admin@naver.com")) {		
 				model.addAttribute("admin",principal.getName()); 
@@ -64,6 +65,8 @@ public class LoginController {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
+			
+			
 		
 			return "/view/mm_main";
 		}

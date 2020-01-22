@@ -311,15 +311,41 @@ $(document).on('click', '#btndelete', function() {
    		});
    	}
 
-
-
-
 </script>
+
+<style>
+* {
+	padding : 0px;
+	margin : 0px;
+}
+
+body {
+	padding : 0px;
+	margin : 0px;
+	width : auto;
+	height : 915px;
+	background-color: #F3F3F3;
+}
+
+html {
+	padding : 0px;
+	margin : 0px;
+	width: 1903px;
+	height: 937px;
+	background-color: #F3F3F3;
+}
+</style>
+
 </head>
 <body>
-	실시간 예약현황
-	<br>
-	<h2>회원 정보</h2>
+<div>
+	<a href="${pageContext.request.contextPath}/">
+		<img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:970px; margin-top:50px;" >
+	</a>
+</div>
+<div>
+	<img alt="마이 페이지" src="/resources/img/myPage.png" height="50	px" width="auto" style="margin-left:200px; margin-top:50px;" >
+</div>
 <div id="inform">
 		<div>
 			<label>이름:</label><c:out value="${userInfo.mmname}"/>
@@ -577,4 +603,6 @@ $(document).on('click', '#btndelete', function() {
 </div>
 
 </body>
+
+
 </html>

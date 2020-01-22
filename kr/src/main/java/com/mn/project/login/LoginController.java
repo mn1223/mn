@@ -75,7 +75,7 @@ public class LoginController {
 	    public String nfmain(RedirectAttributes rttr,Principal principal,Model model) throws Exception{
 			try{
 				if(principal.getName().equals("admin@naver.com")) {		
-				model.addAttribute("admin",principal.getName()); 
+				model.addAttribute("myid",principal.getName()); 
 				}
 			}catch(Exception e) {
 				e.printStackTrace();

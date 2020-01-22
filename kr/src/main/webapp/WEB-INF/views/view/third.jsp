@@ -56,10 +56,6 @@
 
 						<button type="submit" class="btn btn-success">로그인</button>
 					</form:form>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				</div>
 				<br/>
 				<div class="col-12 forgotid">
@@ -179,19 +175,4 @@ body {
 }
 </style>
 </html>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-</html>
-=======
-<<<<<<< HEAD
-</html>
-=======
 
-</html>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-=======
-
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git

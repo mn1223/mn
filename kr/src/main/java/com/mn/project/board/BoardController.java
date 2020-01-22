@@ -153,10 +153,10 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
+			@ModelAttribute("search") Search search	,			
+			Principal principal) throws Exception {
 
-
+		model.addAttribute("myid",principal.getName());
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -248,10 +248,10 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
+			@ModelAttribute("search") Search search,			
+			Principal principal) throws Exception {
 
-
+		model.addAttribute("myid",principal.getName());
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -341,10 +341,10 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
+			@ModelAttribute("search") Search search,				
+			Principal principal) throws Exception {
 
-
+		model.addAttribute("myid",principal.getName());
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -427,10 +427,10 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
+			@ModelAttribute("search") Search search,				
+			Principal principal) throws Exception {
 
-
+		model.addAttribute("myid",principal.getName());
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -513,10 +513,10 @@ public class BoardController {
 				@RequestParam(defaultValue = "1") int range,
 				@RequestParam(defaultValue = "title") String searchType,
 				@RequestParam(required = false) String keyword,
-				@ModelAttribute("search") Search search				
-				) throws Exception {
+				@ModelAttribute("search") Search search,				
+				Principal principal) throws Exception {
 
-
+			model.addAttribute("myid",principal.getName());
 			//검색
 			model.addAttribute("search", search);
 			search.setSearchType(searchType);

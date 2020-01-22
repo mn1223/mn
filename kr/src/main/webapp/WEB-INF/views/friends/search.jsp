@@ -333,11 +333,8 @@ $(document).on('click', '#btnSearch4', function() {
 			 <input type ="text" name ="eschool" id = "eschool" placeholder="초등학교를 입력해 주세요">
 			 <input type ="text" name ="eschoolgy" id = "eschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType" id = "searchType" value="es">
+			 <button type="button" id="btnSearch1" style="margin-left: 10px;">검색</button>
 		</div>
-		<div style="margin-left:500px; margin-top: 40px;">
-			<button type="button" id="btnSearch1">검색</button>
-		</div>
-	
 </div>
 <div id = "ms">
 		<h2 style="margin-left:500px; margin-top: 40px;">중학교 검색</h2>
@@ -346,9 +343,7 @@ $(document).on('click', '#btnSearch4', function() {
 			 <input type ="text" name ="mschool" id = "mschool" placeholder="중학교를 입력해 주세요">
 			 <input type ="text" name ="mschoolgy" id = "mschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType2" id = "searchType2" value="ms">
-		</div>
-		<div style="margin-left:500px; margin-top: 40px;">
-			<button type="button" id="btnSearch2">검색</button>
+			 <button type="button" id="btnSearch2" style="margin-left: 10px;">검색</button>
 		</div>
 </div>
 <div id = "hs">
@@ -358,9 +353,7 @@ $(document).on('click', '#btnSearch4', function() {
 			 <input type ="text" name ="hschool" id = "hschool" placeholder="고교를 입력해 주세요">
 			 <input type ="text" name ="hschoolgy" id = "hschoolgy" placeholder="졸업년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType3" id = "searchType3" value="hs">
-		</div>
-		<div style="margin-left:500px; margin-top: 40px;">
-			<button type="button" id="btnSearch3">검색</button>
+			 <button type="button" id="btnSearch3" style="margin-left: 10px;">검색</button>
 		</div>
 </div>
 <div id = "us">
@@ -371,9 +364,7 @@ $(document).on('click', '#btnSearch4', function() {
 			 <input type ="text" name ="uschoolma" id = "uschoolma" placeholder="학과를 입력해 주세요">
 			 <input type ="text" name ="uschooley" id = "uschooley" placeholder="입학년도 입력해 주세요">		 
 			 <input type ="hidden" name ="searchType4" id = "searchType4" value="us">
-		</div>
-		<div style="margin-left:500px; margin-top: 40px;">
-			<button type="button" id="btnSearch4">검색</button>
+			 <button type="button" id="btnSearch4" style="margin-left: 10px;">검색</button>
 		</div>
 </div>
 

@@ -26,7 +26,7 @@
 </head>
 <div>
 <a href="${pageContext.request.contextPath}/">
-<img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:970px; margin-top:50px;" >
+<img alt="메인 페이지" src="/resources/img/logoMain.png" height="200px" width="auto" style="margin-left:940px; margin-top:50px;" >
 </a>
 </div>
 
@@ -177,13 +177,4 @@ body {
 	color: #daf1ff;
 }
 </style>
-<<<<<<< HEAD
 </html>
-=======
-<<<<<<< HEAD
-</html>
-=======
-
-</html>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git

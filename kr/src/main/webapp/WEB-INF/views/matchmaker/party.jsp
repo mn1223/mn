@@ -66,9 +66,6 @@
     <c:set var="result" value="${result}!${list.pDate}"/>
 
 </c:forEach>
-
-<h1>관리자 페이지(매치 메이커 공통)</h1>
-	<h2>파티관리</h2> <a href="/">홈으로</a>
 	
 	<table data-mbook="${result}">
 		<tr>

@@ -155,8 +155,13 @@ public class BoardController {
 			@RequestParam(required = false) String keyword,
 			@ModelAttribute("search") Search search	,			
 			Principal principal) throws Exception {
-
-		model.addAttribute("myid",principal.getName());
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -250,8 +255,13 @@ public class BoardController {
 			@RequestParam(required = false) String keyword,
 			@ModelAttribute("search") Search search,			
 			Principal principal) throws Exception {
-
-		model.addAttribute("myid",principal.getName());
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -343,8 +353,13 @@ public class BoardController {
 			@RequestParam(required = false) String keyword,
 			@ModelAttribute("search") Search search,				
 			Principal principal) throws Exception {
-
-		model.addAttribute("myid",principal.getName());
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -429,8 +444,13 @@ public class BoardController {
 			@RequestParam(required = false) String keyword,
 			@ModelAttribute("search") Search search,				
 			Principal principal) throws Exception {
-
-		model.addAttribute("myid",principal.getName());
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -516,7 +536,11 @@ public class BoardController {
 				@ModelAttribute("search") Search search,				
 				Principal principal) throws Exception {
 
-			model.addAttribute("myid",principal.getName());
+			try {
+				model.addAttribute("myid",principal.getName());
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
 			//검색
 			model.addAttribute("search", search);
 			search.setSearchType(searchType);

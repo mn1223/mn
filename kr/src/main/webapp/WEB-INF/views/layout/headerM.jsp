@@ -1,36 +1,22 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<<<<<<< HEAD
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<<<<<<< HEAD
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-=======
 
 
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <!-- jQuery -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  -->
 
 <%-- <script src="${pageContext.request.contextPath}/resources/common/js/jquery-3.3.1.min.js" ></script> --%>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <%-- fontawesome script --%>
 <script type="text/javascript" src="/resources/fontawesome/js/all.js"></script>
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 
@@ -47,7 +33,7 @@
       <div class="col-4 pt-1">
       
       <a href="${pageContext.request.contextPath}/">
-      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:530px; float:left;">
+      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:400px; float:left;">
       </a>
       </div>
       
@@ -64,16 +50,7 @@
       </div>      
       <div id="btnMenu">
       	<div id="btnMenuIn">
-<<<<<<< HEAD
-
-          	
-=======
-<<<<<<< HEAD
-
-=======
        	
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
           	<sec:authorize access="isAnonymous()">
 				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
 				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
@@ -95,16 +72,8 @@
      						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
 					 </c:otherwise>
 				</c:choose>
-<<<<<<< HEAD
 			</sec:authorize>
-=======
-			</sec:authorize>
-<<<<<<< HEAD
 
-=======
-
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
         </div>
       </div>
     </div>    
@@ -114,9 +83,9 @@
  <div style="width: 100%; text-align:center;">
 	<div id="menu1" >
 		<ul> 
-			 <li><a href="${pageContext.request.contextPath}/board/getBoardListOne">공지사항</a></li>
-			 <li><a href="${pageContext.request.contextPath}/user/user">파티참석</a></li>
-			 <li><a href="${pageContext.request.contextPath}/board/getBoardListTwo">서비스 후기</a></li>
+			 <li><a href="${pageContext.request.contextPath}/board/getBoardListOne">회원관리</a></li>
+			 <li><a href="${pageContext.request.contextPath}/user/user">파티관리</a></li>
+			 <li><a href="${pageContext.request.contextPath}/board/getBoardListTwo">예약관리</a></li>
 			 <li><a href="${pageContext.request.contextPath}/board/getBoardListThree">Q&A</a></li>
 	    </ul>
 	</div>	

@@ -64,24 +64,17 @@
 
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
-          		<c:set var="name" value="${admin }" />
-
+          		<c:set var="name" value="${myid }" />
 				<c:choose>
 					<c:when test="${name eq 'admin@naver.com'}">
-        			
-	
 						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>
-					
    	 				</c:when>
 
 					<c:otherwise>
      						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmypage">마이페이지</a>
 					 </c:otherwise>
 				</c:choose>
-
-
 			</sec:authorize>
-
         </div>
       </div>
     </div>    

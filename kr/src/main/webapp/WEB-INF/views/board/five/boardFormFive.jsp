@@ -79,7 +79,7 @@
 <body>
 	<article>
 		<div class="container" role="main">
-			<h2>board Form</h2>
+			<h2>Q&A(반갑다친구야)</h2>
 			<form:form name="form" id="form" role="form" modelAttribute="boardVO"
 				method="post"
 				action="${pageContext.request.contextPath}/board/saveBoardFive">

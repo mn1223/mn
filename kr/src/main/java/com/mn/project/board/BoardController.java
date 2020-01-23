@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mn.project.login.LoginVO;
 import com.mn.project.reply.ReplyVO;
 import com.mn.project.util.SessionClass;
 
@@ -353,18 +354,20 @@ public class BoardController {
 			@RequestParam(required = false) String keyword,
 			@ModelAttribute("search") Search search,				
 			Principal principal) throws Exception {
-		
+
 		try {
-			model.addAttribute("myid",principal.getName());
+			String id = principal.getName();
+			model.addAttribute("myid",id);
+			search.setMmid(id);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		
+
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
 		search.setKeyword(keyword);		
-
+		
 		//전체 게시글 개수
 		int listCnt = service.getBoardListCntFour(search);
 

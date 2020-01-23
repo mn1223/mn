@@ -192,13 +192,13 @@
 	<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
 	
 	<!-- 게시글 목록 보기(4번 게시판) -->
-	<select id="getBoardListFour" resultType="com.mn.project.board.BoardVO">
+	<select id="getBoardListFour" parameterType="com.mn.project.board.Search" resultType="com.mn.project.board.BoardVO">
 	<![CDATA[
 	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
 	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
 	over(order by bno asc) as rNum
 	from board
-	where bomanagenum=4]]>
+	where bomanagenum=4 and bommid =#{mmid}]]>
 	<include refid="search"></include>
 	<![CDATA[
 	) mp

@@ -15,7 +15,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
@@ -25,6 +24,26 @@
 <!-- (Optional) Latest compiled and minified JavaScript translation files -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-ko_KR.min.js"></script>
 <script src="/js/javascript.js"></script>
+<style>
+input[type='text'] {
+    border-radius:10px; 
+   background-color:rgb(212,244,250);
+}
+div.tt{
+  padding:90px 300px;
+  position: absolute;
+}
+#view{
+  border-radius:10px;
+  background: linear-gradient(to right,#9575CD,#F48FB1 );
+  width: 60px;
+  height: 33px;
+  text-color:#ffff;
+}
+#color{
+  background-color:rgb(196,222,255);
+}
+</style>
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <style>
@@ -52,7 +71,6 @@ div.tt{
 <div class="tt">
 	<center>회원 검색 (회원이름 및 아이디) :
 	<input type="text" name="name" id="sid"><button type="button" id="view">확인</button></center>
-
 	<br />
 	<br />
 	<h2>Member List</h2>
@@ -107,4 +125,4 @@ div.tt{
 	</table>
 	</div>
 </body>
-</html>
+</html>

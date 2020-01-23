@@ -134,11 +134,19 @@
 				</table>
 			</div>
 			<div>
+
+				<c:set var ="name" value ="${myid }"/>
+				<c:choose>
+				<c:when test="${not empty name}">
+				
 				<button type="button" class="btn btn-sm btn-primary"
 					id="btnWriteForm">글쓰기</button>
-			
+				</c:when>
+				</c:choose>
+				
 				<button type="button" class="btn btn-sm btn-primary"
 					id="btnlistForm">목록</button>
+					
 			</div>
 			<br />			
 

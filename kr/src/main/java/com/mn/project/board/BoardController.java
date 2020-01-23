@@ -153,10 +153,15 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
-
-
+			@ModelAttribute("search") Search search	,			
+			Principal principal) throws Exception {
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -248,10 +253,15 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
-
-
+			@ModelAttribute("search") Search search,			
+			Principal principal) throws Exception {
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -341,10 +351,15 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
-
-
+			@ModelAttribute("search") Search search,				
+			Principal principal) throws Exception {
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -427,10 +442,15 @@ public class BoardController {
 			@RequestParam(defaultValue = "1") int range,
 			@RequestParam(defaultValue = "title") String searchType,
 			@RequestParam(required = false) String keyword,
-			@ModelAttribute("search") Search search				
-			) throws Exception {
-
-
+			@ModelAttribute("search") Search search,				
+			Principal principal) throws Exception {
+		
+		try {
+			model.addAttribute("myid",principal.getName());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
 		//검색
 		model.addAttribute("search", search);
 		search.setSearchType(searchType);
@@ -513,10 +533,14 @@ public class BoardController {
 				@RequestParam(defaultValue = "1") int range,
 				@RequestParam(defaultValue = "title") String searchType,
 				@RequestParam(required = false) String keyword,
-				@ModelAttribute("search") Search search				
-				) throws Exception {
+				@ModelAttribute("search") Search search,				
+				Principal principal) throws Exception {
 
-
+			try {
+				model.addAttribute("myid",principal.getName());
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
 			//검색
 			model.addAttribute("search", search);
 			search.setSearchType(searchType);

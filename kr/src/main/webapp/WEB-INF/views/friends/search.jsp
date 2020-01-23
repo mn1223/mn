@@ -88,8 +88,7 @@ $(document).on('click', '#btnSearch1', function() {
 				html += '<th>'+this.eschool+'<th>';
 				html += '<th>'+this.eschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
-				html += '<th><button>채팅하기</button><th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -198,8 +197,7 @@ $(document).on('click', '#btnSearch2', function() {
 				html += '<th>'+this.mschool+'<th>';
 				html += '<th>'+this.mschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
-				html += '<th><button>채팅하기</button><th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -248,8 +246,7 @@ $(document).on('click', '#btnSearch3', function() {
 				html += '<th>'+this.hschool+'<th>';
 				html += '<th>'+this.hschoolgy+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
-				html += '<th><button>채팅하기</button><th>';
+				html += html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -300,8 +297,7 @@ $(document).on('click', '#btnSearch4', function() {
 				html += '<th>'+this.uschool+'<th>';
 				html += '<th>'+this.uschooley+'<th>';
 				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><a href = "#" onclick=friends_judge("'+ this.scmmid +'");>친구추가</a><th>';
-				html += '<th><button>채팅하기</button><th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
 				html += '<tr>';							
 			});//each end			
 			$("#result").html(html);
@@ -388,7 +384,6 @@ $(document).on('click', '#btnSearch4', function() {
 				<th>졸업년도</th>
 				<th>성별</th>
 				<th>친구추가하기</th>							
-				<th>채팅하기</th>
 			</tr>
 		</thead>
 		<tbody id ="result"></tbody>

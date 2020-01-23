@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
@@ -35,90 +33,16 @@
 						<td><button id="signUp" type="button" onclick="location.href='${pageContext.request.contextPath}/signup'">회원가입</button></td>
 					</tr>
 				</sec:authorize>
-<<<<<<< HEAD
-
-				<sec:authorize access="isAuthenticated()">
-												<td>
-=======
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-				<sec:authorize access="isAuthenticated()">
-					<tr>
+			
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
 							<td><a style="visibility: hidden;">공간띄기</a></td>	
 							<td><a style="visibility: hidden;">공간띄기</a></td>		
 						
 
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
-							</td>
+			
 
-						</form:form>
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-				<sec:authorize access="isAuthenticated()">
-<<<<<<< HEAD
-
-					<tr>
-						<form:form action="${pageContext.request.contextPath}/logout" method="POST">					
-
-
-=======
-<<<<<<< HEAD
-					<tr>
-						<form:form action="${pageContext.request.contextPath}/logout" method="POST">					
-=======
-					<tr>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-							<td><a style="visibility: hidden;">공간띄기</a></td>						
-							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>								
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-							<td>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-							<!-- <input type="submit" value="로그아웃" /> -->
-							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
-							</td>
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->		
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-						</form:form>
-<<<<<<< HEAD
-
-=======
-=======
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-					</tr>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-				</sec:authorize>
+						</form:form>				
 			</table>
 				<div class="logo">
 					<img alt="로고" src="resources/img/logoMain.png" height="200px" width="auto">

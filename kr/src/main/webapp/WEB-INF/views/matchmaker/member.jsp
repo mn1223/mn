@@ -8,9 +8,7 @@
 <html>
 <head>
 
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -31,11 +29,9 @@
 <title>관리자 페이지</title>
 </head>
 <body>
-	<h1>관리자 페이지(매치 메이커 공통)</h1>
-	<h2>회원관리</h2><a href="/">홈으로</a>
-	<p />
-	회원 검색(회원이름 및 아이디) :
-	<input type="text" name="name" id="sid"><button type="button" id="view">확인</button>
+<div class="tt">
+	<center>회원 검색 (회원이름 및 아이디) :
+	<input type="text" name="name" id="sid"><button type="button" id="view">확인</button></center>
 
 	<br />
 	<br />
@@ -51,8 +47,8 @@
 			<col style="width: 10%;" />
 		</colgroup>
 		<thead>
-			<tr>
-				<th>회원이름</th>
+			<tr id="color">
+				<th> 회원이름</th>
 				<th>회원아이디</th>
 				<th>성별</th>
 				<th>전화번호</th>
@@ -84,14 +80,33 @@
 						$('#grade${status.index}').selectpicker();
 						</script>
 						
-					<td><button type="button">수정</button></td>
+					<td><center><button type="button">수정</button></td></center>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 </body>
 <script>
-
-
 </script>
 </html>
+<style>
+input[type='text'] {
+    border-radius:10px; 
+   background-color:rgb(212,244,250);
+}
+div.tt{
+  padding:90px 300px;
+  position: absolute;
+}
+#view{
+  border-radius:10px;
+  background: linear-gradient(to right,#9575CD,#F48FB1 );
+  width: 60px;
+  height: 33px;
+  text-color:#ffff;
+}
+#color{
+  background-color:rgb(196,222,255);
+}
+</style>

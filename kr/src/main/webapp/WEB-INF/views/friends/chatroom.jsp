@@ -13,39 +13,40 @@
 #${myid}{
 #color:green;
 float:right;
-
-}
-#${myid} {
-	position: relative;
-	background: #88b7d5;
-	border: 4px solid #c2e1f5;
 }
 
-
-#${myid}:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-left-color: #88b7d5;
-	border-width: 30px;
-	margin-top: -30px;
+.chat_container{
+	position:;
+	width:987px;
+	height:auto;
+	background:#ddd;
+	 
+	 
 }
+body{ 
+padding:10px 450px;  
+}  
 
 
-</style>
+
+</style>    
 </head>
 <body>
-	<h2>${yourname }</h2>
-	<form id="chatForm">
-		<input type="text" id="message" />
-		<button>send</button>
+	<div><span style="background-color: #ddd; font-size: 20pt; margin-bottom: 30px;">${yourname }</span></div>
+	<div class ="chat_container" id="chat">${chatList }</div>
+
+	<form id="chatForm" style="text-align: right;"> 
+		<input type="text" id="message" placeholder="여기에 채팅을 입력하세요." style="width:775px; height:100px;" />   
+		<button style="width:200px; height:100px; font-size:30pt; font-style:italic; font-weight: bold;" >전송</button>     
 	</form>
-	<div id="chat">${chatList }</div>
-	<script>
+  
+	<script>   
 		$(document).ready(
 				function() {
 					$("#chatForm").submit(
 							function(event) {
 								event.preventDefault();
-								var mes = $("#message").val();
+								var mes = $("#message").val(); 
 								var user = "${myid}";
 								sock.send("<span id = ${myid}>" + user + ":"
 										+ mes + "</span>");

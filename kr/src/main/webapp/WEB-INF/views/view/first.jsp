@@ -35,49 +35,27 @@
 						<td><button id="signUp" type="button" onclick="location.href='${pageContext.request.contextPath}/signup'">회원가입</button></td>
 					</tr>
 				</sec:authorize>
-<<<<<<< HEAD
-				<sec:authorize access="isAuthenticated()">
-					<tr>
-						<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-							<td><a style="visibility: hidden;">공간띄기</a></td>	
-							<td><a style="visibility: hidden;">공간띄기</a></td>		
-						
 
-							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
-							</td>
 
-						</form:form>
-=======
 				<sec:authorize access="isAuthenticated()">
-<<<<<<< HEAD
+
 					<tr>
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">					
-=======
-					<tr>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+
+
 							<td><a style="visibility: hidden;">공간띄기</a></td>						
 							<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><a style="visibility: hidden;">공간띄기</a></td>								
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 							<td>
 							<!-- <input type="submit" value="로그아웃" /> -->
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
 							</td>
 
-<<<<<<< HEAD
 							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->		
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 
-<<<<<<< HEAD
 						</form:form>
-=======
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+
 					</tr>
 				</sec:authorize>
 			</table>

@@ -6,7 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
+<title>Insert title here</title>
+
+=======
 <title>반갑다친구야 : 친구목록</title>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function(){
@@ -30,11 +35,20 @@ function showFriendListTrue(){
 		success: function(data){
 			var html = "";
 			$(data).each(function(){
+<<<<<<< HEAD
+				html += '<tr>';
+=======
 				html += '<tr>';
 
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
 				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T") style="margin-left:230px; padding: 5px;">친구 삭제</button><th>';
+<<<<<<< HEAD
+				html += '<th><button onclick = gochat("'+this.yourid+'","'+this.mmname+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>' 
+				html += '<tr>';
+=======
 				html += '<th><button onclick = gochat("'+this.yourid+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>'				
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 			});
 			$("#friendTrue").html(html);
 		},

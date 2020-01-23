@@ -138,6 +138,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	select scmmid,eschool,eschoolgy,mschool,mschoolgy,hschool,hschoolgy,uschool,uschoolma,uschooley from scinfo where scmmid = #{mmid}
 	</select>
 	
+	<select id ="getMyName" parameterType="com.mn.project.login.LoginVO" resultType ="com.mn.project.friend.FriendVO">
+	select mmname from member where mmid = #{scmmid}
+	</select>
+	
 	
 	
 	

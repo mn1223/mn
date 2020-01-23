@@ -58,8 +58,6 @@ function usc(){
 }
 
 
-
-
 $(document).on('click', '#btnSearch1', function() {	
 	var name = $('#mmname').val();
 	var eschool = $('#eschool').val();

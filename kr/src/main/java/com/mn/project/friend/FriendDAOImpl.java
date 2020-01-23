@@ -121,6 +121,12 @@ public class FriendDAOImpl implements FriendDAO {
 
 		}
 	}
+
+	@Override
+	public FriendVO getMyName(FriendVO friendVO) {
+		
+		return session.selectOne(namespace+".getMyName",friendVO);
+	}
 	
 
 }

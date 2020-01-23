@@ -173,6 +173,4 @@ body {
 .forgotid a {
 	color: #daf1ff;
 }
-
 </style>
-</html>

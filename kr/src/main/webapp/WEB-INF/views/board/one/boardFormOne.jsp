@@ -67,7 +67,7 @@ src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js">
 <body>
 	<article>
 		<div class="container" role="main">
-			<h2>board Form</h2>
+			<h2>공지사항(매치메이커)</h2>
 			<form:form name="form" id="form" role="form" modelAttribute="boardVO"
 				method="post"
 				action="${pageContext.request.contextPath}/board/saveBoardOne">

@@ -75,7 +75,7 @@
 				<div style="height:178px;position:relative;">
 				<img alt="반갑다 친구야" src="resources/img/nicemeetyou.png" style="height:178px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
 				</div>
-				반갑다 친구야<br />
+				반갑다 친구야<br/>
 				(페이지 이동)
 			</button>
 		</div>

@@ -172,12 +172,5 @@ body {
 
 .forgotid a {
 	color: #daf1ff;
-<<<<<<< HEAD
 }
 </style>
-=======
-}
-
-</style>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-</html>

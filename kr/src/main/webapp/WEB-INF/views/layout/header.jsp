@@ -55,13 +55,6 @@
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
           		<c:set var="name" value="${myid }" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
-
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				<c:choose>
 					<c:when test="${name eq 'admin@naver.com'}">
 						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>

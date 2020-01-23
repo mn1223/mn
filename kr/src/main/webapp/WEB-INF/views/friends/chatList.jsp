@@ -32,9 +32,14 @@ function showFriendListTrue(){
 			$(data).each(function(){
 				html += '<tr>';
 
+
 				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
 				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T") style="margin-left:230px; padding: 5px;">친구 삭제</button><th>';
-				html += '<th><button onclick = gochat("'+this.yourid+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>'				
+
+				html += '<th><button onclick = gochat("'+this.yourid+'","'+this.mmname+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>' 
+				html += '</tr>';
+				
+
 			});
 			$("#friendTrue").html(html);
 		},

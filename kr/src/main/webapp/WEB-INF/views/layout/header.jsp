@@ -44,10 +44,19 @@
       			
         	</a>
         </h1>
+
       </div>      
+<<<<<<< HEAD
       <div id="btnMenu">
       	<div id="btnMenuIn">
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 
+<<<<<<< HEAD
+=======
+      <div id="btnMenu">
+      	<div id="btnMenuIn">
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
           	<sec:authorize access="isAnonymous()">
 				<a class="btn btn-sm btn-outline-secondary" href="/login/loginForm">로그인</a>
 				<a class="btn btn-sm btn-outline-secondary" href="/signup">회원가입</a>				
@@ -55,9 +64,13 @@
 
 			<sec:authorize access="isAuthenticated()">
           		<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/logout">로그아웃</a>
+<<<<<<< HEAD
 
           		<c:set var="name" value="${myid }" />
 
+=======
+          		<c:set var="name" value="${myid }" />
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				<c:choose>
 					<c:when test="${name eq 'admin@naver.com'}">
 						<a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/matchmaker/managermain">관리자 페이지</a>

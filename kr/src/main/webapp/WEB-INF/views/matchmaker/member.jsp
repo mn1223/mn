@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="/WEB-INF/views/layout/headerM.jsp"%>
-<!-- <%@ page session="false" %> -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +46,26 @@ div.tt{
 </style>
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
+<style>
+input[type='text'] {
+    border-radius:10px; 
+   background-color:rgb(212,244,250);
+}
+div.tt{
+  padding:90px 300px;
+  position: absolute;
+}
+#view{
+  border-radius:10px;
+  background: linear-gradient(to right,#9575CD,#F48FB1 );
+  width: 60px;
+  height: 33px;
+  text-color:#ffff;
+}
+#color{
+  background-color:rgb(196,222,255);
+}
+</style>
 </head>
 <body>
 <div class="tt">
@@ -105,4 +125,4 @@ div.tt{
 	</table>
 	</div>
 </body>
-</html>
+</html>

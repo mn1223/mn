@@ -84,4 +84,10 @@ public class FriendServiceImpl implements FriendService {
 		
 	}
 
+	@Override
+	public FriendVO getMyName(FriendVO friendVO) {
+		
+		return friendDAO.getMyName(friendVO);
+	}
+
 }

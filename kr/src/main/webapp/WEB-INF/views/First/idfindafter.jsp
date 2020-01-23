@@ -18,6 +18,9 @@
 		<img alt="로고" src="resources/img/logoMain.png" height="200px" width="auto" style="margin-left : 850px;" >
 	</a>
 		<div id = "friendTrue" style="padding : 50px; margin-left : 380px; width: 1100px; height: 400px; background-color: #FAFAFA; text-align: center;">
+		<br/>
+		<br/>
+		<br/>
 		<h1><c:out value="${idfindaftern.mmid}"/></h1>
 		    <br/>
 		    <br/>

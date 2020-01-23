@@ -14,8 +14,8 @@
 </head>
 <body>
 	<div>
-	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; float:left;">
-	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; margin-left: 270px; float:left;">	
+	<img alt="메인 페이지 배경" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; float:left;">
+	<img alt="메인 페이지 배경" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; margin-left: 270px; float:left;">	
 	</div>	
 	
 	<div class="base" style="opacity : 0.95;">

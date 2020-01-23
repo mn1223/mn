@@ -30,7 +30,7 @@
       <div class="col-4 pt-1">
       
       <a href="${pageContext.request.contextPath}/">
-      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:530px; float:left;">
+      <img alt="메인 페이지" src="/resources/img/logoMain.png" height="100px" width="auto" style="margin-top: 60px; margin-left:400px; float:left;">
       </a>
       </div>
       

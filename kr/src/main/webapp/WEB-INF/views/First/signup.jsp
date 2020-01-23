@@ -114,6 +114,10 @@
 </script>
 </head>
   <body>
+  <div style="height: 850px; width: auto;">
+  <a href="${pageContext.request.contextPath}/">
+  <img alt="메인 페이지" src="/resources/img/logoMain.png" height="150px" width="auto" style="margin-left:850px; margin-top:0px;" >
+  </a>
     <div class="container">
       <form class="form-signin" method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
@@ -165,14 +169,16 @@
       </form>
 
     </div> <!-- /container -->
+    </div>
   </body>
-</html>
 <style>
 body {
   padding-top: 90px;
   padding-bottom: 40px;
   background-color: #eee;
   background-image:url('mainPage.png');
+  height : 900px;
+  width : auto;
 }
 
 .form-signin {
@@ -212,4 +218,6 @@ body {
   border-top-right-radius: 0;
 }
 
-</style>
+</style>  
+  
+</html>

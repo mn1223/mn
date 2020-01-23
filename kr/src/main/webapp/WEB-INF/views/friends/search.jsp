@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>반갑다 친구야 : 친구찾기</title>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
  
 <script>
@@ -16,7 +16,9 @@ $(document).ready(function() {
 	$("#es").show();
 	$("#ms").hide();
 	$("#hs").hide();
-	$("#us").hide();	
+	$("#us").hide();
+	$("#oschoolTable").show();
+	$("#uschoolTable").hide();
 });
 
 function esc(){
@@ -24,6 +26,8 @@ function esc(){
 	$("#ms").hide();
 	$("#hs").hide();
 	$("#us").hide();
+	$("#oschoolTable").show();
+	$("#uschoolTable").hide();
 }
 
 function msc(){
@@ -31,6 +35,8 @@ function msc(){
 	$("#ms").show();
 	$("#hs").hide();
 	$("#us").hide();
+	$("#oschoolTable").show();
+	$("#uschoolTable").hide();
 }
 
 function hsc(){
@@ -38,6 +44,8 @@ function hsc(){
 	$("#ms").hide();
 	$("#hs").show();
 	$("#us").hide();
+	$("#oschoolTable").show();
+	$("#uschoolTable").hide();
 }
 
 function usc(){
@@ -45,6 +53,8 @@ function usc(){
 	$("#ms").hide();
 	$("#hs").hide();
 	$("#us").show();
+	$("#oschoolTable").hide();
+	$("#uschoolTable").show();
 }
 
 
@@ -80,14 +90,14 @@ $(document).on('click', '#btnSearch1', function() {
 		success : function(data){
 			console.log(data);
 			var html = "";			
-			$(data).each(function(){				
-				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th>'+this.eschool+'<th>';
-				html += '<th>'+this.eschoolgy+'<th>';
-				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
-				html += '<tr>';							
+			$(data).each(function(){	
+				html += '<tr style="text-align:center;">';
+				html += '<th style="width: 100px">'+this.mmname+'</th>';
+				html += '<th style="width: 200px">'+this.eschool+'</th>';
+				html += '<th style="width: 200px">'+this.eschoolgy+'</th>';
+				html += '<th style="width: 150px">'+this.mmgender+'</th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button></th>';
+				html += '</tr>';
 			});//each end			
 			$("#result").html(html);
 		},
@@ -189,14 +199,14 @@ $(document).on('click', '#btnSearch2', function() {
 		dataType : "json",
 		success : function(data){			
 			var html = "";			
-			$(data).each(function(){				
-				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th>'+this.mschool+'<th>';
-				html += '<th>'+this.mschoolgy+'<th>';
-				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
-				html += '<tr>';							
+			$(data).each(function(){
+				html += '<tr style="text-align:center; ">';
+				html += '<th style="width: 100px;"">'+this.mmname+'</th>';
+				html += '<th style="width: 200px">'+this.mschool+'</th>';
+				html += '<th style="width: 200px">'+this.mschoolgy+'</th>';
+				html += '<th style="width: 150px">'+this.mmgender+'</th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button></th>';
+				html += '</tr>';
 			});//each end			
 			$("#result").html(html);
 		},
@@ -239,13 +249,13 @@ $(document).on('click', '#btnSearch3', function() {
 		success : function(data){			
 			var html = "";			
 			$(data).each(function(){				
-				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th>'+this.hschool+'<th>';
-				html += '<th>'+this.hschoolgy+'<th>';
-				html += '<th>'+this.mmgender+'<th>';
-				html += html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
-				html += '<tr>';							
+				html += '<tr style="text-align:center; ">';
+				html += '<th style="width: 100px;"">'+this.mmname+'</th>';
+				html += '<th style="width: 200px">'+this.hschool+'</th>';
+				html += '<th style="width: 200px">'+this.hschoolgy+'</th>';
+				html += '<th style="width: 150px">'+this.mmgender+'</th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button></th>';
+				html += '</tr>';						
 			});//each end			
 			$("#result").html(html);
 		},
@@ -289,14 +299,14 @@ $(document).on('click', '#btnSearch4', function() {
 		dataType : "json",
 		success : function(data){			
 			var html = "";			
-			$(data).each(function(){				
-				html += '<tr>';
-				html += '<th>'+this.mmname+'<th>';
-				html += '<th>'+this.uschool+'<th>';
-				html += '<th>'+this.uschooley+'<th>';
-				html += '<th>'+this.mmgender+'<th>';
-				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button><th>';
-				html += '<tr>';							
+			$(data).each(function(){
+				html += '<tr style="text-align:center; ">';
+				html += '<th style="width: 100px;"">'+this.mmname+'</th>';
+				html += '<th style="width: 200px">'+this.uschool+'</th>';
+				html += '<th style="width: 200px">'+this.uschooley+'</th>';
+				html += '<th style="width: 150px">'+this.mmgender+'</th>';
+				html += '<th><button onclick=friends_judge("'+ this.scmmid +'");>친구추가</button></th>';
+				html += '</tr>';
 			});//each end			
 			$("#result").html(html);
 		},
@@ -307,78 +317,108 @@ $(document).on('click', '#btnSearch4', function() {
 	}
 });
 
-
-
-
 </script>
+
+<style>
+input {
+	padding : 5px;
+	text-align : center;
+}
+
+p {
+	float: left;
+}
+
+
+</style>
 </head>
 
 <body>
-<div>
-<img alt="친구 찾기" src="/resources/img/fs.png" height="70px" width="auto" style="margin-left:500px; margin-top:10px;" >
-</div>
-<input type="button" value ="초등학교 동창" onclick ="esc()" style="margin-left:500px; margin-top: 40px;">
-<input type="button" value ="중학교 동창" onclick ="msc()" style="margin-left:200px;">
-<input type="button" value ="고등학교 동창" onclick ="hsc()" style="margin-left:200px;">
-<input type="button" value ="대학교 동창" onclick ="usc()" style="margin-left:200px;">
-<input type="hidden" id = loginId value = ${id}>
-
-
-<div id = "es">
-		<h2 style="margin-left:500px; margin-top: 40px;">초등학교 검색</h2>
-		<div style="margin-left:500px; margin-top: 40px;">
-			 <input type ="text" name ="mmname" id ="mmname" placeholder="이름을 입력해 주세요">
-			 <input type ="text" name ="eschool" id = "eschool" placeholder="초등학교를 입력해 주세요">
-			 <input type ="text" name ="eschoolgy" id = "eschoolgy" placeholder="졸업년도 입력해 주세요">		 
-			 <input type ="hidden" name ="searchType" id = "searchType" value="es">
-			 <button type="button" id="btnSearch1" style="margin-left: 10px;">검색</button>
-		</div>
-</div>
-<div id = "ms">
-		<h2 style="margin-left:500px; margin-top: 40px;">중학교 검색</h2>
-		<div style="margin-left:500px; margin-top: 40px;">
-			 <input type ="text" name ="mmname2" id ="mmname2" placeholder="이름을 입력해 주세요">
-			 <input type ="text" name ="mschool" id = "mschool" placeholder="중학교를 입력해 주세요">
-			 <input type ="text" name ="mschoolgy" id = "mschoolgy" placeholder="졸업년도 입력해 주세요">		 
-			 <input type ="hidden" name ="searchType2" id = "searchType2" value="ms">
-			 <button type="button" id="btnSearch2" style="margin-left: 10px;">검색</button>
-		</div>
-</div>
-<div id = "hs">
-		<h2 style="margin-left:500px; margin-top: 40px;">고등학교 검색</h2>
-		<div style="margin-left:500px; margin-top: 40px;">
-			 <input type ="text" name ="mmname3" id ="mmname3" placeholder="이름을 입력해 주세요">
-			 <input type ="text" name ="hschool" id = "hschool" placeholder="고교를 입력해 주세요">
-			 <input type ="text" name ="hschoolgy" id = "hschoolgy" placeholder="졸업년도 입력해 주세요">		 
-			 <input type ="hidden" name ="searchType3" id = "searchType3" value="hs">
-			 <button type="button" id="btnSearch3" style="margin-left: 10px;">검색</button>
-		</div>
-</div>
-<div id = "us">
-		<h2 style="margin-left:500px; margin-top: 40px;">대학교 검색</h2>
-		<div style="margin-left:500px; margin-top: 40px;">
-			 <input type ="text" name ="mmname4" id ="mmname4" placeholder="이름을 입력해 주세요">
-			 <input type ="text" name ="uschool" id = "uschool" placeholder="대학교를 입력해 주세요">
-			 <input type ="text" name ="uschoolma" id = "uschoolma" placeholder="학과를 입력해 주세요">
-			 <input type ="text" name ="uschooley" id = "uschooley" placeholder="입학년도 입력해 주세요">		 
-			 <input type ="hidden" name ="searchType4" id = "searchType4" value="us">
-			 <button type="button" id="btnSearch4" style="margin-left: 10px;">검색</button>
-		</div>
-</div>
-
-<div>
-	<table style="margin-left:500px; margin-top: 40px;">
-		<thead>
-			<tr>
-				<th>이름</th>
-				<th>학교</th>
-				<th>졸업년도</th>
-				<th>성별</th>
-				<th>친구추가하기</th>							
-			</tr>
-		</thead>
-		<tbody id ="result"></tbody>
-	</table>
+<img alt="친구 찾기" src="/resources/img/fs.png" height="50px" width="auto" style="margin-left:380px; margin-top:10px;" >
+<div style="padding : 50px; margin-left : 380px; width: 1100px; height: 565px; background-color: #FAFAFA; ">
+	<div>
+	
+	</div>
+	<div>
+	<input type="button" value ="초등학교 동창" onclick ="esc()" style="margin-right: 20px;">
+	<input type="button" value ="중학교 동창" onclick ="msc()" style="margin-right: 20px;">
+	<input type="button" value ="고등학교 동창" onclick ="hsc()" style="margin-right: 20px;">
+	<input type="button" value ="대학교 동창" onclick ="usc()" style="margin-right: 20px;">
+	<input type="hidden" id = loginId value = ${id}>
+	</div>
+	<br/>
+	<br/>		
+	<div id = "es">
+			<h2>초등학교 검색</h2>
+			<div>
+				 <input type ="text" name ="mmname" id ="mmname" placeholder="이름을 입력해 주세요" style="height:auto; width: 200px;">
+				 <input type ="text" name ="eschool" id = "eschool" placeholder="초등학교를 입력해 주세요" style="height:auto; width: 250px;">
+				 <input type ="text" name ="eschoolgy" id = "eschoolgy" placeholder="졸업년도 입력해 주세요" style="height:auto; width: 250px;">		 
+				 <input type ="hidden" name ="searchType" id = "searchType" value="es">
+				 <button type="button" id="btnSearch1" style="margin-left: 10px; padding: 10px; font-size: 18px;">검색</button>
+			</div>
+	</div>
+	<div id = "ms">
+			<h2>중학교 검색</h2>
+			<div >
+				 <input type ="text" name ="mmname2" id ="mmname2" placeholder="이름을 입력해 주세요" style="height:auto; width: 250px;">
+				 <input type ="text" name ="mschool" id = "mschool" placeholder="중학교를 입력해 주세요" style="height:auto; width: 250px;">
+				 <input type ="text" name ="mschoolgy" id = "mschoolgy" placeholder="졸업년도 입력해 주세요" style="height:auto; width: 250px;">		 
+				 <input type ="hidden" name ="searchType2" id = "searchType2" value="ms">
+				 <button type="button" id="btnSearch2" style="margin-left: 10px; padding: 10px; font-size: 18px;">검색</button>
+			</div>
+	</div>
+	<div id = "hs">
+			<h2>고등학교 검색</h2>
+			<div >
+				 <input type ="text" name ="mmname3" id ="mmname3" placeholder="이름을 입력해 주세요" style="height:auto; width: 250px;">
+				 <input type ="text" name ="hschool" id = "hschool" placeholder="고등학교를 입력해 주세요" style="height:auto; width: 250px;">
+				 <input type ="text" name ="hschoolgy" id = "hschoolgy" placeholder="졸업년도 입력해 주세요" style="height:auto; width: 250px;">		 
+				 <input type ="hidden" name ="searchType3" id = "searchType3" value="hs">
+				 <button type="button" id="btnSearch3" style="margin-left: 10px; padding: 10px; font-size: 18px;">검색</button>
+			</div>
+	</div>
+	<div id = "us">
+			<h2>대학교 검색</h2>
+			<div >
+				 <input type ="text" name ="mmname4" id ="mmname4" placeholder="이름을 입력해 주세요" style="height:auto; width: 200px;">
+				 <input type ="text" name ="uschool" id = "uschool" placeholder="대학교를 입력해 주세요" style="height:auto; width: 200px;">
+				 <input type ="text" name ="uschoolma" id = "uschoolma" placeholder="학과를 입력해 주세요" style="height:auto; width: 200px;">
+				 <input type ="text" name ="uschooley" id = "uschooley" placeholder="입학년도 입력해 주세요" style="height:auto; width: 200px;">
+				 <input type ="hidden" name ="searchType4" id = "searchType4" value="us">
+				 <button type="button" id="btnSearch4" style="margin-left: 10px; padding: 10px; font-size: 18px;">검색</button>
+			</div>
+	</div>
+	
+	<div>
+	<br/>	
+		<table >
+			<thead id="uschoolTable">
+				<tr style="text-align:center;">
+					<th style="width: 50px;">이름</th>
+					<th style="width: 100px;">학교</th>
+					<th style="width: 100px;">입학년도</th>
+					<th style="width: 100px;">성별</th>
+					<th style="width: 150px;">친구추가하기</th>							
+				</tr>
+			</thead>	
+			<thead id="oschoolTable">
+				<tr style="text-align:center;">
+					<th style="width: 50px;">이름</th>
+					<th style="width: 100px;">학교</th>
+					<th style="width: 100px;">졸업년도</th>
+					<th style="width: 100px;">성별</th>
+					<th style="width: 150px;">친구추가하기</th>							
+				</tr>
+			</thead>		
+			<tbody id ="result"></tbody>
+		</table>
+		
+	</div>
 </div>
 </body>
+<style>
+
+</style>
+
 </html>

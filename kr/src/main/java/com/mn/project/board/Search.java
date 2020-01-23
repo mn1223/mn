@@ -3,8 +3,16 @@ package com.mn.project.board;
 public class Search extends Pagination {
 	private String searchType="";
 	private String keyword="";
+	private String mmid;
 	
 	
+	
+	public String getMmid() {
+		return mmid;
+	}
+	public void setMmid(String mmid) {
+		this.mmid = mmid;
+	}
 	public String getSearchType() {
 		return searchType;
 	}

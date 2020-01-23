@@ -380,23 +380,23 @@ th{
 
 		<div id="inform" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 				
-				<div style="font-size: 20pt;">
+				<div style="font-size: 15pt;">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름:&nbsp;&nbsp;<c:out value="${userInfo.mmname}"/>
 				</div>
 				<br/>  
-				<div style="font-size: 20pt;">
+				<div style="font-size: 15pt;">
 					&nbsp;&nbsp;&nbsp;아이디:&nbsp;&nbsp;<c:out value="${userInfo.mmid}"/>
 				</div>
 				<br/>  
-				<div style="font-size: 20pt;">
+				<div style="font-size: 15pt;">
 					비밀번호:&nbsp;&nbsp;<c:out value="${userInfo.mmpwd}"/>
 				</div>
 				<br/>  
-				<div style="font-size: 20pt;">
+				<div style="font-size: 15pt;">
 					전화번호:&nbsp;&nbsp;<c:out value="${userInfo.mmphonenum}"/>
 				</div>
 				<br/>  
-				<div style="font-size: 20pt;">
+				<div style="font-size: 15pt;">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별:&nbsp;&nbsp;<c:out value="${userInfo.mmgender}"/>
 				</div>
 				<br/>  
@@ -407,19 +407,19 @@ th{
 <!-- 회원정보 수정  -->
 <div id= "editform" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 	
-	<div style="font-size: 20pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;<input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;<input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
 	</div>
 	<br/>
-	<div style="font-size: 20pt;">&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;<input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly">
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;<input type="text" id="mmid" value="${userInfo.mmid}" readonly="readonly">
 	</div>
 	<br/>
-	<div style="font-size: 20pt;">비밀번호&nbsp;&nbsp;<input type="text" id="mmpwd" value="${userInfo.mmpwd}">
+	<div style="font-size: 15pt;">비밀번호&nbsp;&nbsp;<input type="text" id="mmpwd" value="${userInfo.mmpwd}">
 	</div>
 	<br/>
-	<div style="font-size: 20pt;">전화번호&nbsp;&nbsp;<input type="text" id="mmphonenum" value="${userInfo.mmphonenum}">
+	<div style="font-size: 15pt;">전화번호&nbsp;&nbsp;<input type="text" id="mmphonenum" value="${userInfo.mmphonenum}">
 	</div>
 	<br/>
-	<div style="font-size: 20pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별&nbsp;&nbsp;<input type="text" id="mmgender" value="${userInfo.mmgender}">
+	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별&nbsp;&nbsp;<input type="text" id="mmgender" value="${userInfo.mmgender}">
 	</div>
 		
 	<br/>
@@ -429,8 +429,9 @@ th{
 
 
 
-<img alt="학교 정보" src="/resources/img/schoolInfo.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
+
 <!-- 학교 정보 입력 form -->
+<img alt="학교 정보" src="/resources/img/schoolInfo.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
 <div id="schoolInfo" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 
 	<input type="button" id = "bt_e" value ="초등학교" onclick ="eschool()">
@@ -449,7 +450,7 @@ th{
 			<div style="font-size: 20pt;">&nbsp;&nbsp;졸업년도:&nbsp;&nbsp;<c:out value ="${scinfo.eschoolgy}년"/><br/></div>
 			<br/>
 			<br/>
-			<button type="button" id="btnschool" onclick="editeschoolinfo()" >수정</button>
+			<button type="button" id="btnschool" onclick="editeschoolinfo()" >등록 및 수정</button>
 		</div>
 		
 		<div id = "editeschool">
@@ -540,13 +541,7 @@ th{
 			<button type="button" id="btnschool" onclick="edituschoolinfo()">등록 및 수정</button>
 		</div>
 		
-		<div id = "edituschool">
-			<%-- <label>대학교</label> <input type="text" id="uschoolName" name="uschoolName" value="${scinfo.uschool}" readonly/>
-			<button id ="searchBtn" data-toggle="modal" data-target="#myModal">학교 찾기</button><br>
-			<label>학과</label> <input type="text" id="uschoolma" name="uschoolma" value="${scinfo.uschoolma}" /><br>
-			<label>입학년도</label> <input type="text" id="uschooley"
-				name="uschooley" value ="${scinfo.uschooley}"/><br>
-			<button type="button" onclick="uschooleditcom()">완료</button> --%>
+		<div id = "edituschool">			
 			<div style="font-size: 20pt; margin-left: 20px" >대학교
 			<input type="text" id="uschoolName" name="uschoolName" value ="${scinfo.uschool}" readonly />			
 			<input type="button" id ="schoolSearch" data-toggle="modal" data-target="#myModal" value="학교찾기"></input>

@@ -14,8 +14,8 @@
 </head>
 <body>
 	<div>
-	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; float:left;">
-	<img alt="메인 페이지" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; margin-left: 270px; float:left;">	
+	<img alt="메인 페이지 배경" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; float:left;">
+	<img alt="메인 페이지 배경" src="resources/img/mainPage.png" height="800px" width="auto" style="margin-top: 90px; margin-left: 270px; float:left;">	
 	</div>	
 	
 	<div class="base" style="opacity : 0.95;">
@@ -25,10 +25,7 @@
 					<tr>
 						<td><a style="visibility: hidden;">공간띄기</a></td>
 						<td><a style="visibility: hidden;">공간띄기</a></td>
-						
-						<!-- <td><a href="/login/loginForm">로그인</a></td> -->
-						<!-- <td><a href="/signup">회원가입</a></td> -->
-						
+
 						<td>
 						<button id="login" type="button" onclick="location.href='${pageContext.request.contextPath}/login/loginForm'">로그인</button>
 						</td>						
@@ -38,17 +35,11 @@
 
 				<sec:authorize access="isAuthenticated()">
 					<tr>
-							<td><a style="visibility: hidden;">공간띄기</a></td>						
-							<td><a style="visibility: hidden;">공간띄기</a></td>
-							<td><a style="visibility: hidden;">공간띄기</a></td>								
+						<form:form action="${pageContext.request.contextPath}/logout" method="POST">				
 							<td>
-							<!-- <input type="submit" value="로그아웃" /> -->
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
 							</td>
-
-
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->
-
+							</form:form>
 					</tr>
 				</sec:authorize>
 			</table>

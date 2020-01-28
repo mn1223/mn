@@ -27,7 +27,7 @@ public interface FriendService {
 	
 	public void schoolUpd(FriendVO friendVO);
 
-
+	public FriendVO getMyName(FriendVO friendVO);
 
 	
 }

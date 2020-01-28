@@ -114,6 +114,10 @@
 </script>
 </head>
   <body>
+  <div style="height: 850px; width: auto;">
+  <a href="${pageContext.request.contextPath}/">
+  <img alt="메인 페이지" src="/resources/img/logoMain.png" height="150px" width="auto" style="margin-left:850px; margin-top:0px;" >
+  </a>
     <div class="container">
       <form class="form-signin" method="get" id ="form" name="form" onsubmit="return checkpwd()"
 		action="${pageContext.request.contextPath}/signupcomplete">
@@ -134,10 +138,10 @@
                 <button type="button" id="idcheck">중복확인</button>
 		</div>
 		<div>
-			<label>비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
+			<label>비밀번호</label> <input type="password" id="mmpwd" name="mmpwd" />
 		</div>
 		<div>
-			<label>비밀번호확인</label> <input type="text" id="re_mmpwd"
+			<label>비밀번호확인</label> <input type="password" id="re_mmpwd"
 				name="re_mmpwd" />
 		</div>
 		<p id="pwsame" style="color: red;"></p>
@@ -166,8 +170,8 @@
          </div>     
       </form>
     </div> <!-- /container -->
+    </div>
   </body>
-</html>
 <style>
 input[type='text'] {
     border-radius:5px; 
@@ -180,6 +184,12 @@ body {
   padding-top: 90px;
   padding-bottom: 40px;
   background-color: #eee;
+<<<<<<< HEAD
+  background-image:url('mainPage.png');
+  height : 900px;
+  width : auto;
+=======
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 }
 .form-signin {
   max-width: 600px;
@@ -214,6 +224,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+<<<<<<< HEAD
+
+</style>  
+  
+</html>
+=======
 .btn-primary{
    border-radius:300px;
    width:300px;
@@ -225,3 +241,4 @@ body {
 margin:auto;
 }
 </style>
+>>>>>>> branch 'master' of https://github.com/mn1223/mn.git

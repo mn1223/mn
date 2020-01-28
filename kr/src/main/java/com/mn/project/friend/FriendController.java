@@ -93,7 +93,7 @@ public class FriendController  {
 		Path path = Paths.get("D:\\log\\" + myid+yourid+ ".txt");
 		StringBuffer sb = new StringBuffer();
 		Charset cs = StandardCharsets.UTF_8;
-		
+		FriendVO friendVO = new FriendVO();
 		List<String> list = new ArrayList<String>();
 		
 		try {
@@ -129,9 +129,13 @@ public class FriendController  {
 		}else {			
 			remyid = myid.substring(0,myid.indexOf("@"));
 		}		
+		friendVO.setScmmid(myid);
+		friendVO = friendService.getMyName(friendVO);
 		
 		System.out.println(name);
+		System.out.println(friendVO.getMmname());
 		model.addAttribute("yourname",name);
+		model.addAttribute("myname",friendVO.getMmname());
 		model.addAttribute("yourid",reyourid);
 	    model.addAttribute("myid",remyid);
 	    model.addAttribute("chatList",sb);

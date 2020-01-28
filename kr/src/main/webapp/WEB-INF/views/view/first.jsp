@@ -32,41 +32,21 @@
 						<td><button id="signUp" type="button" onclick="location.href='${pageContext.request.contextPath}/signup'">회원가입</button></td>
 					</tr>
 				</sec:authorize>
-<<<<<<< HEAD
 
-=======
-
-
-
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 				<sec:authorize access="isAuthenticated()">
 					<tr>
-<<<<<<< HEAD
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">				
-=======
-						<form:form action="${pageContext.request.contextPath}/logout" method="POST">					
-
 					<tr>
 
 							<td><a style="visibility: hidden;">공간띄기</a></td>						
 							<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><a style="visibility: hidden;">공간띄기</a></td>								
 
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 							<td>
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
 							</td>
-<<<<<<< HEAD
 							</form:form>
-=======
 
-
-						</form:form>
-
-
-							<!-- <td><a href="/matchmaker/managermain">관리자 페이지</a></td> -->
-
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 					</tr>
 				</sec:authorize>
 			</table>

@@ -23,8 +23,6 @@
     <link rel="icon" href="../../favicon.ico">
   
     <title>Signin Template for Bootstrap</title>
-
- 
   </head>
 <script>
 	$(document).ready(function(){
@@ -184,12 +182,9 @@ body {
   padding-top: 90px;
   padding-bottom: 40px;
   background-color: #eee;
-<<<<<<< HEAD
   background-image:url('mainPage.png');
   height : 900px;
   width : auto;
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 }
 .form-signin {
   max-width: 600px;
@@ -224,21 +219,6 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-<<<<<<< HEAD
 
 </style>  
-  
-</html>
-=======
-.btn-primary{
-   border-radius:300px;
-   width:300px;
-   background-color: #1c6288;
-   border: 1px solid #daf1ff;
-    background: linear-gradient(to right,#9575CD,#F48FB1 );
-}
-.oo{ 
-margin:auto;
-}
-</style>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+

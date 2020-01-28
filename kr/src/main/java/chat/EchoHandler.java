@@ -1,6 +1,7 @@
 package chat;
 
 import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -34,7 +35,6 @@ public class EchoHandler extends TextWebSocketHandler {
 		return this.yourid;
 	}
 	
-
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		sessionList.add(session);

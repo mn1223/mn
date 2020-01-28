@@ -146,8 +146,8 @@
 		</div>
 		<p id="pwsame" style="color: red;"></p>
 		<div>
-			<label>전화번호</label> <input type="text" id="mmphonenum"
-				name="mmphonenum" /> ex)01012345678
+			<label>전화번호</label> <input type="text" id="mmphonenum" placeholder=" ex)01012345678"
+				name="mmphonenum" />
 		</div>
 		<div>
 		<label>성별</label> <input type="radio" name="mmgender" value="남자"checked>남
@@ -173,6 +173,12 @@
     </div>
   </body>
 <style>
+#idcheck{
+   border-radius:7px;
+   background-color:#337ab7;
+   border:2px solid #daf1ff;
+   color:white;
+}
 input[type='text'] {
     border-radius:5px; 
 }
@@ -184,22 +190,20 @@ body {
   padding-top: 90px;
   padding-bottom: 40px;
   background-color: #eee;
-<<<<<<< HEAD
-  background-image:url('mainPage.png');
-  height : 900px;
-  width : auto;
-=======
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
 }
 .form-signin {
   max-width: 600px;
   padding: 15px;
   margin: 0 auto;
+     border-radius: 10px;
+    background-color: #3938462e;
 }
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+
+
 }
 
 .form-signin .form-control {
@@ -224,21 +228,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-<<<<<<< HEAD
+
+.btn-primary{
+  width:300px;
+   border:3px solid #daf1ff;
+}
 
 </style>  
-  
 </html>
-=======
-.btn-primary{
-   border-radius:300px;
-   width:300px;
-   background-color: #1c6288;
-   border: 1px solid #daf1ff;
-    background: linear-gradient(to right,#9575CD,#F48FB1 );
-}
-.oo{ 
-margin:auto;
-}
-</style>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+

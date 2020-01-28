@@ -34,19 +34,19 @@
 				</sec:authorize>
 
 				<sec:authorize access="isAuthenticated()">
+
 					<tr>
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">				
-					<tr>
+                    <tr>
 
 							<td><a style="visibility: hidden;">공간띄기</a></td>						
 							<td><a style="visibility: hidden;">공간띄기</a></td>
 							<td><a style="visibility: hidden;">공간띄기</a></td>								
-
+							
 							<td>
 							<button id="logout" type="button" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
 							</td>
 							</form:form>
-
 					</tr>
 				</sec:authorize>
 			</table>

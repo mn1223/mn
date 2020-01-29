@@ -18,8 +18,9 @@ $("document").ready(function(){
 	});
 	
 	$("td:last-child button").on("click",function(){
-		var mmid = $(this).parent().parent().find("td:nth-child(2)").html();
-	    var mmgrade = $(this).parent().parent().find("td:nth-child(6) select option:selected").val();
+		var mmid = $(this).parent().parent().parent().find("td:nth-child(2)").html();
+	    var mmgrade = $(this).parent().parent().parent().find("td:nth-child(6) select option:selected").val();
+	    console.log(mmid);
 	    $.ajax({
 	    	type : "POST",
 	    	

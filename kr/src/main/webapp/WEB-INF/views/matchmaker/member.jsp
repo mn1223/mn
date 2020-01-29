@@ -118,7 +118,7 @@ div.tt{
 						$('#grade${status.index}').selectpicker();
 						</script>
 						
-					<td><center><button type="button">수정</button></td></center>
+					<td><center><button type="button">수정</button></center></td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -116,7 +116,7 @@ li{
 
 #menu1 ul li{
 	float:left;
-	width:25%;
+	width:33%;
 	height: auto;
 	line-height: 47px;
 	text-align:center;	

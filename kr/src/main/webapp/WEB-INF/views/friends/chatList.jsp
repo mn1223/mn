@@ -2,12 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/layout/headerNF.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>반갑다친구야 : 친구목록</title>
+<title>반갑다친구야 : 친구록</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
 <script>
 $(document).ready(function(){
 	showFriendListTrue();
@@ -33,7 +42,12 @@ function showFriendListTrue(){
 				html += '<tr>';
 
 
-				html += '<th style="font-size:20px;">'+this.mmname+'<th>';
+
+				html += '<th style="font-size:20px;"><input type="button" onclick=getFInfo("'+this.yourid+'") data-toggle="modal" data-target="#myModal" value="'+this.mmname+'"></input><th>';
+
+
+				/*html += '<th style="font-size:20px;">'+this.mmname+'<th>';*/
+
 				html += '<th><button onclick = deleteFriendFalse("'+this.myid+'","'+this.yourid+'","T") style="margin-left:230px; padding: 5px;">친구 삭제</button><th>';
 
 				html += '<th><button onclick = gochat("'+this.yourid+'","'+this.mmname+'") style="margin-left:10px; padding: 5px;">채팅 하기</button><th>' 
@@ -55,7 +69,29 @@ function showFriendListTrue(){
 function gochat(yourid,mmname){
 	location.href = "/chating?myid=${myid}&yourid="+yourid+"&mmname="+mmname;
 }
-
+function getFInfo(yourid){
+	
+	
+	$.ajax({
+		type:"GET",
+		url:"/getInfo",
+		data:{"yourid":yourid},
+		dataType:"json",
+		success:function(data){
+			var html ="";
+			html+='<th>'+data.eschool+'</th>';
+			html+='<th>'+data.mschool+'</th>'; 
+			html+='<th>'+data.hschool+'</th>';
+			html+='<th>'+data.uschool+'</th>';
+			$("#schoolInfo").html(html); 
+		},
+		error:function(e){
+			alert(e);
+		}
+	});
+	
+}
+ 
 
 
 </script>
@@ -87,6 +123,30 @@ button:hover{
 
 </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+       	<table>
+       		<thead id = "schoolInfo">  
+       		 
+       		</thead>
+       	</table>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick ="sendSchool()"data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
 </body>
 </html>

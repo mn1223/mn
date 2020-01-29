@@ -124,7 +124,14 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public List<BoardVO> getBoardListFour(Search search) throws Exception {
 		// TODO Auto-generated method stub
-		return sql.selectList(namespace + ".getBoardListFour", search);
+		if(search.getMmid().equals("admin@naver.com")) {
+
+			return sql.selectList(namespace + ".getBoardListFourMa", search);
+		}else {
+	
+			return sql.selectList(namespace + ".getBoardListFour", search);
+		}
+		
 	}
 
 	//게시글 작성(4번 게시판)

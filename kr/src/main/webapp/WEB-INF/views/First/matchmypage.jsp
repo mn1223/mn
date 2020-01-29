@@ -366,19 +366,19 @@ th{
 <body>
 <div>
 	<a href="${pageContext.request.contextPath}/mmmain">
-		<img alt="매치메이커 메인" src="/resources/img/matchLogo.png" height="80px" width="auto" style="margin-left:900px; margin-top:50px; " >
+		<img alt="매치메이커 메인" src="/resources/img/matchLogo.png" height="80px" width="auto" style="margin-left:750px; margin-top:50px; " >
 	</a>
 </div>
 <br/>
 <br/>
 <div>
-	<img alt="마이 페이지" src="/resources/img/myPage.png" height="50px" width="auto" style="margin-left:450px; margin-top:50px;" >
+	<img alt="마이 페이지" src="/resources/img/myPage.png" height="50px" width="auto" style="margin-left:350px; margin-top:50px;" >
 </div>
 <div>
-	<img alt="회원 정보" src="/resources/img/memberInfo.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
+	<img alt="회원 정보" src="/resources/img/memberInfo.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
 </div>
 
-		<div id="inform" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+		<div id="inform" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 				
 				<div style="font-size: 15pt;">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름:&nbsp;&nbsp;<c:out value="${userInfo.mmname}"/>
@@ -405,7 +405,7 @@ th{
 
 
 <!-- 회원정보 수정  -->
-<div id= "editform" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+<div id= "editform" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 	
 	<div style="font-size: 15pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;<input type="text" id="mmname" value ="${userInfo.mmname}"/><br>
 	</div>
@@ -431,8 +431,8 @@ th{
 
 
 <!-- 학교 정보 입력 form -->
-<img alt="학교 정보" src="/resources/img/schoolInfo.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
-<div id="schoolInfo" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+<img alt="학교 정보" src="/resources/img/schoolInfo.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+<div id="schoolInfo" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 
 	<input type="button" id = "bt_e" value ="초등학교" onclick ="eschool()">
 	<input type="button" id = "bt_m" value ="중학교" onclick ="mschool()">
@@ -492,7 +492,7 @@ th{
 			<input type="text" id="mschoolgy" name="mschoolgy" value="${scinfo.mschoolgy}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="mschooleditcom()">수정완료</button>
 			</div>		
 		</div>
 		<!-- eschool{e} -->
@@ -521,7 +521,7 @@ th{
 			<input type="text" id="hschoolgy" name="hschoolgy" value="${scinfo.hschoolgy}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="hschooleditcom()">수정완료</button>
 			</div>
 		</div>
 		<!-- hschool{e} -->
@@ -549,31 +549,31 @@ th{
 			<br/>
 			<br/>
 			<div style="font-size: 20pt; margin-left: 50px" >학과
-			<input type="text" id="uschoolName" name="uschoolName" value ="${scinfo.uschoolma}" readonly />
+			<input type="text" id="uschoolma" name="uschoolma" value ="${scinfo.uschoolma}" />
 			</div>
 			<br/>
 			<br/>
 			<div style="font-size: 20pt;">입학년도 
-			<input type="text" id="uschoolgy" name="uschoolgy" value="${scinfo.uschooley}" />
+			<input type="text" id="uschooley" name="uschooley" value="${scinfo.uschooley}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="uschooleditcom()">수정완료</button>
 			</div>
 		</div>
 		<!-- uschool{e} -->	
 	</div>
 	
 	<!-- 1:1문의 및 대학교 인증 -->
-	<img alt="1:1문의 및 대학교 인증" src="/resources/img/oneToOne.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
-	<div id="oneToOne" style="padding : 50px; margin-left : 450px; width: 1300px; height: 150px; background-color: #FAFAFA; ">
+	<img alt="1:1문의 및 대학교 인증" src="/resources/img/oneToOne.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+	<div id="oneToOne" style="padding : 50px; margin-left : 350px; width: 1300px; height: 150px; background-color: #FAFAFA; ">
 		<div style="font-size: 25px; float: left; margin-top : 15px;">
 			<a href="/board/getBoardListFour">1:1문의 및 대학교 인증 게시판 이동하기(클릭)</a>
 		</div>
 	</div>	
 	
 	<!-- 실시간 예약 현황 -->
-	<img alt="실시간 예약 현황" src="/resources/img/list.png" height="30px" width="auto" style="margin-left:450px; margin-top:50px;" >
-	<div id="reservation" style="padding : 50px; margin-left : 450px; width: 1300px; height: auto; background-color: #FAFAFA; ">
+	<img alt="실시간 예약 현황" src="/resources/img/list.png" height="30px" width="auto" style="margin-left:350px; margin-top:50px;" >
+	<div id="reservation" style="padding : 50px; margin-left : 350px; width: 1300px; height: auto; background-color: #FAFAFA; ">
 		<div id="resTable" style="padding: 0; margin-bottom: 20px;">			
 			 	<table border="1">
 		        	<colgroup>

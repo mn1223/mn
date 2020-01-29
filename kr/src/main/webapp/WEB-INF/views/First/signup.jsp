@@ -23,8 +23,6 @@
     <link rel="icon" href="../../favicon.ico">
   
     <title>Signin Template for Bootstrap</title>
-
- 
   </head>
 <script>
 	$(document).ready(function(){
@@ -138,16 +136,16 @@
                 <button type="button" id="idcheck">중복확인</button>
 		</div>
 		<div>
-			<label>비밀번호</label> <input type="text" id="mmpwd" name="mmpwd" />
+			<label>비밀번호</label> <input type="password" id="mmpwd" name="mmpwd" />
 		</div>
 		<div>
-			<label>비밀번호확인</label> <input type="text" id="re_mmpwd"
+			<label>비밀번호확인</label> <input type="password" id="re_mmpwd"
 				name="re_mmpwd" />
 		</div>
 		<p id="pwsame" style="color: red;"></p>
 		<div>
-			<label>전화번호</label> <input type="text" id="mmphonenum"
-				name="mmphonenum" /> ex)01012345678
+			<label>전화번호</label> <input type="text" id="mmphonenum" placeholder=" ex)01012345678"
+				name="mmphonenum" />
 		</div>
 		<div>
 		<label>성별</label> <input type="radio" name="mmgender" value="남자"checked>남
@@ -173,6 +171,12 @@
     </div>
   </body>
 <style>
+#idcheck{
+   border-radius:7px;
+   background-color:#337ab7;
+   border:2px solid #daf1ff;
+   color:white;
+}
 input[type='text'] {
     border-radius:5px; 
 }
@@ -195,11 +199,15 @@ body {
   max-width: 600px;
   padding: 15px;
   margin: 0 auto;
+     border-radius: 10px;
+    background-color: #3938462e;
 }
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+
+
 }
 
 .form-signin .form-control {
@@ -224,21 +232,9 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-<<<<<<< HEAD
-
-</style>  
-  
-</html>
-=======
 .btn-primary{
-   border-radius:300px;
-   width:300px;
-   background-color: #1c6288;
-   border: 1px solid #daf1ff;
-    background: linear-gradient(to right,#9575CD,#F48FB1 );
+  width:300px;
+   border:3px solid #daf1ff;
 }
-.oo{ 
-margin:auto;
-}
-</style>
->>>>>>> branch 'master' of https://github.com/mn1223/mn.git
+</style>  
+</html>

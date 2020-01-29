@@ -30,11 +30,11 @@ input[type='text'] {
    background-color:rgb(212,244,250);
 }
 div.tt{
-  padding:90px 300px;
-  position: absolute;
+  padding:90px 400px;
+  position: absolute; 
 }
-#view{
-  border-radius:10px;
+#view{  
+  border-radius:10px; 
   background: linear-gradient(to right,#9575CD,#F48FB1 );
   width: 60px;
   height: 33px;

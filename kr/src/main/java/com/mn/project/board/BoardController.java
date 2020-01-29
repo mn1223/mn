@@ -435,6 +435,98 @@ public class BoardController {
 		service.deleteBoard(bno);
 		return "redirect:/board/getBoardListFour";
 	}
+	
+	//////////////////////////////////////////////////
+	//게시글 전체 조회(4번 게시판)
+	@RequestMapping(value="/getBoardListFourMa", method=RequestMethod.GET)
+	public String getBoardListFourMa(Model model,
+			@RequestParam(defaultValue = "1") int page,
+			@RequestParam(defaultValue = "1") int range,
+			@RequestParam(defaultValue = "title") String searchType,
+			@RequestParam(required = false) String keyword,
+			@ModelAttribute("search") Search search,				
+			Principal principal) throws Exception {
+
+		try {
+			String id = principal.getName();
+			model.addAttribute("myid",id);
+			search.setMmid(id);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+
+		//검색
+		model.addAttribute("search", search);
+		search.setSearchType(searchType);
+		search.setKeyword(keyword);		
+		
+		//전체 게시글 개수
+		int listCnt = service.getBoardListCntFour(search);
+
+		//검색
+		search.pageInfo(page, range, listCnt);
+
+		//페이징				
+		model.addAttribute("pagination", search);
+
+
+		//게시글 화면 출력
+		model.addAttribute("boardList", service.getBoardListFour(search));			
+		System.out.println("?????????");
+		return "board/four2/indexFour";
+	}
+	
+	//게시글 저장 + 수정(4번 게시판)
+	@RequestMapping(value = "/saveBoardFourMa", method = RequestMethod.POST)
+	public String saveBoardFourMa(@ModelAttribute("boardVO") BoardVO vo,
+			@RequestParam("mode") String mode,
+			RedirectAttributes rttr) throws Exception {
+
+		if(mode.equals("edit")) {
+			service.updateBoard(vo);
+		}else {
+			service.insertBoardFour(vo);
+		}
+
+		return "redirect:/board/getBoardListFourMa";
+	}
+
+	//게시글 내용 상세보기(4번 게시판)
+	@RequestMapping(value = "/getBoardContentFourMa", method = RequestMethod.GET)
+	public String getBoardContentFourMa(Model model,@RequestParam("bno") int bno,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
+		//내용 출력
+		model.addAttribute("boardContent", service.getBoardContent(bno));
+
+		//댓글 출력
+		model.addAttribute("replyVO", new ReplyVO());
+
+		return "board/four2/boardContentFour";
+	}
+
+	//게시글 수정 화면(4번 게시판)
+	@RequestMapping(value = "/editFormFourMa", method = RequestMethod.GET)
+	public String editFormFourMa(Model model,@RequestParam("bno") int bno,
+			@RequestParam("mode") String mode) throws Exception {
+		model.addAttribute("boardContent", service.getBoardContent(bno));
+		model.addAttribute("mode", mode);
+		model.addAttribute("boardVO", new BoardVO());
+		return "board/four2/boardFormFour";
+	}
+
+	//게시글 삭제(4번 게시판)
+	@RequestMapping(value = "/deleteBoardFourMa", method = RequestMethod.GET)
+	public String deleteBoardFourMa(RedirectAttributes rttr,
+			@RequestParam("bno") int bno) throws Exception {
+		service.deleteBoard(bno);
+		return "redirect:/board/getBoardListFourMa";
+	}
+	@RequestMapping(value="/boardFormFourMa", method=RequestMethod.GET)
+	public String boardFormFourMa(@ModelAttribute("boardVO") BoardVO vo, Model model,Principal principal) throws Exception {
+		model.addAttribute("myid",principal.getName());
+		return "board/four2/boardFormFour";
+	}
+
 
 	/* 여기는 5번 게시판입니다--------------------------------------------------------------*/
 

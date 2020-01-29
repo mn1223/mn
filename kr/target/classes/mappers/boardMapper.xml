@@ -198,13 +198,28 @@
 	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
 	over(order by bno asc) as rNum
 	from board
-	where bomanagenum=4 and bommid =#{mmid}]]>
+	where bomanagenum=4 and bommid = #{mmid} ]]>
 	<include refid="search"></include>
 	<![CDATA[
 	) mp
 	where rNum > #{endList} and rNum <= #{startList}
 	order by rnum desc
 	]]>	
+	</select>
+	
+	<select id="getBoardListFourMa" parameterType="com.mn.project.board.Search" resultType="com.mn.project.board.BoardVO">
+	<![CDATA[
+	select rnum, bomanagenum, bno, title, contents, viewcnt, bommid, bodate
+	from( select bomanagenum, bno, title, contents, viewcnt, bommid, bodate,	row_number() 
+	over(order by bno asc) as rNum
+	from board
+	where bomanagenum=4]]>
+	<include refid="search"></include>
+	<![CDATA[
+	) mp
+	where rNum > #{endList} and rNum <= #{startList}
+	order by rnum desc
+	]]>		
 	</select>
 	
 	
@@ -229,7 +244,7 @@
 		SELECT COUNT(*) AS listCnt
 		FROM
 		BOARD
-        where bomanagenum = 4
+        where bomanagenum = 4 <!--  and bommid = #{mmid}-->
 		<include refid="search"></include>		
 	</select>
 	

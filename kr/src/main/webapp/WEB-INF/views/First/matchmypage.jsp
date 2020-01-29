@@ -492,7 +492,7 @@ th{
 			<input type="text" id="mschoolgy" name="mschoolgy" value="${scinfo.mschoolgy}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="mschooleditcom()">수정완료</button>
 			</div>		
 		</div>
 		<!-- eschool{e} -->
@@ -521,7 +521,7 @@ th{
 			<input type="text" id="hschoolgy" name="hschoolgy" value="${scinfo.hschoolgy}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="hschooleditcom()">수정완료</button>
 			</div>
 		</div>
 		<!-- hschool{e} -->
@@ -549,15 +549,15 @@ th{
 			<br/>
 			<br/>
 			<div style="font-size: 20pt; margin-left: 50px" >학과
-			<input type="text" id="uschoolName" name="uschoolName" value ="${scinfo.uschoolma}" readonly />
+			<input type="text" id="uschoolma" name="uschoolma" value ="${scinfo.uschoolma}" />
 			</div>
 			<br/>
 			<br/>
 			<div style="font-size: 20pt;">입학년도 
-			<input type="text" id="uschoolgy" name="uschoolgy" value="${scinfo.uschooley}" />
+			<input type="text" id="uschooley" name="uschooley" value="${scinfo.uschooley}" />
 			<br/>
 			<br/>
-			<button type="button"  onclick="eschooleditcom()">수정완료</button>
+			<button type="button"  onclick="uschooleditcom()">수정완료</button>
 			</div>
 		</div>
 		<!-- uschool{e} -->	

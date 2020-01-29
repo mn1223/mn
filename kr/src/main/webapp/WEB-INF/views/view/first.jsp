@@ -38,7 +38,7 @@
 
 						<form:form action="${pageContext.request.contextPath}/logout" method="POST">					
 
-					<tr>
+
 
 							<td><a style="visibility: hidden;">공간띄기</a></td>						
 							<td><a style="visibility: hidden;">공간띄기</a></td>

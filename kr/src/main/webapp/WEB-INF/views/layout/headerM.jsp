@@ -65,6 +65,7 @@
 			 <li><a href="${pageContext.request.contextPath}/matchmaker/member">회원관리</a></li>
 			 <li><a href="${pageContext.request.contextPath}/matchmaker/party">파티관리</a></li>
 			 <li><a href="${pageContext.request.contextPath}/matchmaker/reservation">예약관리</a></li>
+			 <li><a href="${pageContext.request.contextPath}/board/getBoardListFourMa">1:1문의 관리</a></li>
 	    </ul>
 	</div>	
  </div>

@@ -12,13 +12,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<trim prefix="WHERE" prefixOverrides="AND|OR">
 	
 		<if test="searchType=='es' and mmname != null and mmname != '' ">
-			and mmname like '%' || #{mmname} ||'%' and eschool like '%' || #{eschool} ||'%' and mmgrade ='N'
+			and mmname like '%' || #{mmname} ||'%' and eschool like '%' || #{eschool} ||'%' and mmgrade != 'X'
 		</if>		
 		<if test="searchType=='es' and eschool != null and eschool != ''">
-			and eschool like '%' || #{eschool} ||'%' and mmgrade ='N'
+			and eschool like '%' || #{eschool} ||'%' and mmgrade != 'X'
 		</if>
 		<if test="searchType=='es' and eschoolgy != null and eschoolgy != ''">
-			and eschoolgy like '%' || #{eschoolgy} ||'%' and mmgrade ='N'
+			and eschoolgy like '%' || #{eschoolgy} ||'%' and mmgrade != 'X'
 		</if>	
 	</trim>
 	</select>
@@ -29,13 +29,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	from scname
 	<trim prefix="WHERE" prefixOverrides="AND|OR">							
 		<if test="searchType=='ms' and mmname != null and mmname != '' ">
-			and mmname like '%' || #{mmname} || '%' and mschool like '%' || #{mschool} || '%' and mmgrade ='N'
+			and mmname like '%' || #{mmname} || '%' and mschool like '%' || #{mschool} || '%' and mmgrade != 'X'
 		</if>	
 		<if test="searchType=='ms' and mschool != null and mschool != '' ">
-			and mschool like '%' || #{mschool} || '%' and mmgrade ='N'
+			and mschool like '%' || #{mschool} || '%' and mmgrade != 'X'
 		</if>
 		<if test="searchType=='ms' and mschoolgy != null and mschoolgy != '' ">
-			and mschoolgy like '%' || #{mschoolgy} ||'%' and mmgrade ='N'
+			and mschoolgy like '%' || #{mschoolgy} ||'%' and mmgrade != 'X'
 		</if>	
 	</trim>
 	</select>
@@ -46,13 +46,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	from scname
 	<trim prefix="WHERE" prefixOverrides="AND|OR">							
 		<if test="searchType=='hs' and mmname != null and mmname != '' ">
-			and mmname like '%' || #{mmname} || '%' and hschool like '%' || #{hschool} || '%' and mmgrade ='N'
+			and mmname like '%' || #{mmname} || '%' and hschool like '%' || #{hschool} || '%' and mmgrade != 'X'
 		</if>	
 		<if test="searchType=='hs' and hschool != null and hschool != '' ">
-			and hschool like '%' || #{hschool} || '%' and mmgrade ='N'
+			and hschool like '%' || #{hschool} || '%' and mmgrade != 'X'
 		</if>
 		<if test="searchType=='hs' and hschoolgy != null and hschoolgy != '' ">
-			and hschoolgy like '%' || #{hschoolgy} ||'%' and mmgrade ='N'
+			and hschoolgy like '%' || #{hschoolgy} ||'%' and mmgrade != 'X'
 		</if>	
 	</trim>
 	</select>
@@ -63,16 +63,16 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	from scname
 	<trim prefix="WHERE" prefixOverrides="AND|OR">							
 		<if test="searchType=='us' and mmname != null and mmname != '' ">
-			and mmname like '%' || #{mmname} || '%' and uschool like '%' || #{uschool} || '%' and mmgrade ='N'
+			and mmname like '%' || #{mmname} || '%' and uschool like '%' || #{uschool} || '%' and mmgrade != 'X'
 		</if>	
 		<if test="searchType=='us' and uschool != null and uschool != '' ">
-			and uschool like '%' || #{uschool} || '%' and mmgrade ='N'
+			and uschool like '%' || #{uschool} || '%' and mmgrade != 'X'
 		</if>
 		<if test="searchType=='us' and uschooley != null and uschooley != '' ">
-			and uschooley like '%' || #{uschooley} ||'%' and mmgrade ='N'
+			and uschooley like '%' || #{uschooley} ||'%' and mmgrade != 'X'
 		</if>
 		<if test="searchType=='us' and uschoolma != null and uschoolma != '' ">
-			and uschoolma like '%' || #{uschoolma} ||'%' and mmgrade ='N'
+			and uschoolma like '%' || #{uschoolma} ||'%' and mmgrade != 'X'
 		</if>		
 	</trim>
 	</select>
@@ -82,15 +82,14 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="judgeFriend" parameterType = "com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
-	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and mmgrade = 'N'
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and mmgrade != 'X'
 	</select>
 	
 	<select id="getFriendfalse" parameterType ="com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
-	select myid,yourid,mmname from nflist a,member b where a.myid = b.mmid and a.yourid = #{myid} and status = 'F' and mmgrade = 'N'
+	select myid,yourid,mmname from nflist a,member b where a.myid = b.mmid and a.yourid = #{myid} and status = 'F' and mmgrade != 'X'
 	</select>
-	
 	<select id="getFriendtrue" parameterType ="com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
-	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and status = 'T' and mmgrade = 'N'
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and status = 'T' and mmgrade != 'X'
 	</select>
 	
 	<update id="addFriendtrue" parameterType ="com.mn.project.friend.FriendVO" >
@@ -102,7 +101,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="getMyFriendfalse" parameterType = "com.mn.project.friend.FriendVO" resultType = "com.mn.project.friend.FriendVO">
-	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and a.status = 'F' and mmgrade = 'N'
+	select myid,yourid,mmname from nflist a,member b where a.yourid = b.mmid and a.myid = #{myid} and a.status = 'F' and mmgrade != 'X'
 	</select>
 	
 	<delete id="deleteFriendFalse" parameterType= "com.mn.project.friend.FriendVO" >

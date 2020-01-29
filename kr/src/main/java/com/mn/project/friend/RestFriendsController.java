@@ -42,6 +42,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
+import com.mn.project.login.LoginService;
+import com.mn.project.login.LoginVO;
 import com.mn.project.util.SessionClass;
 
 import SchoolAPI.ItemList;
@@ -56,6 +58,9 @@ public class RestFriendsController {
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 
+	@Inject
+	private LoginService service;
+	
 	@Inject
 	FriendService friendService;
 
@@ -236,5 +241,16 @@ public class RestFriendsController {
 		friendService.schoolUpd(friendVO);
 	}
 	
+	@RequestMapping(value="getInfo",method =RequestMethod.GET)
+	public FriendVO getInfo(@RequestParam("yourid") String yourid,Model model) throws Exception{
+		LoginVO loginVO = new LoginVO();
+		loginVO.setMmid(yourid);
+		
+		FriendVO friendVO = service.getSchoolInfo(loginVO);
+		System.out.println(friendVO);
+		model.addAttribute("scinfo",friendVO);
+		
+		return friendVO;	
+	}
 
 }
